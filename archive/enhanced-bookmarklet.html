@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NYT TPL Highlighter - Strategic Analysis Edition</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        .bookmarklet { 
+            background: #f0f0f0; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 20px 0;
+            border: 2px dashed #326891;
+        }
+        .bookmarklet a {
+            background: #326891;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .bookmarklet a:hover { background: #2d5a82; }
+        .strategic-insights { background: #e8f4f8; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .token-category { background: white; padding: 15px; margin: 10px 0; border-left: 4px solid #326891; }
+        .code { font-family: monospace; background: #f5f5f5; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>🔍 NYT TPL Design System - Strategic Analysis Edition</h1>
+    
+    <div class="strategic-insights">
+        <h2>🎯 Strategic Design System Intelligence</h2>
+        <p>This enhanced bookmarklet doesn't just highlight TPL elements—it provides strategic insights into NYT's design system architecture, token usage patterns, and system maturity.</p>
+    </div>
+
+    <div class="bookmarklet">
+        <h3>🚀 Enhanced TPL Analyzer - Drag to Bookmarks:</h3>
+        <a href="javascript:(function(){if(window.tplAnalyzer){window.tplAnalyzer.toggle();return;}var css=`
+.tpl-highlighted{outline:2px solid #ff6b35!important;outline-offset:2px!important;position:relative!important;background:rgba(255,107,53,0.1)!important;transition:all 0.2s ease!important;cursor:pointer!important;}
+.tpl-highlighted:hover{outline-width:3px!important;background:rgba(255,107,53,0.2)!important;transform:scale(1.01)!important;}
+.tpl-badge{position:absolute!important;background:#ff6b35!important;color:white!important;font-family:monospace!important;font-size:9px!important;font-weight:600!important;padding:3px 6px!important;border-radius:3px!important;z-index:10000!important;pointer-events:none!important;white-space:nowrap!important;box-shadow:0 2px 4px rgba(0,0,0,0.2)!important;max-width:180px!important;overflow:hidden!important;text-overflow:ellipsis!important;}
+.tpl-tooltip{position:absolute!important;background:#1f2937!important;color:white!important;font-family:sans-serif!important;font-size:11px!important;padding:10px 12px!important;border-radius:6px!important;z-index:10001!important;max-width:320px!important;box-shadow:0 4px 12px rgba(0,0,0,0.3)!important;line-height:1.4!important;}
+.tpl-analytics-panel{position:fixed!important;top:20px!important;right:20px!important;width:300px!important;background:white!important;border:1px solid #ddd!important;border-radius:8px!important;box-shadow:0 4px 12px rgba(0,0,0,0.15)!important;z-index:10002!important;font-family:sans-serif!important;font-size:12px!important;max-height:80vh!important;overflow-y:auto!important;}
+.tpl-panel-header{background:#326891!important;color:white!important;padding:12px!important;font-weight:bold!important;border-radius:8px 8px 0 0!important;}
+.tpl-panel-content{padding:15px!important;}
+.tpl-category{margin:10px 0!important;padding:8px!important;background:#f8f9fa!important;border-radius:4px!important;}
+.tpl-category-title{font-weight:bold!important;color:#326891!important;margin-bottom:5px!important;}
+.tpl-token{font-family:monospace!important;font-size:10px!important;background:#e9ecef!important;padding:2px 4px!important;margin:2px!important;border-radius:2px!important;display:inline-block!important;}
+.tpl-close{float:right!important;cursor:pointer!important;font-size:16px!important;font-weight:bold!important;}`;
+var style=document.createElement('style');style.textContent=css;document.head.appendChild(style);
+class TPLAnalyzer{constructor(){this.isActive=false;this.tplElements=[];this.analytics={};this.panel=null;}
+categorizeTPLClass(className){if(className.includes('text')||className.includes('typography')||className.includes('font')||className.includes('heading')||className.includes('body'))return 'Typography';if(className.includes('button')||className.includes('btn')||className.includes('link')||className.includes('cta'))return 'Interactive';if(className.includes('grid')||className.includes('container')||className.includes('layout')||className.includes('spacing')||className.includes('margin')||className.includes('padding'))return 'Layout';if(className.includes('color')||className.includes('bg')||className.includes('theme')||className.includes('brand'))return 'Theme';if(className.includes('nav')||className.includes('header')||className.includes('footer')||className.includes('menu'))return 'Navigation';if(className.includes('card')||className.includes('modal')||className.includes('dropdown')||className.includes('tooltip'))return 'Components';return 'Other';}
+analyzeTPLUsage(){this.analytics={Typography:new Set(),Interactive:new Set(),Layout:new Set(),Theme:new Set(),Navigation:new Set(),Components:new Set(),Other:new Set()};this.tplElements.forEach(item=>{item.classes.forEach(cls=>{const category=this.categorizeTPLClass(cls);this.analytics[category].add(cls);});});}
+detectTPLElements(){const allElements=document.querySelectorAll('*');this.tplElements=[];allElements.forEach(element=>{const classes=element.className;if(typeof classes==='string'&&classes.includes('tpl')){const classArray=classes.split(' ');const tplClasses=classArray.filter(cls=>cls.startsWith('tpl')||cls.includes('tpl-'));if(tplClasses.length>0){this.tplElements.push({element:element,classes:tplClasses});}}});this.analyzeTPLUsage();console.log('TPL Analysis:',{totalElements:this.tplElements.length,categories:Object.fromEntries(Object.entries(this.analytics).map(([k,v])=>[k,Array.from(v)]))});return this.tplElements.length;}
+createAnalyticsPanel(){if(this.panel){this.panel.remove();}this.panel=document.createElement('div');this.panel.className='tpl-analytics-panel';this.panel.innerHTML=`
+<div class='tpl-panel-header'>TPL Design System Analysis <span class='tpl-close' onclick='this.parentElement.parentElement.remove()'>×</span></div>
+<div class='tpl-panel-content'>
+<div><strong>Total TPL Elements:</strong> ${this.tplElements.length}</div>
+${Object.entries(this.analytics).map(([category,tokens])=>`
+<div class='tpl-category'>
+<div class='tpl-category-title'>${category} (${tokens.size})</div>
+${Array.from(tokens).slice(0,10).map(token=>`<span class='tpl-token'>${token}</span>`).join('')}
+${tokens.size>10?`<div style='font-size:10px;color:#666;margin-top:5px;'>+${tokens.size-10} more tokens</div>`:''}
+</div>`).join('')}
+<div style='margin-top:15px;padding-top:10px;border-top:1px solid #eee;font-size:10px;color:#666;'>
+<strong>Design System Insights:</strong><br>
+• Token Diversity: ${Object.values(this.analytics).reduce((sum,set)=>sum+set.size,0)} unique classes<br>
+• System Maturity: ${this.getMaturityScore()}<br>
+• Most Used Category: ${this.getMostUsedCategory()}
+</div>
+</div>`;document.body.appendChild(this.panel);}
+getMaturityScore(){const totalTokens=Object.values(this.analytics).reduce((sum,set)=>sum+set.size,0);const categories=Object.values(this.analytics).filter(set=>set.size>0).length;if(totalTokens>50&&categories>=5)return 'High - Comprehensive system';if(totalTokens>20&&categories>=4)return 'Medium - Growing system';return 'Early - Developing system';}
+getMostUsedCategory(){return Object.entries(this.analytics).reduce((max,[cat,tokens])=>tokens.size>max.count?{category:cat,count:tokens.size}:max,{category:'None',count:0}).category;}
+activate(){if(this.isActive)return;this.isActive=true;this.tplElements.forEach((item,index)=>{const{element,classes}=item;element.classList.add('tpl-highlighted');const badge=document.createElement('div');badge.className='tpl-badge';const primaryCategory=this.categorizeTPLClass(classes[0]);badge.textContent=`${primaryCategory}: ${classes[0]}`;badge.setAttribute('data-tpl-index',index);const rect=element.getBoundingClientRect();badge.style.left=rect.left+window.scrollX+'px';badge.style.top=rect.top+window.scrollY-22+'px';document.body.appendChild(badge);element.addEventListener('click',(e)=>{e.preventDefault();e.stopPropagation();this.showElementDetails(element,classes);});});this.createAnalyticsPanel();}
+deactivate(){if(!this.isActive)return;this.isActive=false;this.tplElements.forEach(({element})=>{element.classList.remove('tpl-highlighted');});document.querySelectorAll('.tpl-badge').forEach(badge=>badge.remove());if(this.panel){this.panel.remove();this.panel=null;}}
+toggle(){if(this.isActive){this.deactivate();return 'deactivated';}else{const count=this.detectTPLElements();this.activate();return `activated - found ${count} TPL elements across ${Object.values(this.analytics).filter(set=>set.size>0).length} categories`;}}
+showElementDetails(element,classes){const tooltip=document.createElement('div');tooltip.className='tpl-tooltip';const categories=classes.map(cls=>this.categorizeTPLClass(cls));tooltip.innerHTML=`<strong>${element.tagName}</strong> (${categories.join(', ')})<br>TPL Classes: ${classes.join(', ')}<br>Content: ${element.textContent.substring(0,80)}...<br><em>Click panel for full analysis</em>`;const rect=element.getBoundingClientRect();tooltip.style.left=rect.left+window.scrollX+'px';tooltip.style.top=rect.bottom+window.scrollY+5+'px';document.body.appendChild(tooltip);setTimeout(()=>tooltip.remove(),4000);}}
+window.tplAnalyzer=new TPLAnalyzer();const result=window.tplAnalyzer.toggle();alert(`TPL Strategic Analyzer ${result}!`);})();">🎯 TPL Strategic Analyzer</a>
+    </div>
+
+    <div class="strategic-insights">
+        <h2>🧠 What This Reveals About NYT's Design System</h2>
+        
+        <div class="token-category">
+            <h3>📊 Token Architecture Analysis</h3>
+            <ul>
+                <li><strong>Naming Convention Consistency:</strong> How systematic is the <code>tpl-*</code> prefix usage?</li>
+                <li><strong>Component Hierarchy:</strong> Reveals parent-child relationships in design components</li>
+                <li><strong>Design Token Maturity:</strong> Number of unique tokens indicates system sophistication</li>
+            </ul>
+        </div>
+
+        <div class="token-category">
+            <h3>🎨 Design System Categories</h3>
+            <ul>
+                <li><strong>Typography:</strong> <code>tpl-text-*</code>, <code>tpl-heading-*</code> - Font scales, weights, styles</li>
+                <li><strong>Layout:</strong> <code>tpl-grid-*</code>, <code>tpl-container-*</code> - Spacing, positioning systems</li>
+                <li><strong>Interactive:</strong> <code>tpl-button-*</code>, <code>tpl-link-*</code> - UI component patterns</li>
+                <li><strong>Theme:</strong> <code>tpl-color-*</code>, <code>tpl-brand-*</code> - Brand consistency tokens</li>
+                <li><strong>Navigation:</strong> <code>tpl-nav-*</code>, <code>tpl-header-*</code> - Site architecture patterns</li>
+            </ul>
+        </div>
+
+        <div class="token-category">
+            <h3>📈 Strategic Insights</h3>
+            <ul>
+                <li><strong>System Adoption:</strong> How widely is TPL used vs legacy styles?</li>
+                <li><strong>Component Reuse:</strong> Which patterns appear most frequently?</li>
+                <li><strong>Design Debt:</strong> Inconsistencies in token naming or usage</li>
+                <li><strong>System Evolution:</strong> Newer vs older token patterns</li>
+                <li><strong>Team Alignment:</strong> Consistency indicates team adoption</li>
+            </ul>
+        </div>
+
+        <div class="token-category">
+            <h3>🔍 What to Look For</h3>
+            <ul>
+                <li><strong>Token Density:</strong> Pages with many TPL elements = high system adoption</li>
+                <li><strong>Category Distribution:</strong> Balanced usage across Typography, Layout, Components</li>
+                <li><strong>Naming Patterns:</strong> Consistent prefixes indicate mature governance</li>
+                <li><strong>Semantic vs Utility:</strong> <code>tpl-primary-button</code> vs <code>tpl-bg-blue-500</code></li>
+                <li><strong>Responsive Patterns:</strong> <code>tpl-mobile-*</code>, <code>tpl-desktop-*</code> breakpoint strategies</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="strategic-insights">
+        <h2>🎯 Testing Strategy</h2>
+        <ol>
+            <li><strong>Homepage Analysis:</strong> Test on nytimes.com homepage for core system usage</li>
+            <li><strong>Article Pages:</strong> Check article layouts for content-specific tokens</li>
+            <li><strong>Interactive Features:</strong> Test on pages with forms, modals, navigation</li>
+            <li><strong>Mobile vs Desktop:</strong> Compare token usage across breakpoints</li>
+            <li><strong>Different Sections:</strong> Sports, Opinion, Business for consistency</li>
+        </ol>
+    </div>
+</body>
+</html>

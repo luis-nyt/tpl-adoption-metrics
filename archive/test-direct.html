@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NYT TPL Highlighter - Direct Test</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container { 
+            background: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 20px 0;
+        }
+        .code-block { 
+            background: #1f2937; 
+            color: #f9fafb;
+            padding: 15px; 
+            border-radius: 5px; 
+            margin: 15px 0;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .button {
+            background: #326891;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+        }
+        .button:hover { background: #2d5a82; }
+        .success { color: #059669; font-weight: bold; }
+        .warning { color: #d97706; font-weight: bold; }
+        .step { 
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #326891;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 NYT TPL Design System Highlighter - Direct Test</h1>
+    
+    <div class="container">
+        <h2>Testing Method: Manual Script Injection</h2>
+        <p>Since your work environment blocks extensions, we'll test the core functionality by manually running the JavaScript code.</p>
+    </div>
+
+    <div class="step">
+        <h3>Step 1: Copy the JavaScript Code</h3>
+        <p>Copy this entire JavaScript code block:</p>
+        <div class="code-block" id="jsCode">// TPL Design System Highlighter - Standalone Version
+(function() {
+    // Inject CSS styles
+    const css = `
+        .tpl-highlighted {
+            outline: 2px solid #ff6b35 !important;
+            outline-offset: 2px !important;
+            position: relative !important;
+            background: rgba(255, 107, 53, 0.1) !important;
+            transition: all 0.2s ease !important;
+            cursor: pointer !important;
+        }
+        .tpl-highlighted:hover {
+            outline-width: 3px !important;
+            background: rgba(255, 107, 53, 0.2) !important;
+        }
+        .tpl-badge {
+            position: absolute !important;
+            background: #ff6b35 !important;
+            color: white !important;
+            font-family: monospace !important;
+            font-size: 10px !important;
+            font-weight: 600 !important;
+            padding: 2px 6px !important;
+            border-radius: 3px !important;
+            z-index: 10000 !important;
+            pointer-events: none !important;
+            white-space: nowrap !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+            max-width: 200px !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+        }
+        .tpl-tooltip {
+            position: absolute !important;
+            background: #1f2937 !important;
+            color: white !important;
+            font-family: sans-serif !important;
+            font-size: 12px !important;
+            padding: 8px 10px !important;
+            border-radius: 4px !important;
+            z-index: 10001 !important;
+            max-width: 250px !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+            line-height: 1.4 !important;
+        }
+    `;
+    
+    // Add styles to page
+    const style = document.createElement('style');
+    style.textContent = css;
+    document.head.appendChild(style);
+    
+    // TPL Highlighter class
+    class TPLHighlighter {
+        constructor() {
+            this.isActive = false;
+            this.tplElements = [];
+            this.highlightClass = 'tpl-highlighted';
+            this.badgeClass = 'tpl-badge';
+        }
+        
+        detectTPLElements() {
+            const allElements = document.querySelectorAll('*');
+            this.tplElements = [];
+            
+            allElements.forEach(element => {
+                const classes = element.className;
+                if (typeof classes === 'string' && classes.includes('tpl')) {
+                    const classArray = classes.split(' ');
+                    const hasTPLClass = classArray.some(cls => 
+                        cls.startsWith('tpl') || cls.includes('tpl-')
+                    );
+                    
+                    if (hasTPLClass) {
+                        this.tplElements.push({
+                            element: element,
+                            classes: classArray.filter(cls => cls.startsWith('tpl') || cls.includes('tpl-'))
+                        });
+                    }
+                }
+            });
+            
+            console.log(`Found ${this.tplElements.length} TPL elements:`, this.tplElements);
+            return this.tplElements.length;
+        }
+        
+        activate() {
+            if (this.isActive) return;
+            
+            this.isActive = true;
+            this.tplElements.forEach((item, index) => {
+                const { element, classes } = item;
+                
+                element.classList.add(this.highlightClass);
+                
+                const badge = document.createElement('div');
+                badge.className = this.badgeClass;
+                badge.textContent = `TPL (${classes.join(', ')})`;
+                badge.setAttribute('data-tpl-index', index);
+                
+                const rect = element.getBoundingClientRect();
+                badge.style.left = rect.left + window.scrollX + 'px';
+                badge.style.top = rect.top + window.scrollY - 20 + 'px';
+                
+                document.body.appendChild(badge);
+                
+                element.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.showElementDetails(element, classes);
+                });
+            });
+        }
+        
+        deactivate() {
+            if (!this.isActive) return;
+            
+            this.isActive = false;
+            
+            this.tplElements.forEach(({ element }) => {
+                element.classList.remove(this.highlightClass);
+            });
+            
+            document.querySelectorAll(`.${this.badgeClass}`).forEach(badge => {
+                badge.remove();
+            });
+        }
+        
+        toggle() {
+            if (this.isActive) {
+                this.deactivate();
+                return 'deactivated';
+            } else {
+                const count = this.detectTPLElements();
+                this.activate();
+                return `activated - found ${count} TPL elements`;
+            }
+        }
+        
+        showElementDetails(element, classes) {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tpl-tooltip';
+            tooltip.innerHTML = `
+                <strong>${element.tagName}</strong><br>
+                TPL Classes: ${classes.join(', ')}<br>
+                Content: ${element.textContent.substring(0, 100)}...
+            `;
+            
+            const rect = element.getBoundingClientRect();
+            tooltip.style.left = rect.left + window.scrollX + 'px';
+            tooltip.style.top = rect.bottom + window.scrollY + 5 + 'px';
+            
+            document.body.appendChild(tooltip);
+            
+            setTimeout(() => tooltip.remove(), 3000);
+        }
+    }
+    
+    // Initialize and run
+    if (!window.tplHighlighter) {
+        window.tplHighlighter = new TPLHighlighter();
+    }
+    
+    const result = window.tplHighlighter.toggle();
+    alert(`TPL Highlighter ${result}! Click highlighted elements for details.`);
+})();</div>
+        <button class="button" onclick="copyCode()">📋 Copy Code</button>
+    </div>
+
+    <div class="step">
+        <h3>Step 2: Test on NYTimes.com</h3>
+        <ol>
+            <li>Open any page on <strong>nytimes.com</strong></li>
+            <li>Right-click on the page and select <strong>"Inspect"</strong> or press <strong>F12</strong></li>
+            <li>If developer tools don't open (blocked by policy), try the bookmarklet method instead</li>
+            <li>Go to the <strong>Console</strong> tab</li>
+            <li>Paste the copied JavaScript code and press Enter</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>Step 3: Alternative - Use Address Bar</h3>
+        <p>If developer tools are blocked, you can also:</p>
+        <ol>
+            <li>Go to any nytimes.com page</li>
+            <li>In the address bar, type: <code>javascript:</code> followed by the code</li>
+            <li>Press Enter to execute</li>
+        </ol>
+        <p class="warning">⚠️ Note: Some browsers block javascript: URLs for security</p>
+    </div>
+
+    <div class="container">
+        <h3>Expected Results:</h3>
+        <ul>
+            <li class="success">✅ Orange outlines around elements with TPL classes</li>
+            <li class="success">✅ Small badges showing TPL class names</li>
+            <li class="success">✅ Click elements to see detailed tooltips</li>
+            <li class="success">✅ Console message showing count of found elements</li>
+        </ul>
+        
+        <h3>If No Elements Found:</h3>
+        <ul>
+            <li>The page might not use TPL design system classes</li>
+            <li>Try different NYTimes pages (articles, homepage, etc.)</li>
+            <li>Check browser console for any error messages</li>
+        </ul>
+    </div>
+
+    <script>
+        function copyCode() {
+            const codeBlock = document.getElementById('jsCode');
+            const text = codeBlock.textContent;
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('Code copied to clipboard!');
+                }).catch(() => {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+        
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                alert('Code copied to clipboard!');
+            } catch (err) {
+                alert('Failed to copy. Please manually select and copy the code.');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+</html>

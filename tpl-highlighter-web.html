@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NYT TPL Highlighter - Clean Version</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            line-height: 1.6; 
+            background: #f8f9fa;
+        }
+        .container { 
+            background: white;
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .bookmarklet-section { 
+            background: #e8f4f8; 
+            padding: 25px; 
+            border-radius: 8px; 
+            margin: 20px 0;
+            border-left: 4px solid #326891;
+        }
+        .bookmarklet-link {
+            background: #326891;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-block;
+            margin: 15px 10px;
+            cursor: move;
+            transition: background 0.2s;
+        }
+        .bookmarklet-link:hover { 
+            background: #2d5a82; 
+        }
+        .manual-section { 
+            background: #fff3cd; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 20px 0; 
+            border-left: 4px solid #ffc107; 
+        }
+        .features {
+            background: #d1fae5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #10b981;
+        }
+        .code-input {
+            width: 100%;
+            height: 60px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 11px;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            background: #f8f9fa;
+            resize: vertical;
+        }
+        .copy-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background: #059669;
+        }
+        .step {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #6366f1;
+            border-radius: 0 6px 6px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 NYT TPL Design System Highlighter</h1>
+        <p>A clean, working bookmarklet to analyze TPL design system usage on New York Times pages.</p>
+    </div>
+
+    <div class="features">
+        <h2>✨ Features</h2>
+        <ul>
+            <li>🎯 <strong>TPL Element Detection:</strong> Finds all elements with TPL-related CSS classes</li>
+            <li>📊 <strong>Screen Coverage Analysis:</strong> Calculates percentage of page area covered by TPL components</li>
+            <li>🔍 <strong>Simple Display:</strong> Shows "tpl" with area percentage for each element</li>
+            <li>📊 <strong>Top Bar Display:</strong> Shows coverage percentage in a non-obstructive top bar</li>
+            <li>📸 <strong>Screenshot Download:</strong> Download the entire page as an image file</li>
+            <li>🖱️ <strong>Interactive Tooltips:</strong> Click highlighted elements for detailed information</li>
+            <li>🔄 <strong>Toggle Functionality:</strong> Click bookmarklet again to turn off/on</li>
+        </ul>
+    </div>
+
+    <div class="bookmarklet-section">
+        <h2>🚀 Drag This Bookmarklet to Your Bookmarks Bar</h2>
+        <p><strong>Step 1:</strong> Drag the link below to your browser's bookmarks bar</p>
+        
+        <a id="bookmarkletLink" class="bookmarklet-link">🎯 TPL Analyzer</a>
+        
+        <p><strong>Step 2:</strong> Go to any nytimes.com page and click the bookmarklet</p>
+    </div>
+
+    <div class="manual-section">
+        <h2>📋 Manual Installation (If Dragging Doesn't Work)</h2>
+        <p>Copy the code below and create a new bookmark with it as the URL:</p>
+        
+        <textarea id="bookmarkletCode" class="code-input" readonly onclick="this.select()"></textarea>
+        <br>
+        <button class="copy-btn" onclick="copyCode()">📋 Copy Bookmarklet Code</button>
+        
+        <div class="step">
+            <h4>Manual Installation Steps:</h4>
+            <ol>
+                <li>Right-click your bookmarks bar → "Add bookmark" or "New bookmark"</li>
+                <li>Name: <code>TPL Analyzer</code></li>
+                <li>URL: Paste the copied code above</li>
+                <li>Save the bookmark</li>
+                <li>Go to nytimes.com and click the bookmark to use</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>🧪 How to Test</h2>
+        <div class="step">
+            <strong>1. Install:</strong> Use either the drag method or manual installation above
+        </div>
+        <div class="step">
+            <strong>2. Navigate:</strong> Go to any page on <code>nytimes.com</code> (homepage, articles, etc.)
+        </div>
+        <div class="step">
+            <strong>3. Activate:</strong> Click your TPL Analyzer bookmark
+        </div>
+        <div class="step">
+            <strong>4. Observe:</strong> You should see:
+            <ul>
+                <li>Alert: "TPL Analyzer activated - found X elements"</li>
+                <li>Orange outlines around TPL elements</li>
+                <li>Small badges showing "tpl (X%)" for each element</li>
+                <li>Blue top bar showing "TPL covers X% of this page"</li>
+                <li>Screenshot download button in the top bar</li>
+            </ul>
+        </div>
+        <div class="step">
+            <strong>5. Interact:</strong> Click any highlighted element for detailed tooltips
+        </div>
+        <div class="step">
+            <strong>6. Toggle:</strong> Click the bookmark again to turn highlighting off/on
+        </div>
+    </div>
+
+    <script>
+        // The bookmarklet code - with top bar and screenshot functionality
+        const bookmarkletCode = `javascript:(function(){if(window.tplWorking){window.tplWorking.toggle();return;}var s=document.createElement('style');s.textContent='.tpl-h{outline:2px solid #ff6b35!important;background:rgba(255,107,53,0.1)!important;cursor:pointer!important}.tpl-h:hover{outline-width:3px!important;background:rgba(255,107,53,0.2)!important}.tpl-badge{position:absolute!important;background:#ff6b35!important;color:white!important;font:600 9px monospace!important;padding:2px 5px!important;border-radius:3px!important;z-index:9999!important;pointer-events:none!important;box-shadow:0 2px 4px rgba(0,0,0,0.2)!important}.tpl-topbar{position:relative!important;top:0!important;left:0!important;right:0!important;background:#326891!important;color:white!important;padding:12px 20px!important;font:14px -apple-system,BlinkMacSystemFont,sans-serif!important;z-index:10000!important;display:flex!important;justify-content:space-between!important;align-items:center!important;box-shadow:0 2px 8px rgba(0,0,0,0.15)!important;margin-bottom:0!important}.tpl-topbar-text{margin:0!important;font-weight:500!important}.tpl-btn{background:#fff!important;color:#326891!important;border:none!important;padding:6px 12px!important;border-radius:4px!important;font:12px -apple-system,BlinkMacSystemFont,sans-serif!important;cursor:pointer!important;font-weight:600!important;margin-left:10px!important}.tpl-btn:hover{background:#f0f0f0!important}.tpl-close-btn{background:transparent!important;color:white!important;border:1px solid rgba(255,255,255,0.3)!important;padding:4px 8px!important;border-radius:3px!important;font-size:12px!important;cursor:pointer!important}.tpl-close-btn:hover{background:rgba(255,255,255,0.1)!important}';document.head.appendChild(s);var T={active:false,elements:[],topbar:null,detect:function(){var all=document.querySelectorAll('*'),totalArea=0,pageArea=Math.max(document.body.scrollHeight||0,document.documentElement.scrollHeight||0)*Math.max(document.body.scrollWidth||0,document.documentElement.scrollWidth||0);T.elements=[];all.forEach(function(el){var cls=el.className;if(typeof cls==='string'&&cls.indexOf('tpl')>-1){var classes=cls.split(' ').filter(function(c){return c.indexOf('tpl')>-1});if(classes.length>0){var rect=el.getBoundingClientRect(),area=rect.width*rect.height;totalArea+=area;T.elements.push({el:el,classes:classes,area:area})}}});T.coveragePercent=(totalArea/pageArea*100).toFixed(1);return T.elements.length},createTopbar:function(){if(T.topbar)T.topbar.remove();T.topbar=document.createElement('div');T.topbar.className='tpl-topbar';T.topbar.innerHTML='<div class="tpl-topbar-text">TPL covers '+T.coveragePercent+'% of this page</div><div><button class="tpl-btn" onclick="window.tplWorking.screenshot()">📸 Download Screenshot</button><button class="tpl-close-btn" onclick="window.tplWorking.deactivate()">✕</button></div>';document.body.insertBefore(T.topbar,document.body.firstChild)},screenshot:function(){var btn=T.topbar.querySelector('.tpl-btn');btn.textContent='📸 Capturing...';btn.disabled=true;if(typeof html2canvas!=='undefined'){T.captureWithHtml2Canvas()}else{var script=document.createElement('script');script.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';script.onload=function(){T.captureWithHtml2Canvas()};script.onerror=function(){T.fallbackScreenshot()};document.head.appendChild(script)}},captureWithHtml2Canvas:function(){var originalScrollY=window.scrollY;window.scrollTo(0,0);document.querySelectorAll('.tpl-badge').forEach(function(b){b.style.display='none'});html2canvas(document.documentElement,{useCORS:true,allowTaint:true,scale:0.8,scrollX:0,scrollY:0,width:Math.max(document.body.scrollWidth,document.documentElement.scrollWidth),height:Math.max(document.body.scrollHeight,document.documentElement.scrollHeight),windowWidth:Math.max(document.body.scrollWidth,document.documentElement.scrollWidth),windowHeight:Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)}).then(function(canvas){var link=document.createElement('a');link.download='tpl-analysis-'+new Date().toISOString().slice(0,10)+'.png';link.href=canvas.toDataURL('image/png');link.click();document.querySelectorAll('.tpl-badge').forEach(function(b){b.style.display=''});window.scrollTo(0,originalScrollY);var btn=T.topbar.querySelector('.tpl-btn');btn.textContent='📸 Download Screenshot';btn.disabled=false}).catch(function(e){console.error('Screenshot failed:',e);document.querySelectorAll('.tpl-badge').forEach(function(b){b.style.display=''});window.scrollTo(0,originalScrollY);T.fallbackScreenshot()})},fallbackScreenshot:function(){alert('Screenshot functionality requires html2canvas library. You can manually take a screenshot using your browser\\'s built-in screenshot tools (usually Cmd/Ctrl + Shift + S).');var btn=T.topbar.querySelector('.tpl-btn');btn.textContent='📸 Download Screenshot';btn.disabled=false},activate:function(){if(T.active)return;T.active=true;T.elements.forEach(function(item,i){var el=item.el;el.classList.add('tpl-h');var badge=document.createElement('div');badge.className='tpl-badge';var areaPercent=(item.area/(Math.max(document.body.scrollHeight||0,document.documentElement.scrollHeight||0)*Math.max(document.body.scrollWidth||0,document.documentElement.scrollWidth||0))*100).toFixed(2);badge.textContent='tpl ('+areaPercent+'%)';var rect=el.getBoundingClientRect();badge.style.left=rect.left+window.scrollX+'px';badge.style.top=rect.top+window.scrollY-18+'px';document.body.appendChild(badge);el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var tooltip=document.createElement('div');tooltip.style.cssText='position:absolute!important;background:#1f2937!important;color:white!important;padding:8px!important;border-radius:4px!important;z-index:9999!important;font:11px sans-serif!important;max-width:250px!important;box-shadow:0 4px 8px rgba(0,0,0,0.3)!important';tooltip.innerHTML='<strong>'+el.tagName+'</strong><br>TPL Classes: '+item.classes.join(', ')+'<br>Area: '+rect.width.toFixed(0)+'×'+rect.height.toFixed(0)+'px ('+areaPercent+'%)';tooltip.style.left=rect.left+window.scrollX+'px';tooltip.style.top=rect.bottom+window.scrollY+5+'px';document.body.appendChild(tooltip);setTimeout(function(){tooltip.remove()},3000)})});T.createTopbar()},deactivate:function(){if(!T.active)return;T.active=false;T.elements.forEach(function(item){item.el.classList.remove('tpl-h')});document.querySelectorAll('.tpl-badge').forEach(function(b){b.remove()});if(T.topbar){T.topbar.remove();T.topbar=null}},toggle:function(){if(T.active){T.deactivate();return'deactivated'}else{var count=T.detect();T.activate();return'activated - found '+count+' TPL elements ('+T.coveragePercent+'% coverage)'}}};window.tplWorking=T;var result=T.toggle();alert('TPL Analyzer '+result+'!');})();`;
+
+        // Set up the bookmarklet link and textarea
+        document.addEventListener('DOMContentLoaded', function() {
+            const link = document.getElementById('bookmarkletLink');
+            const textarea = document.getElementById('bookmarkletCode');
+            
+            link.href = bookmarkletCode;
+            textarea.value = bookmarkletCode;
+        });
+
+        function copyCode() {
+            const textarea = document.getElementById('bookmarkletCode');
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // For mobile devices
+            
+            try {
+                document.execCommand('copy');
+                alert('✅ Bookmarklet code copied to clipboard!\n\nNow create a new bookmark and paste this as the URL.');
+            } catch (err) {
+                alert('❌ Copy failed. Please manually select and copy the code from the text area.');
+            }
+        }
+    </script>
+</body>
+</html>

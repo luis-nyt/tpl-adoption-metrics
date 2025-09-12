@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NYT TPL Highlighter - Bookmarklet Version</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .bookmarklet { 
+            background: #f0f0f0; 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin: 20px 0;
+            border: 2px dashed #ccc;
+        }
+        .bookmarklet a {
+            background: #326891;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .bookmarklet a:hover { background: #2d5a82; }
+        .instructions { background: #e8f4f8; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>NYT TPL Design System Highlighter - Bookmarklet Version</h1>
+    
+    <div class="instructions">
+        <h3>How to use:</h3>
+        <ol>
+            <li>Drag the bookmarklet below to your bookmarks bar</li>
+            <li>Go to any nytimes.com page</li>
+            <li>Click the bookmarklet to activate TPL highlighting</li>
+            <li>Click again to deactivate</li>
+        </ol>
+    </div>
+
+    <div class="bookmarklet">
+        <h3>Drag this to your bookmarks bar:</h3>
+        <a href="javascript:(function(){if(window.tplHighlighter){window.tplHighlighter.toggle();return;}var css=`
+.tpl-highlighted{outline:2px solid #ff6b35!important;outline-offset:2px!important;position:relative!important;background:rgba(255,107,53,0.1)!important;transition:all 0.2s ease!important;cursor:pointer!important;}
+.tpl-highlighted:hover{outline-width:3px!important;background:rgba(255,107,53,0.2)!important;}
+.tpl-badge{position:absolute!important;background:#ff6b35!important;color:white!important;font-family:monospace!important;font-size:10px!important;font-weight:600!important;padding:2px 6px!important;border-radius:3px!important;z-index:10000!important;pointer-events:none!important;white-space:nowrap!important;box-shadow:0 2px 4px rgba(0,0,0,0.2)!important;max-width:200px!important;overflow:hidden!important;text-overflow:ellipsis!important;}
+.tpl-tooltip{position:absolute!important;background:#1f2937!important;color:white!important;font-family:sans-serif!important;font-size:12px!important;padding:8px 10px!important;border-radius:4px!important;z-index:10001!important;max-width:250px!important;box-shadow:0 4px 6px rgba(0,0,0,0.3)!important;line-height:1.4!important;}`;
+var style=document.createElement('style');style.textContent=css;document.head.appendChild(style);
+class TPLHighlighter{constructor(){this.isActive=false;this.tplElements=[];this.highlightClass='tpl-highlighted';this.badgeClass='tpl-badge';}
+detectTPLElements(){const allElements=document.querySelectorAll('*');this.tplElements=[];allElements.forEach(element=>{const classes=element.className;if(typeof classes==='string'&&classes.includes('tpl')){const classArray=classes.split(' ');const hasTPLClass=classArray.some(cls=>cls.startsWith('tpl')||cls.includes('tpl-'));if(hasTPLClass){this.tplElements.push({element:element,classes:classArray.filter(cls=>cls.startsWith('tpl')||cls.includes('tpl-'))});}}});console.log(`Found ${this.tplElements.length} TPL elements:`,this.tplElements);}
+activate(){if(this.isActive)return;this.isActive=true;this.tplElements.forEach((item,index)=>{const{element,classes}=item;element.classList.add(this.highlightClass);const badge=document.createElement('div');badge.className=this.badgeClass;badge.textContent=`TPL (${classes.join(', ')})`;badge.setAttribute('data-tpl-index',index);const rect=element.getBoundingClientRect();badge.style.left=rect.left+window.scrollX+'px';badge.style.top=rect.top+window.scrollY-20+'px';document.body.appendChild(badge);element.addEventListener('click',(e)=>{e.preventDefault();e.stopPropagation();this.showElementDetails(element,classes);});});}
+deactivate(){if(!this.isActive)return;this.isActive=false;this.tplElements.forEach(({element})=>{element.classList.remove(this.highlightClass);});document.querySelectorAll(`.${this.badgeClass}`).forEach(badge=>{badge.remove()});}
+toggle(){if(this.isActive){this.deactivate();}else{this.detectTPLElements();this.activate();}}
+showElementDetails(element,classes){const tooltip=document.createElement('div');tooltip.className='tpl-tooltip';tooltip.innerHTML=`<strong>${element.tagName}</strong><br>TPL Classes: ${classes.join(', ')}<br>Content: ${element.textContent.substring(0,100)}...`;const rect=element.getBoundingClientRect();tooltip.style.left=rect.left+window.scrollX+'px';tooltip.style.top=rect.bottom+window.scrollY+5+'px';document.body.appendChild(tooltip);setTimeout(()=>tooltip.remove(),3000);}}
+window.tplHighlighter=new TPLHighlighter();window.tplHighlighter.detectTPLElements();window.tplHighlighter.activate();alert(`TPL Highlighter activated! Found ${window.tplHighlighter.tplElements.length} TPL elements. Click highlighted elements for details.`);})();">TPL Highlighter</a>
+    </div>
+
+    <div class="instructions">
+        <h3>What it does:</h3>
+        <ul>
+            <li>Scans the page for elements with TPL-related CSS classes</li>
+            <li>Highlights them with orange outlines and badges</li>
+            <li>Shows element details when clicked</li>
+            <li>Works on any nytimes.com page</li>
+        </ul>
+        
+        <h3>Alternative browsers to try:</h3>
+        <ul>
+            <li><strong>Chrome Canary</strong> - Development version with fewer restrictions</li>
+            <li><strong>Chromium</strong> - Open source version</li>
+            <li><strong>Firefox</strong> - Different extension policies</li>
+            <li><strong>Microsoft Edge</strong> - Supports Chrome extensions</li>
+        </ul>
+    </div>
+</body>
+</html>

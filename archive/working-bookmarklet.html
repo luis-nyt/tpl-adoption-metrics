@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NYT TPL Highlighter - Working Bookmarklet</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        .bookmarklet { 
+            background: #f0f0f0; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 20px 0;
+            border: 2px dashed #326891;
+        }
+        .bookmarklet-link {
+            background: #326891;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-block;
+            margin: 10px 5px;
+            cursor: move;
+        }
+        .bookmarklet-link:hover { background: #2d5a82; }
+        .code-section { 
+            background: #fff3cd; 
+            padding: 15px; 
+            border-radius: 6px; 
+            margin: 15px 0; 
+            border-left: 4px solid #ffc107; 
+        }
+        .success { 
+            background: #d1fae5; 
+            padding: 15px; 
+            border-radius: 6px; 
+            margin: 15px 0; 
+            border-left: 4px solid #10b981; 
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 NYT TPL Highlighter - Working Version</h1>
+    
+    <div class="success">
+        <h2>✅ Great! Alerts Work</h2>
+        <p>Since basic bookmarklets work in your browser, let's use a simplified but fully functional version of the TPL analyzer.</p>
+    </div>
+
+    <div class="bookmarklet">
+        <h3>🚀 Working TPL Analyzer - Drag to Bookmarks:</h3>
+        <p><strong>This version includes:</strong></p>
+        <ul>
+            <li>✅ TPL element detection and highlighting</li>
+            <li>✅ Screen real estate percentage calculations</li>
+            <li>✅ "Other" category analysis (including tpl-lbl interpretation)</li>
+            <li>✅ Analytics panel with detailed breakdown</li>
+            <li>✅ Click elements for detailed tooltips</li>
+        </ul>
+        
+        <a href="javascript:(function(){if(window.tplWorking){window.tplWorking.toggle();return;}var s=document.createElement('style');s.textContent='.tpl-h{outline:2px solid %23ff6b35!important;background:rgba(255,107,53,0.1)!important;cursor:pointer!important}.tpl-h:hover{outline-width:3px!important;background:rgba(255,107,53,0.2)!important}.tpl-badge{position:absolute!important;background:%23ff6b35!important;color:white!important;font:600 9px monospace!important;padding:2px 5px!important;border-radius:3px!important;z-index:9999!important;pointer-events:none!important;box-shadow:0 2px 4px rgba(0,0,0,0.2)!important}.tpl-panel{position:fixed!important;top:20px!important;right:20px!important;width:320px!important;background:white!important;border:1px solid %23ddd!important;border-radius:6px!important;box-shadow:0 4px 12px rgba(0,0,0,0.15)!important;z-index:9998!important;font:11px sans-serif!important;max-height:80vh!important;overflow-y:auto!important}.tpl-header{background:%23326891!important;color:white!important;padding:10px!important;font-weight:bold!important;border-radius:6px 6px 0 0!important}.tpl-content{padding:12px!important}.tpl-close{float:right!important;cursor:pointer!important;font-size:16px!important}.tpl-cat{margin:8px 0!important;padding:8px!important;background:%23f8f9fa!important;border-radius:4px!important}.tpl-metrics{background:%23fff3cd!important;padding:8px!important;border-radius:4px!important;margin:8px 0!important}';document.head.appendChild(s);var T={active:false,elements:[],analytics:{},panel:null,categorize:function(c){if(/text|typography|font|heading|body|title/.test(c))return'Typography';if(/button|btn|link|cta/.test(c))return'Interactive';if(/grid|container|layout|spacing|margin|padding|flex/.test(c))return'Layout';if(/color|bg|theme|brand/.test(c))return'Theme';if(/nav|header|footer|menu/.test(c))return'Navigation';if(/card|modal|dropdown|tooltip/.test(c))return'Components';return'Other'},getOtherDetails:function(tokens){return tokens.map(function(t){var i='Unknown';if(/lbl|label/.test(t))i='Label/Text identifier';else if(/ico|icon/.test(t))i='Icon component';else if(/img|image/.test(t))i='Image component';else if(/meta|data/.test(t))i='Metadata display';else if(/tag|badge/.test(t))i='Tag/Badge component';else if(/form|input/.test(t))i='Form element';else if(/util|helper/.test(t))i='Utility class';else if(/state|status/.test(t))i='State indicator';return{token:t,meaning:i}})},detect:function(){var all=document.querySelectorAll('*'),totalArea=0,pageArea=Math.max(document.body.scrollHeight||0,document.documentElement.scrollHeight||0)*Math.max(document.body.scrollWidth||0,document.documentElement.scrollWidth||0);T.elements=[];T.analytics={Typography:[],Interactive:[],Layout:[],Theme:[],Navigation:[],Components:[],Other:[]};all.forEach(function(el){var cls=el.className;if(typeof cls==='string'&&cls.indexOf('tpl')>-1){var classes=cls.split(' ').filter(function(c){return c.indexOf('tpl')>-1});if(classes.length>0){var rect=el.getBoundingClientRect(),area=rect.width*rect.height;totalArea+=area;T.elements.push({el:el,classes:classes,area:area});classes.forEach(function(c){var cat=T.categorize(c);if(T.analytics[cat].indexOf(c)===-1)T.analytics[cat].push(c)})}}});T.coveragePercent=(totalArea/pageArea*100).toFixed(2);return T.elements.length},createPanel:function(){if(T.panel)T.panel.remove();var otherDetails=T.getOtherDetails(T.analytics.Other);T.panel=document.createElement('div');T.panel.className='tpl-panel';T.panel.innerHTML='<div class=\"tpl-header\">TPL Analytics <span class=\"tpl-close\" onclick=\"this.parentElement.parentElement.remove()\">×</span></div><div class=\"tpl-content\"><div class=\"tpl-metrics\"><strong>📊 Coverage Analysis</strong><br>• Total TPL Coverage: <strong>'+T.coveragePercent+'%</strong><br>• Elements Found: <strong>'+T.elements.length+'</strong><br>• Categories: <strong>'+Object.keys(T.analytics).filter(function(k){return T.analytics[k].length>0}).length+'</strong></div>'+Object.keys(T.analytics).map(function(cat){var tokens=T.analytics[cat];if(tokens.length===0)return'';return'<div class=\"tpl-cat\"><strong>'+cat+' ('+tokens.length+')</strong><br>'+(cat==='Other'&&otherDetails.length>0?'<div style=\"background:%23e3f2fd;padding:6px;border-radius:3px;margin:4px 0;font-size:10px\">'+otherDetails.map(function(d){return'<div><code>'+d.token+'</code> → '+d.meaning+'</div>'}).join('')+'</div>':'')+tokens.slice(0,6).map(function(t){return'<code style=\"background:%23e9ecef;padding:1px 3px;margin:1px;font-size:9px;border-radius:2px\">'+t+'</code>'}).join(' ')+(tokens.length>6?'<div style=\"font-size:9px;color:%23666;margin-top:3px\">+'+(tokens.length-6)+' more</div>':'')+'</div>'}).join('')+'</div>';document.body.appendChild(T.panel)},activate:function(){if(T.active)return;T.active=true;T.elements.forEach(function(item,i){var el=item.el;el.classList.add('tpl-h');var badge=document.createElement('div');badge.className='tpl-badge';var areaPercent=(item.area/(Math.max(document.body.scrollHeight||0,document.documentElement.scrollHeight||0)*Math.max(document.body.scrollWidth||0,document.documentElement.scrollWidth||0))*100).toFixed(2);badge.textContent=item.classes[0]+' ('+areaPercent+'%)';var rect=el.getBoundingClientRect();badge.style.left=rect.left+window.scrollX+'px';badge.style.top=rect.top+window.scrollY-18+'px';document.body.appendChild(badge);el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var tooltip=document.createElement('div');tooltip.style.cssText='position:absolute!important;background:%231f2937!important;color:white!important;padding:8px!important;border-radius:4px!important;z-index:9999!important;font:11px sans-serif!important;max-width:250px!important;box-shadow:0 4px 8px rgba(0,0,0,0.3)!important';tooltip.innerHTML='<strong>'+el.tagName+'</strong><br>Classes: '+item.classes.join(', ')+'<br>Area: '+rect.width.toFixed(0)+'×'+rect.height.toFixed(0)+'px ('+areaPercent+'%)<br>Category: '+T.categorize(item.classes[0]);tooltip.style.left=rect.left+window.scrollX+'px';tooltip.style.top=rect.bottom+window.scrollY+5+'px';document.body.appendChild(tooltip);setTimeout(function(){tooltip.remove()},3000)})});T.createPanel()},deactivate:function(){if(!T.active)return;T.active=false;T.elements.forEach(function(item){item.el.classList.remove('tpl-h')});document.querySelectorAll('.tpl-badge').forEach(function(b){b.remove()});if(T.panel){T.panel.remove();T.panel=null}},toggle:function(){if(T.active){T.deactivate();return'deactivated'}else{var count=T.detect();T.activate();return'activated - found '+count+' TPL elements ('+T.coveragePercent+'% coverage)'}}};window.tplWorking=T;var result=T.toggle();alert('TPL Analyzer '+result+'!');})();" class="bookmarklet-link">🎯 TPL Analyzer (Working)</a>
+    </div>
+
+    <div class="code-section">
+        <h3>📋 Manual Installation (If Dragging Doesn't Work)</h3>
+        <p>Create a new bookmark with this URL:</p>
+        <textarea readonly onclick="this.select()" style="width: 100%; height: 100px; font-family: monospace; font-size: 10px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">javascript:(function(){if(window.tplWorking){window.tplWorking.toggle();return;}var s=document.createElement('style');s.textContent='.tpl-h{outline:2px solid %23ff6b35!important;background:rgba(255,107,53,0.1)!important;cursor:pointer!important}.tpl-h:hover{outline-width:3px!important;background:rgba(255,107,53,0.2)!important}.tpl-badge{position:absolute!important;background:%23ff6b35!important;color:white!important;font:600 9px monospace!important;padding:2px 5px!important;border-radius:3px!important;z-index:9999!important;pointer-events:none!important;box-shadow:0 2px 4px rgba(0,0,0,0.2)!important}.tpl-panel{position:fixed!important;top:20px!important;right:20px!important;width:320px!important;background:white!important;border:1px solid %23ddd!important;border-radius:6px!important;box-shadow:0 4px 12px rgba(0,0,0,0.15)!important;z-index:9998!important;font:11px sans-serif!important;max-height:80vh!important;overflow-y:auto!important}.tpl-header{background:%23326891!important;color:white!important;padding:10px!important;font-weight:bold!important;border-radius:6px 6px 0 0!important}.tpl-content{padding:12px!important}.tpl-close{float:right!important;cursor:pointer!important;font-size:16px!important}.tpl-cat{margin:8px 0!important;padding:8px!important;background:%23f8f9fa!important;border-radius:4px!important}.tpl-metrics{background:%23fff3cd!important;padding:8px!important;border-radius:4px!important;margin:8px 0!important}';document.head.appendChild(s);var T={active:false,elements:[],analytics:{},panel:null,categorize:function(c){if(/text|typography|font|heading|body|title/.test(c))return'Typography';if(/button|btn|link|cta/.test(c))return'Interactive';if(/grid|container|layout|spacing|margin|padding|flex/.test(c))return'Layout';if(/color|bg|theme|brand/.test(c))return'Theme';if(/nav|header|footer|menu/.test(c))return'Navigation';if(/card|modal|dropdown|tooltip/.test(c))return'Components';return'Other'},getOtherDetails:function(tokens){return tokens.map(function(t){var i='Unknown';if(/lbl|label/.test(t))i='Label/Text identifier';else if(/ico|icon/.test(t))i='Icon component';else if(/img|image/.test(t))i='Image component';else if(/meta|data/.test(t))i='Metadata display';else if(/tag|badge/.test(t))i='Tag/Badge component';else if(/form|input/.test(t))i='Form element';else if(/util|helper/.test(t))i='Utility class';else if(/state|status/.test(t))i='State indicator';return{token:t,meaning:i}})},detect:function(){var all=document.querySelectorAll('*'),totalArea=0,pageArea=Math.max(document.body.scrollHeight||0,document.documentElement.scrollHeight||0)*Math.max(document.body.scrollWidth||0,document.documentElement.scrollWidth||0);T.elements=[];T.analytics={Typography:[],Interactive:[],Layout:[],Theme:[],Navigation:[],Components:[],Other:[]};all.forEach(function(el){var cls=el.className;if(typeof cls==='string'&&cls.indexOf('tpl')>-1){var classes=cls.split(' ').filter(function(c){return c.indexOf('tpl')>-1});if(classes.length>0){var rect=el.getBoundingClientRect(),area=rect.width*rect.height;totalArea+=area;T.elements.push({el:el,classes:classes,area:area});classes.forEach(function(c){var cat=T.categorize(c);if(T.analytics[cat].indexOf(c)===-1)T.analytics[cat].push(c)})}}});T.coveragePercent=(totalArea/pageArea*100).toFixed(2);return T.elements.length},createPanel:function(){if(T.panel)T.panel.remove();var otherDetails=T.getOtherDetails(T.analytics.Other);T.panel=document.createElement('div');T.panel.className='tpl-panel';T.panel.innerHTML='<div class="tpl-header">TPL Analytics <span class="tpl-close" onclick="this.parentElement.parentElement.remove()">×</span></div><div class="tpl-content"><div class="tpl-metrics"><strong>📊 Coverage Analysis</strong><br>• Total TPL Coverage: <strong>'+T.coveragePercent+'%</strong><br>• Elements Found: <strong>'+T.elements.length+'</strong><br>• Categories: <strong>'+Object.keys(T.analytics).filter(function(k){return T.analytics[k].length>0}).length+'</strong></div>'+Object.keys(T.analytics).map(function(cat){var tokens=T.analytics[cat];if(tokens.length===0)return'';return'<div class="tpl-cat"><strong>'+cat+' ('+tokens.length+')</strong><br>'+(cat==='Other'&&otherDetails.length>0?'<div style="background:#e3f2fd;padding:6px;border-radius:3px;margin:4px 0;font-size:10px">'+otherDetails.map(function(d){return'<div><code>'+d.token+'</code> → '+d.meaning+'</div>'}).join('')+'</div>':'')+tokens.slice(0,6).map(function(t){return'<code style="background:#e9ecef;padding:1px 3px;margin:1px;font-size:9px;border-radius:2px">'+t+'</code>'}).join(' ')+(tokens.length>6?'<div style="font-size:9px;color:#666;margin-top:3px">+'+(tokens.length-6)+' more</div>':'')+'</div>'}).join('')+'</div>';document.body.appendChild(T.panel)},activate:function(){if(T.active)return;T.active=true;T.elements.forEach(function(item,i){var el=item.el;el.classList.add('tpl-h');var badge=document.createElement('div');badge.className='tpl-badge';var areaPercent=(item.area/(Math.max(document.body.scrollHeight||0,document.documentElement.scrollHeight||0)*Math.max(document.body.scrollWidth||0,document.documentElement.scrollWidth||0))*100).toFixed(2);badge.textContent=item.classes[0]+' ('+areaPercent+'%)';var rect=el.getBoundingClientRect();badge.style.left=rect.left+window.scrollX+'px';badge.style.top=rect.top+window.scrollY-18+'px';document.body.appendChild(badge);el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var tooltip=document.createElement('div');tooltip.style.cssText='position:absolute!important;background:#1f2937!important;color:white!important;padding:8px!important;border-radius:4px!important;z-index:9999!important;font:11px sans-serif!important;max-width:250px!important;box-shadow:0 4px 8px rgba(0,0,0,0.3)!important';tooltip.innerHTML='<strong>'+el.tagName+'</strong><br>Classes: '+item.classes.join(', ')+'<br>Area: '+rect.width.toFixed(0)+'×'+rect.height.toFixed(0)+'px ('+areaPercent+'%)<br>Category: '+T.categorize(item.classes[0]);tooltip.style.left=rect.left+window.scrollX+'px';tooltip.style.top=rect.bottom+window.scrollY+5+'px';document.body.appendChild(tooltip);setTimeout(function(){tooltip.remove()},3000)})});T.createPanel()},deactivate:function(){if(!T.active)return;T.active=false;T.elements.forEach(function(item){item.el.classList.remove('tpl-h')});document.querySelectorAll('.tpl-badge').forEach(function(b){b.remove()});if(T.panel){T.panel.remove();T.panel=null}},toggle:function(){if(T.active){T.deactivate();return'deactivated'}else{var count=T.detect();T.activate();return'activated - found '+count+' TPL elements ('+T.coveragePercent+'% coverage)'}}};window.tplWorking=T;var result=T.toggle();alert('TPL Analyzer '+result+'!');})();</textarea>
+        <button onclick="copyBookmarklet()" style="margin-top: 10px; padding: 8px 16px; background: #326891; color: white; border: none; border-radius: 4px; cursor: pointer;">📋 Copy Bookmarklet</button>
+    </div>
+
+    <div class="success">
+        <h2>✅ What This Fixed Version Does</h2>
+        <ul>
+            <li><strong>🎯 Detects TPL Elements:</strong> Finds all elements with TPL-related classes</li>
+            <li><strong>📊 Screen Coverage:</strong> Calculates percentage of page area covered</li>
+            <li><strong>🏷️ Smart Categorization:</strong> Groups elements by Typography, Interactive, Layout, etc.</li>
+            <li><strong>🔍 "Other" Analysis:</strong> Interprets <code>tpl-lbl</code> as "Label/Text identifier"</li>
+            <li><strong>📱 Analytics Panel:</strong> Shows detailed breakdown on the right</li>
+            <li><strong>🖱️ Interactive:</strong> Click highlighted elements for details</li>
+            <li><strong>🔄 Toggle:</strong> Click again to turn off highlighting</li>
+        </ul>
+    </div>
+
+    <div class="code-section">
+        <h2>🧪 How to Test</h2>
+        <ol>
+            <li><strong>Install:</strong> Drag the bookmarklet link above to your bookmarks bar</li>
+            <li><strong>Navigate:</strong> Go to any <code>nytimes.com</code> page</li>
+            <li><strong>Activate:</strong> Click the bookmarklet in your bookmarks</li>
+            <li><strong>Observe:</strong> You should see:
+                <ul>
+                    <li>Alert showing "TPL Analyzer activated - found X elements"</li>
+                    <li>Orange outlines around TPL elements</li>
+                    <li>Small badges showing class names and percentages</li>
+                    <li>Analytics panel on the right side</li>
+                </ul>
+            </li>
+            <li><strong>Interact:</strong> Click any highlighted element for detailed tooltip</li>
+            <li><strong>Toggle:</strong> Click bookmarklet again to turn off</li>
+        </ol>
+    </div>
+
+    <script>
+        function copyBookmarklet() {
+            const textarea = document.querySelector('textarea');
+            textarea.select();
+            document.execCommand('copy');
+            alert('Bookmarklet code copied to clipboard! Create a new bookmark and paste this as the URL.');
+        }
+    </script>
+</body>
+</html>
