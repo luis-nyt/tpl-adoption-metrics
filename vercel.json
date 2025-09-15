@@ -6,5 +6,10 @@
       "src": "/",
       "dest": "/tpl-highlighter-web.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/coverage.js": {
+      "maxDuration": 10
+    }
+  }
 }
