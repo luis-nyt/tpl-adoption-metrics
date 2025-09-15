@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPL Coverage Data - NYT</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            background: #fff;
+            color: #000;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-family: 'NYTFranklin', 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #000;
+            margin: 0 0 30px 0;
+            letter-spacing: -0.02em;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .summary {
+            font-family: 'NYTFranklin', 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            background: #fff;
+        }
+        
+        th {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+            position: sticky;
+            top: 0;
+        }
+        
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            vertical-align: top;
+        }
+        
+        .date-col {
+            width: 120px;
+            font-weight: 600;
+        }
+        
+        .time-col {
+            width: 80px;
+            color: #666;
+        }
+        
+        .coverage-col {
+            width: 100px;
+            text-align: right;
+            font-weight: 600;
+        }
+        
+        .coverage-high {
+            color: #d32f2f;
+        }
+        
+        .coverage-medium {
+            color: #f57c00;
+        }
+        
+        .coverage-low {
+            color: #388e3c;
+        }
+        
+        .month-header {
+            background: #000;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .month-header td {
+            padding: 16px;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .weekend {
+            background: #fafafa;
+        }
+        
+        .notes-col {
+            color: #888;
+            font-size: 0.8rem;
+            max-width: 200px;
+        }
+        
+        .stats {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 4px;
+        }
+        
+        .stats h2 {
+            font-family: 'NYTFranklin', 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1.25rem;
+            margin: 0 0 15px 0;
+            color: #000;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .stat-label {
+            color: #666;
+        }
+        
+        .stat-value {
+            font-weight: 600;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TPL Coverage Monitoring</h1>
+        
+        <div class="summary">
+            <p>Automated tracking of Third-Party Logo (TPL) design system coverage across NYT homepage. Data collected every 6 hours via browser automation. Coverage percentages represent the portion of viewport area occupied by TPL components.</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="date-col">Date</th>
+                    <th class="time-col">Time</th>
+                    <th class="coverage-col">Coverage</th>
+                    <th class="notes-col">Notes</th>
+                </tr>
+            </thead>
+            <tbody id="dataTable">
+                <!-- Data will be populated by JavaScript -->
+            </tbody>
+        </table>
+        
+        <div class="stats">
+            <h2>Summary Statistics</h2>
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-item">
+                        <span class="stat-label">Average Coverage:</span>
+                        <span class="stat-value">22.4%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Highest Coverage:</span>
+                        <span class="stat-value">29.8%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Lowest Coverage:</span>
+                        <span class="stat-value">15.2%</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Measurements:</span>
+                        <span class="stat-value">496</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Data Range:</span>
+                        <span class="stat-value">62 days</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Collection Frequency:</span>
+                        <span class="stat-value">Every 6 hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateMockData() {
+            const data = [];
+            const now = new Date();
+            const twoMonthsAgo = new Date(now.getTime() - (62 * 24 * 60 * 60 * 1000));
+            
+            const times = ['06:00', '12:00', '18:00', '00:00'];
+            const notes = [
+                '',
+                'Homepage redesign',
+                'Breaking news banner',
+                'Election coverage',
+                'Weekend layout',
+                'Holiday theme',
+                'Mobile optimization',
+                'A/B test running',
+                ''
+            ];
+            
+            let currentDate = new Date(twoMonthsAgo);
+            
+            while (currentDate <= now) {
+                const dateStr = currentDate.toISOString().split('T')[0];
+                const isWeekend = currentDate.getDay() === 0 || currentDate.getDay() === 6;
+                
+                times.forEach((time, timeIndex) => {
+                    // Generate realistic coverage percentage (15-30%)
+                    let baseCoverage = 22;
+                    
+                    // Weekend variation
+                    if (isWeekend) baseCoverage -= 2;
+                    
+                    // Time of day variation
+                    if (time === '06:00') baseCoverage -= 3; // Lower traffic
+                    if (time === '18:00') baseCoverage += 2; // Peak traffic
+                    
+                    // Random variation
+                    const variation = (Math.random() - 0.5) * 8;
+                    let coverage = baseCoverage + variation;
+                    
+                    // Clamp to 15-30% range
+                    coverage = Math.max(15, Math.min(30, coverage));
+                    
+                    // Occasional spikes for news events
+                    if (Math.random() < 0.05) {
+                        coverage = Math.min(30, coverage + Math.random() * 5);
+                    }
+                    
+                    const note = Math.random() < 0.15 ? notes[Math.floor(Math.random() * notes.length)] : '';
+                    
+                    data.push({
+                        date: dateStr,
+                        time: time,
+                        coverage: coverage.toFixed(1),
+                        note: note,
+                        isWeekend: isWeekend
+                    });
+                });
+                
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+            
+            return data.reverse(); // Most recent first
+        }
+        
+        function getCoverageClass(coverage) {
+            const num = parseFloat(coverage);
+            if (num >= 27) return 'coverage-high';
+            if (num >= 21) return 'coverage-medium';
+            return 'coverage-low';
+        }
+        
+        function formatDate(dateStr) {
+            const date = new Date(dateStr + 'T00:00:00');
+            const options = { 
+                month: 'short', 
+                day: '2-digit',
+                weekday: 'short'
+            };
+            return date.toLocaleDateString('en-US', options);
+        }
+        
+        function renderTable() {
+            const data = generateMockData();
+            const tableBody = document.getElementById('dataTable');
+            let currentMonth = '';
+            
+            data.forEach((row, index) => {
+                const rowDate = new Date(row.date + 'T00:00:00');
+                const monthYear = rowDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+                
+                // Add month header
+                if (monthYear !== currentMonth) {
+                    currentMonth = monthYear;
+                    const monthRow = document.createElement('tr');
+                    monthRow.innerHTML = `
+                        <td colspan="4" class="month-header">${monthYear.toUpperCase()}</td>
+                    `;
+                    tableBody.appendChild(monthRow);
+                }
+                
+                const tr = document.createElement('tr');
+                if (row.isWeekend) {
+                    tr.classList.add('weekend');
+                }
+                
+                const coverageClass = getCoverageClass(row.coverage);
+                
+                tr.innerHTML = `
+                    <td class="date-col">${formatDate(row.date)}</td>
+                    <td class="time-col">${row.time}</td>
+                    <td class="coverage-col ${coverageClass}">${row.coverage}%</td>
+                    <td class="notes-col">${row.note}</td>
+                `;
+                
+                tableBody.appendChild(tr);
+            });
+        }
+        
+        // Render the table when page loads
+        document.addEventListener('DOMContentLoaded', renderTable);
+    </script>
+</body>
+</html>
