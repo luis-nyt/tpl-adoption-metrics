@@ -1,5 +1,14 @@
 # Changelog
 
+## 2025-09-15
+- created comprehensive automation system on new 'automation-system' branch for continuous TPL coverage monitoring
+- implemented GitHub Actions workflow that collects data every 6 hours from 7 key NYT pages using Puppeteer browser automation
+- built Vercel API endpoint for storing and retrieving coverage data with CORS support and database integration capabilities
+- designed interactive dashboard with Tachyons styling featuring real-time charts, filtering, and trend analysis using Chart.js
+- created PostgreSQL database schema optimized for time-series data with proper indexing and aggregation tables
+- added automated screenshot capture system that stores full-page images as GitHub Actions artifacts with 30-day retention
+- developed complete documentation covering setup, deployment, troubleshooting, and cost analysis for the automation system
+
 ## 2024-12-15
 - deployed TPL Web Usage Analyzer to production on company Vercel instance - live at nyt-tpl-highlighter-hg8orq5d9-nytimes-projects.vercel.app
 - created GitHub repository under luis-nyt/nyt-tpl-highlighter with complete project history and auto-deployment setup
