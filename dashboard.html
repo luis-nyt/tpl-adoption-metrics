@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPL Coverage Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container { position: relative; height: 400px; }
+        .metric-card { 
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #326891;
+        }
+        .loading { 
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .error-state {
+            background: #fff5f5;
+            border-color: #feb2b2;
+            color: #c53030;
+        }
+        .success-state {
+            background: #f0fff4;
+            border-color: #9ae6b4;
+            color: #276749;
+        }
+    </style>
+</head>
+<body class="bg-near-white">
+    <div class="mw8 center pa3">
+        <!-- Header -->
+        <header class="mb4">
+            <h1 class="f1 fw6 dark-gray mb2">TPL Coverage Dashboard</h1>
+            <p class="f4 gray lh-copy">Track Third-Party Logo design system coverage across NYT pages over time</p>
+        </header>
+
+        <!-- Status Bar -->
+        <div id="statusBar" class="mb4 pa3 br3 bg-white shadow-1">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div id="statusIndicator" class="w1 h1 br-100 bg-gray mr3"></div>
+                    <span id="statusText" class="f5 gray">Loading dashboard...</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="f6 gray mr3">Last updated:</span>
+                    <span id="lastUpdated" class="f6 fw6 dark-gray">--</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Metrics -->
+        <div class="grid-container mb4">
+            <div class="cf">
+                <div class="fl w-100 w-25-l pa2">
+                    <div class="metric-card pa3 br3 shadow-1">
+                        <div class="f6 ttu tracked gray mb1">Average Coverage</div>
+                        <div id="avgCoverage" class="f2 fw6 dark-blue">--%</div>
+                        <div id="avgCoverageTrend" class="f7 gray">--</div>
+                    </div>
+                </div>
+                <div class="fl w-100 w-25-l pa2">
+                    <div class="metric-card pa3 br3 shadow-1">
+                        <div class="f6 ttu tracked gray mb1">Total Data Points</div>
+                        <div id="totalDataPoints" class="f2 fw6 dark-blue">--</div>
+                        <div class="f7 gray">Across all pages</div>
+                    </div>
+                </div>
+                <div class="fl w-100 w-25-l pa2">
+                    <div class="metric-card pa3 br3 shadow-1">
+                        <div class="f6 ttu tracked gray mb1">Pages Monitored</div>
+                        <div id="pagesMonitored" class="f2 fw6 dark-blue">--</div>
+                        <div class="f7 gray">Unique URLs</div>
+                    </div>
+                </div>
+                <div class="fl w-100 w-25-l pa2">
+                    <div class="metric-card pa3 br3 shadow-1">
+                        <div class="f6 ttu tracked gray mb1">Max Coverage</div>
+                        <div id="maxCoverage" class="f2 fw6 dark-blue">--%</div>
+                        <div id="maxCoveragePage" class="f7 gray">--</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="cf mb4">
+            <div class="fl w-100 w-60-l pa2">
+                <div class="bg-white pa3 br3 shadow-1">
+                    <h3 class="f4 fw6 dark-gray mb3">Coverage Over Time</h3>
+                    <div class="chart-container">
+                        <canvas id="coverageChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="fl w-100 w-40-l pa2">
+                <div class="bg-white pa3 br3 shadow-1">
+                    <h3 class="f4 fw6 dark-gray mb3">Coverage by Page</h3>
+                    <div class="chart-container">
+                        <canvas id="pageChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Data Table -->
+        <div class="bg-white pa3 br3 shadow-1 mb4">
+            <div class="flex items-center justify-between mb3">
+                <h3 class="f4 fw6 dark-gray">Recent Measurements</h3>
+                <button id="refreshBtn" class="f6 link dim ph3 pv2 mb2 dib white bg-blue br2 pointer">
+                    Refresh Data
+                </button>
+            </div>
+            <div class="overflow-auto">
+                <table class="f6 w-100" cellspacing="0">
+                    <thead>
+                        <tr class="bb b--black-20">
+                            <th class="fw6 tl pb3 pr3 dark-gray">Timestamp</th>
+                            <th class="fw6 tl pb3 pr3 dark-gray">Page</th>
+                            <th class="fw6 tr pb3 pr3 dark-gray">Coverage</th>
+                            <th class="fw6 tr pb3 pr3 dark-gray">Elements</th>
+                            <th class="fw6 tr pb3 dark-gray">Viewport</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataTable">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="bg-white pa3 br3 shadow-1">
+            <h3 class="f4 fw6 dark-gray mb3">Controls</h3>
+            <div class="cf">
+                <div class="fl w-100 w-50-l pa2">
+                    <label class="f6 fw6 db mb2 dark-gray">Filter by Page:</label>
+                    <select id="pageFilter" class="w-100 pa2 input-reset ba b--black-20 br2">
+                        <option value="">All pages</option>
+                    </select>
+                </div>
+                <div class="fl w-100 w-50-l pa2">
+                    <label class="f6 fw6 db mb2 dark-gray">Time Range:</label>
+                    <select id="timeFilter" class="w-100 pa2 input-reset ba b--black-20 br2">
+                        <option value="24">Last 24 hours</option>
+                        <option value="168">Last 7 days</option>
+                        <option value="720">Last 30 days</option>
+                        <option value="">All time</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class TPLDashboard {
+            constructor() {
+                this.data = [];
+                this.filteredData = [];
+                this.charts = {};
+                this.apiEndpoint = '/api/coverage';
+                this.init();
+            }
+
+            async init() {
+                this.setupEventListeners();
+                await this.loadData();
+                this.updateDashboard();
+                
+                // Auto-refresh every 5 minutes
+                setInterval(() => this.loadData(), 5 * 60 * 1000);
+            }
+
+            setupEventListeners() {
+                document.getElementById('refreshBtn').addEventListener('click', () => this.loadData());
+                document.getElementById('pageFilter').addEventListener('change', () => this.filterData());
+                document.getElementById('timeFilter').addEventListener('change', () => this.filterData());
+            }
+
+            async loadData() {
+                try {
+                    this.updateStatus('loading', 'Loading data...');
+                    
+                    const response = await fetch(this.apiEndpoint);
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        this.data = result.data;
+                        this.summary = result.summary;
+                        this.populatePageFilter();
+                        this.filterData();
+                        this.updateStatus('success', `Loaded ${result.total} data points`);
+                        document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+                    } else {
+                        throw new Error(result.error || 'Failed to load data');
+                    }
+                } catch (error) {
+                    console.error('Failed to load data:', error);
+                    this.updateStatus('error', 'Failed to load data');
+                }
+            }
+
+            updateStatus(type, message) {
+                const indicator = document.getElementById('statusIndicator');
+                const text = document.getElementById('statusText');
+                
+                indicator.className = `w1 h1 br-100 mr3 ${
+                    type === 'loading' ? 'bg-yellow loading' :
+                    type === 'success' ? 'bg-green' :
+                    type === 'error' ? 'bg-red' : 'bg-gray'
+                }`;
+                
+                text.textContent = message;
+            }
+
+            populatePageFilter() {
+                const pageFilter = document.getElementById('pageFilter');
+                const uniquePages = [...new Set(this.data.map(d => d.url))].sort();
+                
+                // Clear existing options (except "All pages")
+                pageFilter.innerHTML = '<option value="">All pages</option>';
+                
+                uniquePages.forEach(page => {
+                    const option = document.createElement('option');
+                    option.value = page;
+                    option.textContent = this.getPageDisplayName(page);
+                    pageFilter.appendChild(option);
+                });
+            }
+
+            getPageDisplayName(url) {
+                try {
+                    const urlObj = new URL(url);
+                    const path = urlObj.pathname;
+                    if (path === '/') return 'Homepage';
+                    return path.replace(/^\/section\//, '').replace(/\//g, ' > ') || 'Unknown';
+                } catch {
+                    return url;
+                }
+            }
+
+            filterData() {
+                const pageFilter = document.getElementById('pageFilter').value;
+                const timeFilter = document.getElementById('timeFilter').value;
+                
+                this.filteredData = this.data.filter(item => {
+                    // Page filter
+                    if (pageFilter && item.url !== pageFilter) return false;
+                    
+                    // Time filter
+                    if (timeFilter) {
+                        const hoursAgo = parseInt(timeFilter);
+                        const cutoff = new Date(Date.now() - hoursAgo * 60 * 60 * 1000);
+                        if (new Date(item.timestamp) < cutoff) return false;
+                    }
+                    
+                    return true;
+                });
+                
+                this.updateDashboard();
+            }
+
+            updateDashboard() {
+                this.updateMetrics();
+                this.updateCharts();
+                this.updateTable();
+            }
+
+            updateMetrics() {
+                if (!this.filteredData.length) {
+                    document.getElementById('avgCoverage').textContent = '--%';
+                    document.getElementById('totalDataPoints').textContent = '--';
+                    document.getElementById('pagesMonitored').textContent = '--';
+                    document.getElementById('maxCoverage').textContent = '--%';
+                    return;
+                }
+
+                const coverageValues = this.filteredData
+                    .map(d => d.totalCoveragePercent)
+                    .filter(v => typeof v === 'number');
+                
+                const avgCoverage = coverageValues.length > 0 ? 
+                    (coverageValues.reduce((a, b) => a + b, 0) / coverageValues.length).toFixed(1) : 0;
+                
+                const maxCoverage = coverageValues.length > 0 ? Math.max(...coverageValues).toFixed(1) : 0;
+                const maxCoverageItem = this.filteredData.find(d => d.totalCoveragePercent === Math.max(...coverageValues));
+                
+                const uniquePages = new Set(this.filteredData.map(d => d.url)).size;
+
+                document.getElementById('avgCoverage').textContent = `${avgCoverage}%`;
+                document.getElementById('totalDataPoints').textContent = this.filteredData.length;
+                document.getElementById('pagesMonitored').textContent = uniquePages;
+                document.getElementById('maxCoverage').textContent = `${maxCoverage}%`;
+                document.getElementById('maxCoveragePage').textContent = maxCoverageItem ? 
+                    this.getPageDisplayName(maxCoverageItem.url) : '--';
+            }
+
+            updateCharts() {
+                this.updateCoverageChart();
+                this.updatePageChart();
+            }
+
+            updateCoverageChart() {
+                const ctx = document.getElementById('coverageChart').getContext('2d');
+                
+                if (this.charts.coverage) {
+                    this.charts.coverage.destroy();
+                }
+
+                const timeData = this.filteredData
+                    .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
+                    .map(d => ({
+                        x: new Date(d.timestamp),
+                        y: d.totalCoveragePercent || 0
+                    }));
+
+                this.charts.coverage = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        datasets: [{
+                            label: 'TPL Coverage %',
+                            data: timeData,
+                            borderColor: '#326891',
+                            backgroundColor: 'rgba(50, 104, 145, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                    displayFormats: {
+                                        hour: 'MMM DD HH:mm',
+                                        day: 'MMM DD'
+                                    }
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `Coverage: ${context.parsed.y.toFixed(1)}%`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            updatePageChart() {
+                const ctx = document.getElementById('pageChart').getContext('2d');
+                
+                if (this.charts.page) {
+                    this.charts.page.destroy();
+                }
+
+                const pageData = {};
+                this.filteredData.forEach(d => {
+                    const pageName = this.getPageDisplayName(d.url);
+                    if (!pageData[pageName]) {
+                        pageData[pageName] = [];
+                    }
+                    pageData[pageName].push(d.totalCoveragePercent || 0);
+                });
+
+                const pageAverages = Object.entries(pageData).map(([page, values]) => ({
+                    page,
+                    average: values.reduce((a, b) => a + b, 0) / values.length
+                })).sort((a, b) => b.average - a.average);
+
+                this.charts.page = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: pageAverages.map(d => d.page),
+                        datasets: [{
+                            label: 'Average Coverage %',
+                            data: pageAverages.map(d => d.average),
+                            backgroundColor: 'rgba(50, 104, 145, 0.8)',
+                            borderColor: '#326891',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `Average: ${context.parsed.y.toFixed(1)}%`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            updateTable() {
+                const tableBody = document.getElementById('dataTable');
+                tableBody.innerHTML = '';
+
+                const recentData = this.filteredData
+                    .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+                    .slice(0, 20);
+
+                recentData.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.className = 'bb b--black-10';
+                    
+                    row.innerHTML = `
+                        <td class="pv2 pr3 f6">${new Date(item.timestamp).toLocaleString()}</td>
+                        <td class="pv2 pr3 f6">${this.getPageDisplayName(item.url)}</td>
+                        <td class="pv2 pr3 f6 tr fw6">${(item.totalCoveragePercent || 0).toFixed(1)}%</td>
+                        <td class="pv2 pr3 f6 tr">${item.totalElements || 0}</td>
+                        <td class="pv2 f6 tr">${(item.viewportCoveragePercent || 0).toFixed(1)}%</td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+
+                if (recentData.length === 0) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = '<td colspan="5" class="pv3 tc gray f6">No data available</td>';
+                    tableBody.appendChild(row);
+                }
+            }
+        }
+
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new TPLDashboard();
+        });
+    </script>
+</body>
+</html>

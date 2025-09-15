@@ -1,0 +1,31 @@
+{
+  "name": "nyt-tpl-highlighter",
+  "version": "1.0.0",
+  "description": "Automated TPL coverage tracking and analysis for NYT pages",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required for static files'",
+    "collect": "node scripts/collect-coverage.js",
+    "test-collection": "node scripts/collect-coverage.js https://www.nytimes.com/"
+  },
+  "keywords": [
+    "nyt",
+    "tpl",
+    "design-system",
+    "coverage",
+    "automation"
+  ],
+  "author": "Luis Queral",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "puppeteer": "^21.5.0"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.38.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
