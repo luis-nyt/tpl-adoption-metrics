@@ -232,6 +232,7 @@ class MultiViewportDataCollector {
   async saveRawData(results) {
     const now = new Date();
     const dateStr = now.toISOString().split('T')[0];
+    const timeStr = now.toISOString().split('T')[1].slice(0, 5).replace(':', ''); // HHMM format
     
     // Ensure directory exists
     const rawDir = path.join(__dirname, '../data/raw', dateStr);
@@ -243,8 +244,8 @@ class MultiViewportDataCollector {
       const result = results[i];
       const pageConfig = result.pageConfig;
       
-      // Save multi-viewport result
-      const filename = `${pageConfig.section}-${i.toString().padStart(2, '0')}-multiview-${dateStr.replace(/-/g, '')}.json`;
+      // Save multi-viewport result with timestamp
+      const filename = `${pageConfig.section}-${i.toString().padStart(2, '0')}-multiview-${dateStr.replace(/-/g, '')}-${timeStr}.json`;
       const filePath = path.join(rawDir, filename);
       
       const multiViewportData = {
@@ -267,6 +268,7 @@ class MultiViewportDataCollector {
   async generateDailySummary(results, config) {
     const now = new Date();
     const dateStr = now.toISOString().split('T')[0];
+    const timeStr = now.toISOString().split('T')[1].slice(0, 5).replace(':', ''); // HHMM format
     
     // Filter successful results
     const successfulResults = results.filter(r => r.crossViewportAnalysis && !r.crossViewportAnalysis.error);
@@ -322,14 +324,14 @@ class MultiViewportDataCollector {
       viewportsTested: viewportNames
     };
     
-    // Save multi-viewport summary
+    // Save multi-viewport summary with timestamp
     const dailyDir = path.join(__dirname, '../data/daily');
     await fs.mkdir(dailyDir, { recursive: true });
     
-    const summaryPath = path.join(dailyDir, `${dateStr}-multiview.json`);
+    const summaryPath = path.join(dailyDir, `${dateStr}-${timeStr}-multiview.json`);
     await fs.writeFile(summaryPath, JSON.stringify(multiViewportSummary, null, 2));
     
-    console.log(`📊 Generated multi-viewport summary: ${dateStr}-multiview.json`);
+    console.log(`📊 Generated multi-viewport summary: ${dateStr}-${timeStr}-multiview.json`);
     
     // Enhanced TUI output with adoption ratings
     this.displayAdoptionSummary(viewportSummaries);
