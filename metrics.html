@@ -104,35 +104,56 @@
                 // Try to get list of available data files dynamically
                 const metrics = [];
                 
-                // List of known file patterns to try (keep this manageable)
+                // List of known file patterns to try (all files we know exist)
                 const filePatterns = [
                     '2025-09-24.json',
                     '2025-09-24-multiview.json',
                     '2025-09-25-multiview.json',
-                    // Recent timestamped files we know exist
+                    // All timestamped files from GitHub Actions
                     '2025-09-25-0234-multiview.json',
                     '2025-09-25-0240-multiview.json',
                     '2025-09-25-0242-multiview.json',
                     '2025-09-25-0343-multiview.json',
                     '2025-09-25-0435-multiview.json',
                     '2025-09-25-0442-multiview.json',
-                    '2025-09-25-0443-multiview.json'
+                    '2025-09-25-0443-multiview.json',
+                    '2025-09-25-0454-multiview.json',
+                    '2025-09-25-0513-multiview.json',
+                    '2025-09-25-0533-multiview.json',
+                    '2025-09-25-0545-multiview.json',
+                    '2025-09-25-0553-multiview.json',
+                    '2025-09-25-0619-multiview.json',
+                    '2025-09-25-0645-multiview.json',
+                    '2025-09-25-0656-multiview.json',
+                    '2025-09-25-0715-multiview.json',
+                    '2025-09-25-0730-multiview.json',
+                    '2025-09-25-0741-multiview.json',
+                    '2025-09-25-0753-multiview.json',
+                    '2025-09-25-0817-multiview.json',
+                    '2025-09-25-0841-multiview.json',
+                    '2025-09-25-0856-multiview.json',
+                    '2025-09-25-0916-multiview.json',
+                    '2025-09-25-0933-multiview.json',
+                    '2025-09-25-0945-multiview.json',
+                    '2025-09-25-0953-multiview.json',
+                    '2025-09-25-1013-multiview.json',
+                    '2025-09-25-1035-multiview.json',
+                    '2025-09-25-1047-multiview.json',
+                    '2025-09-25-1054-multiview.json',
+                    '2025-09-25-1111-multiview.json',
+                    '2025-09-25-1128-multiview.json',
+                    '2025-09-25-1137-multiview.json',
+                    '2025-09-25-1145-multiview.json',
+                    '2025-09-25-1153-multiview.json',
+                    '2025-09-25-1225-multiview.json',
+                    '2025-09-25-1304-multiview.json',
+                    '2025-09-25-1336-multiview.json',
+                    '2025-09-25-1348-multiview.json',
+                    '2025-09-25-1356-multiview.json',
+                    '2025-09-25-1414-multiview.json'
                 ];
-                
-                // Add some recent timestamped files for today (limited scope)
-                const today = new Date().toISOString().slice(0, 10);
-                const now = new Date();
-                const currentHour = now.getHours();
-                
-                // Only check around current time (last 2 hours and next hour)
-                for (let hour = Math.max(0, currentHour - 2); hour <= Math.min(23, currentHour + 1); hour++) {
-                    for (let min = 0; min < 60; min += 10) { // Check every 10 minutes  
-                        const timeStr = `${hour.toString().padStart(2, '0')}${min.toString().padStart(2, '0')}`;
-                        filePatterns.push(`${today}-${timeStr}-multiview.json`);
-                    }
-                }
 
-                // Fetch each potential data file
+                // Fetch each data file
                 for (const file of filePatterns) {
                     try {
                         const response = await fetch(`./data/daily/${file}`);
