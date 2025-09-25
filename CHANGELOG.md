@@ -1,5 +1,11 @@
 # Changelog
 
+## 2025-09-25
+- renamed project from nyt-tpl-highlighter to tpl-adoption-metrics to better reflect focus on automated metrics collection rather than browser extension functionality
+- updated package.json, README.md, and all internal references to use new project name and positioning
+- repositioned project description to emphasize automated data collection and GitHub Actions workflow over manual highlighting tools
+- maintained backward compatibility with existing bookmarklet and web tools while shifting primary focus to adoption metrics tracking
+
 ## 2025-09-24
 - implemented complete automated TPL data collection system using puppeteer and headless browser automation
 - converted bookmarklet logic into reusable Node.js module (tpl-analyzer.js) that extracts TPL adoption metrics programmatically  

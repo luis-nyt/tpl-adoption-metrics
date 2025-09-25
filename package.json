@@ -1,7 +1,7 @@
 {
-  "name": "nyt-tpl-highlighter",
+  "name": "tpl-adoption-metrics",
   "version": "1.0.0",
-  "description": "TPL design system adoption metrics collection for The New York Times",
+  "description": "Automated collection and analysis of TPL design system adoption metrics for The New York Times",
   "main": "index.js",
   "scripts": {
     "collect": "node scripts/collect-data.js",
@@ -31,10 +31,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nytimes/tpl-highlighter.git"
+    "url": "git+https://github.com/nytimes/tpl-adoption-metrics.git"
   },
   "bugs": {
-    "url": "https://github.com/nytimes/tpl-highlighter/issues"
+    "url": "https://github.com/nytimes/tpl-adoption-metrics/issues"
   },
-  "homepage": "https://github.com/nytimes/tpl-highlighter#readme"
+  "homepage": "https://github.com/nytimes/tpl-adoption-metrics#readme"
 }

@@ -32,7 +32,7 @@ graph TB
 
     subgraph "🌐 Vercel Deployment"
         T[vercel.json config] --> U[Static Site Deploy]
-        U --> V[nyt-tpl-highlighter.vercel.app]
+        U --> V[tpl-adoption-metrics.vercel.app]
         V --> W[Bookmarklet Download]
         W --> X[Manual TPL Analysis]
     end
@@ -79,7 +79,7 @@ Cursor IDE
 
 ### 2. 📦 **GitHub Repository Structure**
 ```
-nyt-tpl-highlighter/
+tpl-adoption-metrics/
 ├── .github/workflows/tpl-metrics.yml    # Automation config
 ├── config/pages.yml                     # Sites to analyze
 ├── scripts/collect-data-multiview.js    # Collection logic
@@ -106,7 +106,7 @@ Trigger: Every hour at :15 past
 ```
 vercel.json
 ├── 🚀 Auto-deploy on GitHub push
-├── 🌍 Serve at: nyt-tpl-highlighter.vercel.app
+├── 🌍 Serve at: tpl-adoption-metrics.vercel.app
 ├── 📥 Provide bookmarklet download
 └── 📊 Optional: Serve data dashboard
 ```

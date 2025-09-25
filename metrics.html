@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TPL Adoption Metrics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px 12px;
+            border-bottom: 1px solid #ddd;
+            font-size: 11px;
+        }
+
+        th {
+            font-weight: 600;
+            background: #f8f8f8;
+        }
+
+        .loading {
+            font-style: italic;
+            color: #666;
+        }
+
+        .error {
+            color: #d00;
+        }
+
+        .number {
+            text-align: right;
+        }
+
+        .viewport-tag {
+            font-size: 9px;
+            padding: 2px 4px;
+            background: #eee;
+            border-radius: 2px;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TPL Adoption Metrics</h1>
+    
+    <div id="loading" class="loading">Loading data...</div>
+    <div id="error" class="error" style="display: none;"></div>
+    
+    <table id="metricsTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Pages</th>
+                <th>Avg Coverage</th>
+                <th>Mobile Cov</th>
+                <th>Desktop Cov</th>
+                <th>Elements</th>
+                <th>Top Components</th>
+                <th>Responsive Score</th>
+            </tr>
+        </thead>
+        <tbody id="metricsBody">
+        </tbody>
+    </table>
+
+    <script>
+        async function loadMetrics() {
+            const loadingEl = document.getElementById('loading');
+            const errorEl = document.getElementById('error');
+            const tableEl = document.getElementById('metricsTable');
+            const bodyEl = document.getElementById('metricsBody');
+
+            try {
+                // Get list of available data files
+                const dataFiles = [
+                    '2025-09-24.json',
+                    '2025-09-24-multiview.json',
+                    '2025-09-25-0234-multiview.json',
+                    '2025-09-25-multiview.json'
+                ];
+
+                const metrics = [];
+
+                // Fetch each data file
+                for (const file of dataFiles) {
+                    try {
+                        const response = await fetch(`./data/daily/${file}`);
+                        if (response.ok) {
+                            const data = await response.json();
+                            metrics.push({ filename: file, data });
+                        }
+                    } catch (e) {
+                        console.warn(`Could not load ${file}:`, e);
+                    }
+                }
+
+                if (metrics.length === 0) {
+                    throw new Error('No data files could be loaded');
+                }
+
+                // Sort by date (newest first)
+                metrics.sort((a, b) => b.data.date.localeCompare(a.data.date));
+
+                // Render table
+                bodyEl.innerHTML = '';
+                metrics.forEach(({ filename, data }) => {
+                    const row = createTableRow(data, filename);
+                    bodyEl.appendChild(row);
+                });
+
+                loadingEl.style.display = 'none';
+                tableEl.style.display = 'table';
+
+            } catch (error) {
+                console.error('Error loading metrics:', error);
+                loadingEl.style.display = 'none';
+                errorEl.textContent = `Error: ${error.message}`;
+                errorEl.style.display = 'block';
+            }
+        }
+
+        function createTableRow(data, filename) {
+            const row = document.createElement('tr');
+            
+            // Extract data based on schema
+            const date = data.date || 'unknown';
+            const type = data.type || (filename.includes('multiview') ? 'multiview' : 'single');
+            
+            let pagesCount = 0;
+            let avgCoverage = 0;
+            let mobileCov = '-';
+            let desktopCov = '-';
+            let elementCount = 0;
+            let topComponents = [];
+            let responsiveScore = '-';
+
+            if (data.viewportSummaries) {
+                // Multi-viewport data
+                const mobile = data.viewportSummaries.mobile;
+                const desktop = data.viewportSummaries.desktop;
+                
+                pagesCount = data.totalPagesAnalyzed || 0;
+                
+                if (mobile && desktop) {
+                    avgCoverage = ((mobile.averageCoverage + desktop.averageCoverage) / 2).toFixed(1);
+                    mobileCov = mobile.averageCoverage.toFixed(1);
+                    desktopCov = desktop.averageCoverage.toFixed(1);
+                    
+                    // Get element count from first page
+                    if (mobile.pages && mobile.pages[0]) {
+                        elementCount = mobile.pages[0].elementCount || 0;
+                    }
+                }
+                
+                if (data.crossViewportInsights) {
+                    responsiveScore = (data.crossViewportInsights.overallResponsiveScore * 100).toFixed(0);
+                    
+                    // Get top components
+                    if (data.crossViewportInsights.mostConsistentComponents) {
+                        topComponents = data.crossViewportInsights.mostConsistentComponents
+                            .slice(0, 3)
+                            .map(c => c.component);
+                    }
+                }
+            } else if (data.pages) {
+                // Single viewport data
+                pagesCount = data.pages.length;
+                if (data.pages.length > 0) {
+                    avgCoverage = (data.pages.reduce((sum, p) => sum + (p.tplCoverage || 0), 0) / data.pages.length).toFixed(1);
+                    elementCount = data.pages.reduce((sum, p) => sum + (p.elementCount || 0), 0);
+                    
+                    // Get top components from first page
+                    if (data.pages[0] && data.pages[0].topComponents) {
+                        topComponents = data.pages[0].topComponents.slice(0, 3);
+                    }
+                }
+            }
+
+            row.innerHTML = `
+                <td>${date}</td>
+                <td>${type}</td>
+                <td class="number">${pagesCount}</td>
+                <td class="number">${avgCoverage}%</td>
+                <td class="number">${mobileCov}${mobileCov !== '-' ? '%' : ''}</td>
+                <td class="number">${desktopCov}${desktopCov !== '-' ? '%' : ''}</td>
+                <td class="number">${elementCount}</td>
+                <td>${topComponents.join(', ')}</td>
+                <td class="number">${responsiveScore}${responsiveScore !== '-' ? '%' : ''}</td>
+            `;
+
+            return row;
+        }
+
+        // Load data when page loads
+        document.addEventListener('DOMContentLoaded', loadMetrics);
+    </script>
+</body>
+</html>

@@ -1,81 +1,108 @@
-# NYT TPL Design System Highlighter
+# TPL Adoption Metrics
 
-A Chrome extension for the New York Times design systems team to highlight elements using the TPL design system on nytimes.com pages.
+Automated collection and analysis of TPL design system adoption metrics for The New York Times. This project monitors TPL design system usage across nytimes.com through automated data collection and provides insights into adoption trends and coverage patterns.
 
 ## Features
 
-- **Auto-detection**: Automatically finds elements with TPL classes (prefixed with `tpl`)
-- **Visual highlighting**: Highlights TPL elements with colored outlines and badges
-- **Element details**: Click on highlighted elements to see TPL class information
-- **Statistics**: Shows count of TPL elements found on the current page
-- **Toggle control**: Easy on/off switching via popup interface
-- **Color coding**: Different colors for different element types (headers, buttons, text, etc.)
+- **Automated Data Collection**: Periodic GitHub Actions workflow that analyzes TPL usage across key NYT pages
+- **Multi-Viewport Analysis**: Tests TPL adoption across mobile, tablet, and desktop breakpoints  
+- **Comprehensive Metrics**: Tracks element counts, coverage percentages, component types, and responsive consistency
+- **Historical Trending**: Stores daily aggregated data for long-term adoption trend analysis
+- **Raw Data Archive**: Preserves detailed element-level analysis for deep-dive investigations
+- **Local Testing**: Development scripts for manual collection and analysis
 
-## Installation
+## Data Collection
 
-1. **Download the extension files** to your local machine
-2. **Open Chrome** and navigate to `chrome://extensions/`
-3. **Enable Developer mode** (toggle in top right corner)
-4. **Click "Load unpacked"** and select the `nyt-tpl-highlighter` folder
-5. **Navigate to nytimes.com** to test the extension
+The system automatically analyzes these NYT page categories:
+- **Homepage** (home): Primary landing page
+- **World News** (world): International coverage
+- **Business** (business): Financial and economic news  
+- **Technology** (technology): Tech industry coverage
+- **Sports** (sports): Athletic events and analysis
+- **Arts** (arts): Culture and entertainment
+
+### Metrics Tracked
+
+- **TPL Element Count**: Total elements using TPL classes
+- **Coverage Percentage**: Ratio of TPL elements to total page elements
+- **Component Categories**: Breakdown by element type (headers, buttons, text, etc.)
+- **Responsive Consistency**: Cross-viewport adoption scoring
+- **Screen Real Estate**: Percentage of page area covered by TPL components
 
 ## Usage
 
-1. **Visit any nytimes.com page**
-2. **Click the TPL extension icon** in the Chrome toolbar
-3. **Click "Activate"** to highlight TPL elements on the page
-4. **View statistics** in the popup (element count, current page)
-5. **Click on highlighted elements** to see detailed information
-6. **Use "Refresh"** to reload the page and re-scan for elements
+### Automated Collection (GitHub Actions)
+The system runs automatically on a scheduled basis. View results in the `/data/daily/` directory.
 
-## How It Works
+### Local Testing
+```bash
+# Install dependencies
+npm install
 
-The extension scans the page for:
-- Elements with class names starting with `tpl`
-- Elements with class names containing `tpl-`
-- CSS custom properties and values containing `tpl`
+# Collect current data (single viewport)
+npm run collect
 
-### Visual Indicators
+# Collect multi-viewport data  
+npm run collect-multiview
 
-- **Orange outline/badge**: Default TPL elements
-- **Purple outline/badge**: Header and navigation elements
-- **Green outline/badge**: Button elements  
-- **Yellow outline/badge**: Text and typography elements
+# Run local testing script
+npm run test-local
+```
+
+## Data Structure
+
+### Daily Aggregates (`/data/daily/`)
+```json
+{
+  "date": "2025-09-25",
+  "total_elements": 146,
+  "coverage_percentage": 21.3,
+  "pages_analyzed": 6,
+  "viewport_analysis": { /* multi-breakpoint data */ }
+}
+```
+
+### Raw Data (`/data/raw/YYYY-MM-DD/`)
+Individual page analysis with detailed element-level information and component breakdowns.
+
+## File Structure
+```
+tpl-adoption-metrics/
+├── config/
+│   └── pages.yml           # Page configuration and categories
+├── data/
+│   ├── daily/             # Aggregated daily metrics
+│   ├── raw/               # Detailed page-level analysis
+│   └── reports/           # Generated analysis reports
+├── scripts/
+│   ├── collect-data.js    # Main collection orchestrator
+│   ├── collect-data-multiview.js  # Multi-viewport analysis
+│   ├── tpl-analyzer.js    # Core TPL detection logic
+│   └── run-local-testing.js       # Local development testing
+├── archive/               # Legacy bookmarklet tools
+└── tpl-highlighter-web.html       # Web-based TPL highlighter
+```
 
 ## Development
 
-### File Structure
-```
-nyt-tpl-highlighter/
-├── manifest.json          # Extension configuration
-├── content.js            # Main highlighting logic
-├── popup.html           # Extension popup interface
-├── popup.js             # Popup functionality
-├── highlight.css        # Highlighting styles
-├── icons/               # Extension icons
-└── README.md           # This file
-```
+The project includes a web-based TPL highlighter tool for manual analysis and a complete bookmarklet system for on-demand page analysis. These tools complement the automated collection system and provide immediate feedback during development.
 
 ### Key Components
 
-- **TPLHighlighter class**: Core functionality for detecting and highlighting elements
-- **Message passing**: Communication between popup and content script
-- **Dynamic styling**: CSS classes applied/removed based on activation state
-- **Element inspection**: Detailed information extraction for TPL elements
-
-## Permissions
-
-- `activeTab`: Access to current tab content
-- `*://*.nytimes.com/*`: Permission to run on NYT domains
+- **TPL Analyzer**: Core detection logic for identifying TPL elements and calculating metrics
+- **Collection Orchestrator**: Manages multi-page analysis workflows  
+- **Multi-Viewport Engine**: Tests responsive TPL adoption across device sizes
+- **Data Persistence**: Structured storage for both raw analysis and aggregated trends
 
 ## Browser Support
 
-- Chrome (Manifest V3)
-- Chromium-based browsers
+- Node.js 16+ (for automated collection)
+- Chrome/Chromium (for Puppeteer automation)
+- Modern browsers (for web-based tools)
 
-## Version History
+## Historical Context
 
-- **v1.0.0**: Initial release with basic highlighting and statistics
+This project evolved from a Chrome extension for highlighting TPL elements into a comprehensive automated metrics collection system. The original bookmarklet and web tools remain available for manual analysis and development workflows.
 
 ## Support
 
