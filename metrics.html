@@ -101,70 +101,31 @@
             const bodyEl = document.getElementById('metricsBody');
 
             try {
-                // Dynamically discover all data files by trying common patterns
+                // Get list of available files from directory index
+                const indexResponse = await fetch('./data/daily/index.json');
+                if (!indexResponse.ok) {
+                    throw new Error('Could not load file index');
+                }
+                
+                const availableFiles = await indexResponse.json();
+                console.log(`📂 Found ${availableFiles.length} files in directory index`);
+                
                 const metrics = [];
                 
-                // Generate comprehensive file patterns to discover all possible files
-                const filePatterns = [];
-                
-                // Get current date and some recent dates
-                const today = new Date();
-                const dates = [];
-                
-                // Check last 7 days
-                for (let i = 0; i < 7; i++) {
-                    const date = new Date(today);
-                    date.setDate(date.getDate() - i);
-                    dates.push(date.toISOString().slice(0, 10));
-                }
-                
-                // For each date, try common file patterns
-                dates.forEach(date => {
-                    // Daily summary files
-                    filePatterns.push(`${date}.json`);
-                    filePatterns.push(`${date}-multiview.json`);
-                    
-                    // Timestamped files (every 10 minutes for comprehensive coverage)
-                    for (let hour = 0; hour < 24; hour++) {
-                        for (let min = 0; min < 60; min += 10) {
-                            const timeStr = `${hour.toString().padStart(2, '0')}${min.toString().padStart(2, '0')}`;
-                            filePatterns.push(`${date}-${timeStr}-multiview.json`);
+                // Load each file from the index
+                for (const filename of availableFiles) {
+                    try {
+                        const response = await fetch(`./data/daily/${filename}`);
+                        if (response.ok) {
+                            const data = await response.json();
+                            metrics.push({ filename, data });
                         }
+                    } catch (e) {
+                        console.warn(`Could not load ${filename}:`, e);
                     }
-                });
-
-                // Try to fetch each pattern (this will auto-discover all existing files)
-                let loadedCount = 0;
-                const batchSize = 10; // Load in batches to avoid overwhelming the browser
-                
-                for (let i = 0; i < filePatterns.length; i += batchSize) {
-                    const batch = filePatterns.slice(i, i + batchSize);
-                    const promises = batch.map(async file => {
-                        try {
-                            const response = await fetch(`./data/daily/${file}`);
-                            if (response.ok) {
-                                const data = await response.json();
-                                return { filename: file, data };
-                            }
-                        } catch (e) {
-                            // Silently fail for missing files
-                        }
-                        return null;
-                    });
-                    
-                    const results = await Promise.all(promises);
-                    results.forEach(result => {
-                        if (result) {
-                            metrics.push(result);
-                            loadedCount++;
-                        }
-                    });
-                    
-                    // Small delay between batches
-                    await new Promise(resolve => setTimeout(resolve, 50));
                 }
                 
-                console.log(`📊 Loaded ${loadedCount} data files dynamically`);
+                console.log(`📊 Successfully loaded ${metrics.length} data files`);
 
                 if (metrics.length === 0) {
                     throw new Error('No data files could be loaded');

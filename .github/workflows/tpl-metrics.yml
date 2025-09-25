@@ -39,6 +39,9 @@ jobs:
     - name: Run TPL metrics collection
       run: npm run collect-multiview
       
+    - name: Generate file index
+      run: node scripts/generate-file-index.js
+      
     - name: Commit and push data
       run: |
         git config --local user.email "action@github.com"
