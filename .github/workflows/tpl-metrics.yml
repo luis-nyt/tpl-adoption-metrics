@@ -2,8 +2,8 @@ name: TPL Metrics Collection
 
 on:
   schedule:
-    # Run every hour at 15 minutes past the hour
-    - cron: '15 * * * *'
+    # Run every 10 minutes for testing (change back to hourly later)
+    - cron: '*/10 * * * *'
   
   # Allow manual triggering
   workflow_dispatch:
@@ -11,7 +11,7 @@ on:
       custom_message:
         description: 'Custom commit message'
         required: false
-        default: 'Automated TPL metrics collection'
+        default: 'Automated TPL metrics collection (10min testing schedule)'
 
 jobs:
   collect-tpl-metrics:
