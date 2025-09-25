@@ -16,6 +16,9 @@ on:
 jobs:
   collect-tpl-metrics:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Allow writing to repository
+      actions: read    # Allow reading workflow files
     
     steps:
     - name: Checkout repository
