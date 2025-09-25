@@ -50,6 +50,18 @@
             color: #666;
         }
 
+        .loading-dots::after {
+            content: '';
+            animation: loading-dots 1.5s infinite;
+        }
+
+        @keyframes loading-dots {
+            0% { content: '.'; }
+            33% { content: '..'; }
+            66% { content: '...'; }
+            100% { content: '.'; }
+        }
+
         .error {
             color: #d00;
         }
@@ -74,7 +86,7 @@
 <body>
     <h1>TPL Adoption Metrics</h1>
     
-    <div id="loading" class="loading">Loading data...</div>
+    <div id="loading" class="loading">Loading data<span class="loading-dots"></span></div>
     <div id="error" class="error" style="display: none;"></div>
     
     <table id="metricsTable" style="display: none;">
