@@ -62,16 +62,18 @@ jobs:
             else
               echo "Push failed on attempt $i, pulling latest changes..."
               
-              # Fetch latest and rebase our commit on top
+              # Fetch latest changes
               git fetch origin main
-              git rebase origin/main
+              
+              # Check if we can merge cleanly
+              git merge origin/main --no-edit
               
               if [ $? -eq 0 ]; then
-                echo "Rebase successful, retrying push..."
+                echo "Merge successful, retrying push..."
                 sleep 2
               else
-                echo "Rebase failed, aborting..."
-                git rebase --abort
+                echo "Merge failed, aborting..."
+                git merge --abort
                 break
               fi
             fi
