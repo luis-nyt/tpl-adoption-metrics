@@ -104,30 +104,31 @@
                 // Try to get list of available data files dynamically
                 const metrics = [];
                 
-                // List of known file patterns to try
+                // List of known file patterns to try (keep this manageable)
                 const filePatterns = [
                     '2025-09-24.json',
                     '2025-09-24-multiview.json',
-                    '2025-09-25-multiview.json'
+                    '2025-09-25-multiview.json',
+                    // Recent timestamped files we know exist
+                    '2025-09-25-0234-multiview.json',
+                    '2025-09-25-0240-multiview.json',
+                    '2025-09-25-0242-multiview.json',
+                    '2025-09-25-0343-multiview.json',
+                    '2025-09-25-0435-multiview.json',
+                    '2025-09-25-0442-multiview.json',
+                    '2025-09-25-0443-multiview.json'
                 ];
                 
-                // Add timestamped files for today
+                // Add some recent timestamped files for today (limited scope)
                 const today = new Date().toISOString().slice(0, 10);
-                for (let hour = 0; hour < 24; hour++) {
-                    for (let min = 0; min < 60; min += 10) { // Check every 10 minutes
+                const now = new Date();
+                const currentHour = now.getHours();
+                
+                // Only check around current time (last 2 hours and next hour)
+                for (let hour = Math.max(0, currentHour - 2); hour <= Math.min(23, currentHour + 1); hour++) {
+                    for (let min = 0; min < 60; min += 10) { // Check every 10 minutes  
                         const timeStr = `${hour.toString().padStart(2, '0')}${min.toString().padStart(2, '0')}`;
                         filePatterns.push(`${today}-${timeStr}-multiview.json`);
-                    }
-                }
-                
-                // Also add some recent dates
-                const yesterday = new Date();
-                yesterday.setDate(yesterday.getDate() - 1);
-                const yesterdayStr = yesterday.toISOString().slice(0, 10);
-                for (let hour = 0; hour < 24; hour++) {
-                    for (let min = 0; min < 60; min += 60) { // Hourly for yesterday
-                        const timeStr = `${hour.toString().padStart(2, '0')}${min.toString().padStart(2, '0')}`;
-                        filePatterns.push(`${yesterdayStr}-${timeStr}-multiview.json`);
                     }
                 }
 
