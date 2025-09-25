@@ -78,6 +78,19 @@ jobs:
           done
         fi
         
+    - name: Trigger Vercel Deploy Hook
+      if: success()  # Only run if previous steps succeeded
+      run: |
+        if [[ -n "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}" ]]; then
+          echo "🚀 Triggering Vercel deployment..."
+          curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -d '{"ref": "main", "name": "Auto-deploy after TPL metrics collection"}'
+          echo "✅ Vercel deployment triggered successfully"
+        else
+          echo "⚠️  VERCEL_DEPLOY_HOOK_URL secret not found - skipping auto-deploy"
+        fi
+        
     - name: Upload artifacts (backup)
       uses: actions/upload-artifact@v4
       if: always()
