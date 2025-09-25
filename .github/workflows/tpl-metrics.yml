@@ -1,0 +1,60 @@
+name: TPL Metrics Collection
+
+on:
+  schedule:
+    # Run every hour at 15 minutes past the hour
+    - cron: '15 * * * *'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+    inputs:
+      custom_message:
+        description: 'Custom commit message'
+        required: false
+        default: 'Automated TPL metrics collection'
+
+jobs:
+  collect-tpl-metrics:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run TPL metrics collection
+      run: npm run collect-multiview
+      
+    - name: Commit and push data
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Add data files
+        git add data/
+        
+        # Only commit if there are changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "${{ github.event.inputs.custom_message || 'Automated TPL metrics collection' }} - $(date -u +%Y-%m-%d\ %H:%M\ UTC)"
+          git push
+        fi
+        
+    - name: Upload artifacts (backup)
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: tpl-metrics-${{ github.run_number }}
+        path: |
+          data/daily/*.json
+          data/raw/**/*.json
+        retention-days: 30

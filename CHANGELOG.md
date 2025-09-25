@@ -1,13 +1,19 @@
 # Changelog
 
-## 2025-09-15
-- created comprehensive automation system on new 'automation-system' branch for continuous TPL coverage monitoring
-- implemented GitHub Actions workflow that collects data every 6 hours from 7 key NYT pages using Puppeteer browser automation
-- built Vercel API endpoint for storing and retrieving coverage data with CORS support and database integration capabilities
-- designed interactive dashboard with Tachyons styling featuring real-time charts, filtering, and trend analysis using Chart.js
-- created PostgreSQL database schema optimized for time-series data with proper indexing and aggregation tables
-- added automated screenshot capture system that stores full-page images as GitHub Actions artifacts with 30-day retention
-- developed complete documentation covering setup, deployment, troubleshooting, and cost analysis for the automation system
+## 2025-09-24
+- implemented complete automated TPL data collection system using puppeteer and headless browser automation
+- converted bookmarklet logic into reusable Node.js module (tpl-analyzer.js) that extracts TPL adoption metrics programmatically  
+- created data collection orchestrator (collect-data.js) that analyzes multiple NYT pages and saves both raw and aggregated data
+- established file structure with /data/raw/ for detailed element-level analysis and /data/daily/ for trend-ready summaries
+- added configuration system (/config/pages.yml) to manage which pages to analyze with categorization and priority settings
+- built package.json with puppeteer and js-yaml dependencies plus npm scripts for easy data collection
+- successfully tested full pipeline capturing 146 TPL elements with 21.3% coverage on NYT homepage
+- generated schema-compliant JSON output matching recommended data structure for tracking adoption metrics over time
+- implemented multi-viewport analysis system testing mobile (375x667), tablet (768x1024), desktop (1440x900), and large desktop (1920x1080) breakpoints
+- discovered mobile-first TPL strategy with 62.3% coverage on mobile vs 18.4% on desktop - revealing 3x higher TPL adoption on mobile devices
+- achieved 83% responsive design consistency score across all viewports with tpl-lb and tpl-lbl components appearing consistently
+- created cross-viewport analytics including coverage variance analysis, component consistency tracking, and responsive adoption scoring
+- standardized on 1440x900 desktop viewport based on NYT content width analysis showing ~1220px optimal layout width
 
 ## 2024-12-15
 - deployed TPL Web Usage Analyzer to production on company Vercel instance - live at nyt-tpl-highlighter-hg8orq5d9-nytimes-projects.vercel.app

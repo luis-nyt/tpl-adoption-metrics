@@ -1,0 +1,75 @@
+{
+  "date": "2025-09-24",
+  "pages": [
+    {
+      "url": "https://www.nytimes.com/",
+      "pageType": "homepage",
+      "section": "home",
+      "tplCoverage": 21.3,
+      "elementCount": 146,
+      "topComponents": [
+        "tpl-lb",
+        "tpl-lbl"
+      ]
+    },
+    {
+      "url": "https://www.nytimes.com/section/world",
+      "pageType": "section",
+      "section": "world",
+      "tplCoverage": 0,
+      "elementCount": 0,
+      "topComponents": []
+    },
+    {
+      "url": "https://www.nytimes.com/section/business",
+      "pageType": "section",
+      "section": "business",
+      "tplCoverage": 0,
+      "elementCount": 0,
+      "topComponents": []
+    },
+    {
+      "url": "https://www.nytimes.com/section/technology",
+      "pageType": "section",
+      "section": "technology",
+      "tplCoverage": 0,
+      "elementCount": 0,
+      "topComponents": []
+    },
+    {
+      "url": "https://www.nytimes.com/section/sports",
+      "pageType": "section",
+      "section": "sports",
+      "tplCoverage": 0,
+      "elementCount": 0,
+      "topComponents": []
+    },
+    {
+      "url": "https://www.nytimes.com/section/arts",
+      "pageType": "section",
+      "section": "arts",
+      "tplCoverage": 0,
+      "elementCount": 0,
+      "topComponents": []
+    }
+  ],
+  "aggregates": {
+    "averageCoverage": 3.6,
+    "totalPagesAnalyzed": 6,
+    "mostUsedComponents": [
+      {
+        "name": "tpl-lb",
+        "frequency": 1
+      },
+      {
+        "name": "tpl-lbl",
+        "frequency": 1
+      }
+    ],
+    "coverageDistribution": {
+      "high": 1,
+      "medium": 0,
+      "low": 5
+    }
+  }
+}

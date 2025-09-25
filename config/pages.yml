@@ -1,0 +1,28 @@
+pages:
+  - url: "https://www.nytimes.com/"
+    name: "Homepage"
+    type: "homepage"
+    section: "home"
+    priority: "high"
+
+# Mobile vs Desktop viewport analysis
+viewports:
+  mobile:
+    width: 375
+    height: 667
+    name: "Mobile"
+    priority: "high"
+    deviceType: "mobile"
+    
+  desktop:
+    width: 1440
+    height: 900  
+    name: "Desktop"
+    priority: "high"
+    deviceType: "desktop"
+
+# Coverage thresholds for categorization
+coverage:
+  high: 20      # >20% TPL coverage
+  medium: 10    # 10-20% TPL coverage
+  # low: <10%   # implicit
