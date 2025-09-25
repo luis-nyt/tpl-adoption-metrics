@@ -55,7 +55,11 @@
         }
 
         .number {
-            text-align: right;
+            text-align: center;
+        }
+
+        .number th {
+            text-align: center;
         }
 
         .viewport-tag {
@@ -78,13 +82,11 @@
             <tr>
                 <th>Date</th>
                 <th>Type</th>
-                <th>Pages</th>
-                <th>Avg Coverage</th>
-                <th>Mobile Cov</th>
-                <th>Desktop Cov</th>
-                <th>Elements</th>
-                <th>Top Components</th>
-                <th>Responsive Score</th>
+                <th class="number">Avg Coverage</th>
+                <th class="number">Mobile Cov</th>
+                <th class="number">Desktop Cov</th>
+                <th class="number">Elements</th>
+                <th class="number">TPL Tokenization %</th>
             </tr>
         </thead>
         <tbody id="metricsBody">
@@ -104,6 +106,9 @@
                     '2025-09-24.json',
                     '2025-09-24-multiview.json',
                     '2025-09-25-0234-multiview.json',
+                    '2025-09-25-0240-multiview.json',
+                    '2025-09-25-0242-multiview.json',
+                    '2025-09-25-0343-multiview.json',
                     '2025-09-25-multiview.json'
                 ];
 
@@ -152,22 +157,49 @@
             
             // Extract data based on schema
             const date = data.date || 'unknown';
-            const type = data.type || (filename.includes('multiview') ? 'multiview' : 'single');
+            let time = 'unknown';
             
-            let pagesCount = 0;
+            // Extract time from filename (e.g., "2025-09-25-0343-multiview.json" -> "03:43")
+            const timeMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})-(\d{4})/);
+            if (timeMatch) {
+                const timeStr = timeMatch[4];
+                time = `${timeStr.slice(0, 2)}:${timeStr.slice(2, 4)}`;
+            } else if (filename.includes('multiview') && !filename.includes('-0')) {
+                time = 'day';
+            }
+            
+            let type = data.type || (filename.includes('multiview') ? 'multiview' : 'single');
+            
+            // Make type more descriptive based on what's being analyzed
+            if (data.viewportSummaries && data.viewportSummaries.mobile && data.viewportSummaries.mobile.pages) {
+                const firstPage = data.viewportSummaries.mobile.pages[0];
+                if (firstPage && firstPage.url && firstPage.url.includes('nytimes.com')) {
+                    if (firstPage.section === 'home' || firstPage.pageType === 'homepage') {
+                        type = 'NYT Home Web';
+                    } else {
+                        type = `NYT ${firstPage.section || 'Unknown'} Web`;
+                    }
+                }
+            } else if (data.pages && data.pages.length > 0) {
+                const firstPage = data.pages[0];
+                if (firstPage && firstPage.url && firstPage.url.includes('nytimes.com')) {
+                    if (firstPage.section === 'home' || firstPage.pageType === 'homepage') {
+                        type = 'NYT Home Web';
+                    } else {
+                        type = `NYT ${firstPage.section || 'Unknown'} Web`;
+                    }
+                }
+            }
+            
             let avgCoverage = 0;
             let mobileCov = '-';
             let desktopCov = '-';
             let elementCount = 0;
-            let topComponents = [];
-            let responsiveScore = '-';
 
             if (data.viewportSummaries) {
                 // Multi-viewport data
                 const mobile = data.viewportSummaries.mobile;
                 const desktop = data.viewportSummaries.desktop;
-                
-                pagesCount = data.totalPagesAnalyzed || 0;
                 
                 if (mobile && desktop) {
                     avgCoverage = ((mobile.averageCoverage + desktop.averageCoverage) / 2).toFixed(1);
@@ -179,41 +211,25 @@
                         elementCount = mobile.pages[0].elementCount || 0;
                     }
                 }
-                
-                if (data.crossViewportInsights) {
-                    responsiveScore = (data.crossViewportInsights.overallResponsiveScore * 100).toFixed(0);
-                    
-                    // Get top components
-                    if (data.crossViewportInsights.mostConsistentComponents) {
-                        topComponents = data.crossViewportInsights.mostConsistentComponents
-                            .slice(0, 3)
-                            .map(c => c.component);
-                    }
-                }
             } else if (data.pages) {
                 // Single viewport data
-                pagesCount = data.pages.length;
                 if (data.pages.length > 0) {
                     avgCoverage = (data.pages.reduce((sum, p) => sum + (p.tplCoverage || 0), 0) / data.pages.length).toFixed(1);
                     elementCount = data.pages.reduce((sum, p) => sum + (p.elementCount || 0), 0);
-                    
-                    // Get top components from first page
-                    if (data.pages[0] && data.pages[0].topComponents) {
-                        topComponents = data.pages[0].topComponents.slice(0, 3);
-                    }
                 }
             }
 
+            // Combine date and time
+            const dateTime = time !== 'unknown' && time !== 'day' ? `${date} ${time}` : date;
+
             row.innerHTML = `
-                <td>${date}</td>
+                <td>${dateTime}</td>
                 <td>${type}</td>
-                <td class="number">${pagesCount}</td>
                 <td class="number">${avgCoverage}%</td>
                 <td class="number">${mobileCov}${mobileCov !== '-' ? '%' : ''}</td>
                 <td class="number">${desktopCov}${desktopCov !== '-' ? '%' : ''}</td>
                 <td class="number">${elementCount}</td>
-                <td>${topComponents.join(', ')}</td>
-                <td class="number">${responsiveScore}${responsiveScore !== '-' ? '%' : ''}</td>
+                <td class="number">-</td>
             `;
 
             return row;
