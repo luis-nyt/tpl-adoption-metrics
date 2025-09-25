@@ -101,21 +101,38 @@
             const bodyEl = document.getElementById('metricsBody');
 
             try {
-                // Get list of available data files
-                const dataFiles = [
+                // Try to get list of available data files dynamically
+                const metrics = [];
+                
+                // List of known file patterns to try
+                const filePatterns = [
                     '2025-09-24.json',
                     '2025-09-24-multiview.json',
-                    '2025-09-25-0234-multiview.json',
-                    '2025-09-25-0240-multiview.json',
-                    '2025-09-25-0242-multiview.json',
-                    '2025-09-25-0343-multiview.json',
                     '2025-09-25-multiview.json'
                 ];
+                
+                // Add timestamped files for today
+                const today = new Date().toISOString().slice(0, 10);
+                for (let hour = 0; hour < 24; hour++) {
+                    for (let min = 0; min < 60; min += 10) { // Check every 10 minutes
+                        const timeStr = `${hour.toString().padStart(2, '0')}${min.toString().padStart(2, '0')}`;
+                        filePatterns.push(`${today}-${timeStr}-multiview.json`);
+                    }
+                }
+                
+                // Also add some recent dates
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                const yesterdayStr = yesterday.toISOString().slice(0, 10);
+                for (let hour = 0; hour < 24; hour++) {
+                    for (let min = 0; min < 60; min += 60) { // Hourly for yesterday
+                        const timeStr = `${hour.toString().padStart(2, '0')}${min.toString().padStart(2, '0')}`;
+                        filePatterns.push(`${yesterdayStr}-${timeStr}-multiview.json`);
+                    }
+                }
 
-                const metrics = [];
-
-                // Fetch each data file
-                for (const file of dataFiles) {
+                // Fetch each potential data file
+                for (const file of filePatterns) {
                     try {
                         const response = await fetch(`./data/daily/${file}`);
                         if (response.ok) {
@@ -123,7 +140,7 @@
                             metrics.push({ filename: file, data });
                         }
                     } catch (e) {
-                        console.warn(`Could not load ${file}:`, e);
+                        // Silently fail for missing files
                     }
                 }
 
