@@ -2,7 +2,7 @@
   "url": "https://www.nytimes.com/",
   "pageType": "homepage",
   "section": "home",
-  "timestamp": "2025-09-25T00:32:39.417Z",
+  "timestamp": "2025-09-25T02:18:18.068Z",
   "viewportResults": {
     "mobile": {
       "viewport": {
@@ -12,9 +12,9 @@
         "deviceType": "mobile"
       },
       "analysis": {
-        "elementCount": 145,
-        "totalCoveragePercent": 58.8,
-        "viewportCoveragePercent": 87.3,
+        "elementCount": 143,
+        "totalCoveragePercent": 59.2,
+        "viewportCoveragePercent": 95.1,
         "topComponents": [
           "tpl-lb",
           "tpl-lbl"
@@ -22,17 +22,17 @@
         "components": [
           {
             "selector": ".tpl-lb",
-            "count": 91,
-            "totalArea": 4403485,
-            "averageArea": 48390,
-            "coveragePercent": 52.12458570075758
+            "count": 88,
+            "totalArea": 4395626,
+            "averageArea": 49950,
+            "coveragePercent": 52.247244632642456
           },
           {
             "selector": ".tpl-lbl",
-            "count": 54,
-            "totalArea": 562058,
-            "averageArea": 10408,
-            "coveragePercent": 6.653148674242424
+            "count": 55,
+            "totalArea": 587534,
+            "averageArea": 10682,
+            "coveragePercent": 6.983540598766807
           }
         ],
         "elements": [
@@ -44,11 +44,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 179,
+              "y": 127,
               "width": 375,
-              "height": 219
+              "height": 236
             },
-            "area": 81958,
+            "area": 88605,
             "isVisible": true,
             "inViewport": true
           },
@@ -60,11 +60,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 179,
+              "y": 145,
               "width": 335,
               "height": 101
             },
-            "area": 33770,
+            "area": 33762,
             "isVisible": true,
             "inViewport": true
           },
@@ -76,11 +76,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 435,
+              "y": 400,
               "width": 375,
-              "height": 512
+              "height": 534
             },
-            "area": 192056,
+            "area": 200309,
             "isVisible": true,
             "inViewport": true
           },
@@ -92,7 +92,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 435,
+              "y": 400,
               "width": 335,
               "height": 46
             },
@@ -107,28 +107,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 984,
-              "width": 273,
-              "height": 87
+              "x": 0,
+              "y": 971,
+              "width": 375,
+              "height": 68
             },
-            "area": 23659,
+            "area": 25406,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-5",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
               "x": 20,
-              "y": 1086,
-              "width": 273,
-              "height": 65
+              "y": 971,
+              "width": 335,
+              "height": 46
             },
-            "area": 17755,
+            "area": 15410,
             "isVisible": true,
             "inViewport": false
           },
@@ -139,28 +139,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 325,
-              "y": 984,
-              "width": 273,
-              "height": 65
+              "x": 0,
+              "y": 1076,
+              "width": 375,
+              "height": 68
             },
-            "area": 17755,
+            "area": 25406,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-7",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 325,
-              "y": 1065,
-              "width": 273,
-              "height": 65
+              "x": 20,
+              "y": 1076,
+              "width": 335,
+              "height": 46
             },
-            "area": 17755,
+            "area": 15410,
             "isVisible": true,
             "inViewport": false
           },
@@ -172,11 +172,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 1513,
+              "y": 1506,
               "width": 335,
-              "height": 204
+              "height": 207
             },
-            "area": 68322,
+            "area": 69502,
             "isVisible": true,
             "inViewport": false
           },
@@ -188,11 +188,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 1531,
+              "y": 1506,
               "width": 335,
               "height": 90
             },
-            "area": 30048,
+            "area": 30056,
             "isVisible": true,
             "inViewport": false
           },
@@ -204,7 +204,7 @@
             ],
             "position": {
               "x": 0,
-              "y": 2315,
+              "y": 2288,
               "width": 375,
               "height": 142
             },
@@ -220,7 +220,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 2315,
+              "y": 2288,
               "width": 335,
               "height": 46
             },
@@ -236,7 +236,7 @@
             ],
             "position": {
               "x": 0,
-              "y": 2494,
+              "y": 2467,
               "width": 375,
               "height": 68
             },
@@ -252,7 +252,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 2494,
+              "y": 2467,
               "width": 335,
               "height": 46
             },
@@ -268,11 +268,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 2599,
+              "y": 2572,
               "width": 375,
-              "height": 68
+              "height": 91
             },
-            "area": 25406,
+            "area": 34031,
             "isVisible": true,
             "inViewport": false
           },
@@ -284,11 +284,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 2599,
+              "y": 2572,
               "width": 335,
-              "height": 46
+              "height": 69
             },
-            "area": 15410,
+            "area": 23115,
             "isVisible": true,
             "inViewport": false
           },
@@ -300,11 +300,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 2761,
+              "y": 2757,
               "width": 375,
-              "height": 578
+              "height": 548
             },
-            "area": 216691,
+            "area": 205488,
             "isVisible": true,
             "inViewport": false
           },
@@ -316,11 +316,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 2761,
+              "y": 2757,
               "width": 335,
-              "height": 90
+              "height": 60
             },
-            "area": 30048,
+            "area": 20037,
             "isVisible": true,
             "inViewport": false
           },
@@ -332,11 +332,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 3376,
+              "y": 3342,
               "width": 375,
-              "height": 161
+              "height": 164
             },
-            "area": 60469,
+            "area": 61406,
             "isVisible": true,
             "inViewport": false
           },
@@ -348,7 +348,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 3394,
+              "y": 3342,
               "width": 335,
               "height": 46
             },
@@ -364,11 +364,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 3574,
+              "y": 3543,
               "width": 375,
-              "height": 68
+              "height": 87
             },
-            "area": 25406,
+            "area": 32531,
             "isVisible": true,
             "inViewport": false
           },
@@ -380,7 +380,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 3574,
+              "y": 3561,
               "width": 335,
               "height": 46
             },
@@ -396,7 +396,7 @@
             ],
             "position": {
               "x": 128,
-              "y": 3679,
+              "y": 3667,
               "width": 201,
               "height": 40
             },
@@ -412,7 +412,7 @@
             ],
             "position": {
               "x": 128,
-              "y": 3792,
+              "y": 3780,
               "width": 201,
               "height": 40
             },
@@ -428,7 +428,7 @@
             ],
             "position": {
               "x": 453,
-              "y": 3679,
+              "y": 3667,
               "width": 201,
               "height": 40
             },
@@ -444,7 +444,7 @@
             ],
             "position": {
               "x": 453,
-              "y": 3792,
+              "y": 3780,
               "width": 201,
               "height": 40
             },
@@ -460,11 +460,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 3980,
+              "y": 3968,
               "width": 335,
               "height": 207
             },
-            "area": 69494,
+            "area": 69502,
             "isVisible": true,
             "inViewport": false
           },
@@ -476,11 +476,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 3980,
+              "y": 3968,
               "width": 335,
               "height": 90
             },
-            "area": 30048,
+            "area": 30056,
             "isVisible": true,
             "inViewport": false
           },
@@ -492,11 +492,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 5912,
+              "y": 5859,
               "width": 375,
-              "height": 526
+              "height": 578
             },
-            "area": 197229,
+            "area": 216703,
             "isVisible": true,
             "inViewport": false
           },
@@ -508,11 +508,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 5912,
+              "y": 5859,
               "width": 335,
-              "height": 60
+              "height": 90
             },
-            "area": 20032,
+            "area": 30056,
             "isVisible": true,
             "inViewport": false
           },
@@ -523,12 +523,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 0,
-              "y": 6475,
-              "width": 375,
-              "height": 68
+              "x": 20,
+              "y": 6840,
+              "width": 335,
+              "height": 207
             },
-            "area": 25406,
+            "area": 69502,
             "isVisible": true,
             "inViewport": false
           },
@@ -540,11 +540,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 6475,
+              "y": 6840,
               "width": 335,
-              "height": 46
+              "height": 90
             },
-            "area": 15410,
+            "area": 30056,
             "isVisible": true,
             "inViewport": false
           },
@@ -556,11 +556,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 6946,
+              "y": 7639,
               "width": 335,
               "height": 207
             },
-            "area": 69494,
+            "area": 69502,
             "isVisible": true,
             "inViewport": false
           },
@@ -572,27 +572,27 @@
             ],
             "position": {
               "x": 20,
-              "y": 6946,
+              "y": 7639,
               "width": 335,
               "height": 90
             },
-            "area": 30048,
+            "area": 30056,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-34",
-            "tagName": "DIV",
+            "tagName": "SECTION",
             "classes": [
               "tpl-lb"
             ],
             "position": {
-              "x": 0,
-              "y": 7745,
-              "width": 375,
-              "height": 578
+              "x": 20,
+              "y": 8439,
+              "width": 335,
+              "height": 503
             },
-            "area": 216691,
+            "area": 168338,
             "isVisible": true,
             "inViewport": false
           },
@@ -604,11 +604,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 7745,
+              "y": 8763,
               "width": 335,
-              "height": 90
+              "height": 178
             },
-            "area": 30048,
+            "area": 59567,
             "isVisible": true,
             "inViewport": false
           },
@@ -619,12 +619,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 8377,
-              "width": 335,
-              "height": 207
+              "x": 0,
+              "y": 9319,
+              "width": 375,
+              "height": 578
             },
-            "area": 69494,
+            "area": 216703,
             "isVisible": true,
             "inViewport": false
           },
@@ -636,27 +636,27 @@
             ],
             "position": {
               "x": 20,
-              "y": 8377,
+              "y": 9319,
               "width": 335,
               "height": 90
             },
-            "area": 30048,
+            "area": 30056,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-38",
-            "tagName": "SECTION",
+            "tagName": "DIV",
             "classes": [
               "tpl-lb"
             ],
             "position": {
               "x": 20,
-              "y": 9484,
+              "y": 9951,
               "width": 335,
-              "height": 503
+              "height": 178
             },
-            "area": 168338,
+            "area": 59483,
             "isVisible": true,
             "inViewport": false
           },
@@ -668,11 +668,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 9809,
+              "y": 9951,
               "width": 335,
-              "height": 178
+              "height": 60
             },
-            "area": 59562,
+            "area": 20037,
             "isVisible": true,
             "inViewport": false
           },
@@ -684,27 +684,27 @@
             ],
             "position": {
               "x": 20,
-              "y": 10057,
-              "width": 335,
-              "height": 178
+              "y": 11530,
+              "width": 146,
+              "height": 198
             },
-            "area": 59478,
+            "area": 28752,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-41",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 10057,
-              "width": 335,
-              "height": 60
+              "x": 182,
+              "y": 11530,
+              "width": 146,
+              "height": 198
             },
-            "area": 20032,
+            "area": 28752,
             "isVisible": true,
             "inViewport": false
           },
@@ -715,8 +715,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 11635,
+              "x": 343,
+              "y": 11530,
               "width": 146,
               "height": 198
             },
@@ -731,8 +731,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 182,
-              "y": 11635,
+              "x": 505,
+              "y": 11530,
               "width": 146,
               "height": 198
             },
@@ -747,28 +747,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 343,
-              "y": 11635,
-              "width": 146,
-              "height": 198
+              "x": 0,
+              "y": 11827,
+              "width": 375,
+              "height": 97
             },
-            "area": 28752,
+            "area": 36428,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-45",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 505,
-              "y": 11635,
-              "width": 146,
-              "height": 198
+              "x": 20,
+              "y": 11827,
+              "width": 335,
+              "height": 75
             },
-            "area": 28752,
+            "area": 25256,
             "isVisible": true,
             "inViewport": false
           },
@@ -780,11 +780,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 11933,
+              "y": 11961,
               "width": 375,
-              "height": 97
+              "height": 399
             },
-            "area": 36434,
+            "area": 149549,
             "isVisible": true,
             "inViewport": false
           },
@@ -796,11 +796,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 11933,
+              "y": 11961,
               "width": 335,
-              "height": 75
+              "height": 48
             },
-            "area": 25261,
+            "area": 16012,
             "isVisible": true,
             "inViewport": false
           },
@@ -812,11 +812,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 12067,
+              "y": 12397,
               "width": 375,
-              "height": 399
+              "height": 97
             },
-            "area": 149552,
+            "area": 36428,
             "isVisible": true,
             "inViewport": false
           },
@@ -828,11 +828,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 12067,
+              "y": 12397,
               "width": 335,
-              "height": 48
+              "height": 75
             },
-            "area": 16015,
+            "area": 25256,
             "isVisible": true,
             "inViewport": false
           },
@@ -843,45 +843,45 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 0,
-              "y": 12503,
-              "width": 375,
-              "height": 97
+              "x": 20,
+              "y": 12531,
+              "width": 167,
+              "height": 125
             },
-            "area": 36434,
+            "area": 20831,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-51",
-            "tagName": "A",
-            "classes": [
-              "tpl-lbl"
-            ],
-            "position": {
-              "x": 20,
-              "y": 12503,
-              "width": 335,
-              "height": 75
-            },
-            "area": 25261,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-52",
             "tagName": "DIV",
             "classes": [
               "tpl-lb"
             ],
             "position": {
               "x": 20,
-              "y": 12637,
-              "width": 167,
-              "height": 125
+              "y": 12723,
+              "width": 266,
+              "height": 40
             },
-            "area": 20835,
+            "area": 10650,
             "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-52",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 20,
+              "y": 12763,
+              "width": 0,
+              "height": 0
+            },
+            "area": 0,
+            "isVisible": false,
             "inViewport": false
           },
           {
@@ -891,8 +891,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 12829,
+              "x": 327,
+              "y": 12723,
               "width": 266,
               "height": 40
             },
@@ -907,8 +907,8 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 20,
-              "y": 12869,
+              "x": 327,
+              "y": 12763,
               "width": 0,
               "height": 0
             },
@@ -923,8 +923,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 327,
-              "y": 12829,
+              "x": 635,
+              "y": 12723,
               "width": 266,
               "height": 40
             },
@@ -939,8 +939,8 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 327,
-              "y": 12869,
+              "x": 635,
+              "y": 12763,
               "width": 0,
               "height": 0
             },
@@ -955,8 +955,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 635,
-              "y": 12829,
+              "x": 942,
+              "y": 12723,
               "width": 266,
               "height": 40
             },
@@ -971,8 +971,8 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 635,
-              "y": 12869,
+              "x": 942,
+              "y": 12763,
               "width": 0,
               "height": 0
             },
@@ -987,8 +987,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 942,
-              "y": 12829,
+              "x": 1249,
+              "y": 12723,
               "width": 266,
               "height": 40
             },
@@ -1003,8 +1003,8 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 942,
-              "y": 12869,
+              "x": 1249,
+              "y": 12763,
               "width": 0,
               "height": 0
             },
@@ -1019,8 +1019,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1249,
-              "y": 12829,
+              "x": 1556,
+              "y": 12723,
               "width": 266,
               "height": 40
             },
@@ -1035,8 +1035,8 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 1249,
-              "y": 12869,
+              "x": 1556,
+              "y": 12763,
               "width": 0,
               "height": 0
             },
@@ -1051,8 +1051,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1556,
-              "y": 12829,
+              "x": 1864,
+              "y": 12723,
               "width": 266,
               "height": 40
             },
@@ -1067,8 +1067,8 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 1556,
-              "y": 12869,
+              "x": 1864,
+              "y": 12763,
               "width": 0,
               "height": 0
             },
@@ -1083,8 +1083,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1864,
-              "y": 12829,
+              "x": 2171,
+              "y": 12723,
               "width": 266,
               "height": 40
             },
@@ -1099,8 +1099,8 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 1864,
-              "y": 12869,
+              "x": 2171,
+              "y": 12763,
               "width": 0,
               "height": 0
             },
@@ -1115,45 +1115,45 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 2171,
-              "y": 12829,
-              "width": 266,
-              "height": 40
-            },
-            "area": 10650,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-68",
-            "tagName": "A",
-            "classes": [
-              "tpl-lbl"
-            ],
-            "position": {
-              "x": 2171,
-              "y": 12869,
-              "width": 0,
-              "height": 0
-            },
-            "area": 0,
-            "isVisible": false,
-            "inViewport": false
-          },
-          {
-            "id": "element-69",
-            "tagName": "DIV",
-            "classes": [
-              "tpl-lb"
-            ],
-            "position": {
               "x": 20,
-              "y": 12923,
+              "y": 12817,
               "width": 228,
               "height": 182
             },
             "area": 41442,
             "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-68",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 0,
+              "y": 13361,
+              "width": 375,
+              "height": 391
+            },
+            "area": 146625,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-69",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 20,
+              "y": 13401,
+              "width": 0,
+              "height": 0
+            },
+            "area": 0,
+            "isVisible": false,
             "inViewport": false
           },
           {
@@ -1164,11 +1164,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 13466,
+              "y": 13789,
               "width": 375,
-              "height": 391
+              "height": 40
             },
-            "area": 146625,
+            "area": 15000,
             "isVisible": true,
             "inViewport": false
           },
@@ -1180,7 +1180,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 13506,
+              "y": 13829,
               "width": 0,
               "height": 0
             },
@@ -1196,11 +1196,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 13894,
+              "y": 13952,
               "width": 375,
-              "height": 40
+              "height": 207
             },
-            "area": 15000,
+            "area": 77801,
             "isVisible": true,
             "inViewport": false
           },
@@ -1212,12 +1212,12 @@
             ],
             "position": {
               "x": 20,
-              "y": 13934,
-              "width": 0,
-              "height": 0
+              "y": 13952,
+              "width": 335,
+              "height": 90
             },
-            "area": 0,
-            "isVisible": false,
+            "area": 30056,
+            "isVisible": true,
             "inViewport": false
           },
           {
@@ -1228,11 +1228,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 14057,
+              "y": 14196,
               "width": 375,
-              "height": 178
+              "height": 164
             },
-            "area": 66580,
+            "area": 61406,
             "isVisible": true,
             "inViewport": false
           },
@@ -1244,11 +1244,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 14057,
+              "y": 14196,
               "width": 335,
-              "height": 60
+              "height": 46
             },
-            "area": 20032,
+            "area": 15410,
             "isVisible": true,
             "inViewport": false
           },
@@ -1260,7 +1260,7 @@
             ],
             "position": {
               "x": 0,
-              "y": 14272,
+              "y": 14397,
               "width": 375,
               "height": 142
             },
@@ -1276,7 +1276,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 14272,
+              "y": 14397,
               "width": 335,
               "height": 46
             },
@@ -1292,11 +1292,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 14451,
+              "y": 14576,
               "width": 375,
-              "height": 187
+              "height": 680
             },
-            "area": 70031,
+            "area": 254871,
             "isVisible": true,
             "inViewport": false
           },
@@ -1308,11 +1308,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 14451,
+              "y": 14576,
               "width": 335,
-              "height": 69
+              "height": 46
             },
-            "area": 23115,
+            "area": 15410,
             "isVisible": true,
             "inViewport": false
           },
@@ -1323,12 +1323,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 0,
-              "y": 14674,
-              "width": 375,
-              "height": 680
+              "x": 20,
+              "y": 15292,
+              "width": 335,
+              "height": 65
             },
-            "area": 254868,
+            "area": 21775,
             "isVisible": true,
             "inViewport": false
           },
@@ -1340,12 +1340,12 @@
             ],
             "position": {
               "x": 20,
-              "y": 14674,
-              "width": 335,
-              "height": 46
+              "y": 15332,
+              "width": 0,
+              "height": 0
             },
-            "area": 15410,
-            "isVisible": true,
+            "area": 0,
+            "isVisible": false,
             "inViewport": false
           },
           {
@@ -1356,7 +1356,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 15391,
+              "y": 15369,
               "width": 335,
               "height": 65
             },
@@ -1372,7 +1372,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 15431,
+              "y": 15409,
               "width": 0,
               "height": 0
             },
@@ -1388,7 +1388,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 15468,
+              "y": 15446,
               "width": 335,
               "height": 65
             },
@@ -1404,7 +1404,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 15508,
+              "y": 15486,
               "width": 0,
               "height": 0
             },
@@ -1420,7 +1420,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 15545,
+              "y": 15523,
               "width": 335,
               "height": 65
             },
@@ -1436,7 +1436,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 15585,
+              "y": 15563,
               "width": 0,
               "height": 0
             },
@@ -1452,7 +1452,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 15622,
+              "y": 15600,
               "width": 335,
               "height": 65
             },
@@ -1468,7 +1468,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 15662,
+              "y": 15640,
               "width": 0,
               "height": 0
             },
@@ -1484,11 +1484,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 15699,
+              "y": 15677,
               "width": 335,
-              "height": 65
+              "height": 40
             },
-            "area": 21775,
+            "area": 13400,
             "isVisible": true,
             "inViewport": false
           },
@@ -1500,7 +1500,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 15739,
+              "y": 15717,
               "width": 0,
               "height": 0
             },
@@ -1516,28 +1516,28 @@
             ],
             "position": {
               "x": 20,
-              "y": 15776,
-              "width": 335,
-              "height": 40
+              "y": 15800,
+              "width": 288,
+              "height": 348
             },
-            "area": 13400,
+            "area": 99936,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-93",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 15816,
-              "width": 0,
-              "height": 0
+              "x": 324,
+              "y": 15800,
+              "width": 288,
+              "height": 348
             },
-            "area": 0,
-            "isVisible": false,
+            "area": 99936,
+            "isVisible": true,
             "inViewport": false
           },
           {
@@ -1547,8 +1547,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 15899,
+              "x": 627,
+              "y": 15800,
               "width": 288,
               "height": 348
             },
@@ -1563,8 +1563,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 324,
-              "y": 15899,
+              "x": 931,
+              "y": 15800,
               "width": 288,
               "height": 348
             },
@@ -1579,8 +1579,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 627,
-              "y": 15899,
+              "x": 1234,
+              "y": 15800,
               "width": 288,
               "height": 348
             },
@@ -1595,12 +1595,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 931,
-              "y": 15899,
-              "width": 288,
-              "height": 348
+              "x": 20,
+              "y": 16966,
+              "width": 228,
+              "height": 40
             },
-            "area": 99936,
+            "area": 9133,
             "isVisible": true,
             "inViewport": false
           },
@@ -1611,12 +1611,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1234,
-              "y": 15899,
-              "width": 288,
-              "height": 348
+              "x": 20,
+              "y": 17093,
+              "width": 228,
+              "height": 40
             },
-            "area": 99936,
+            "area": 9133,
             "isVisible": true,
             "inViewport": false
           },
@@ -1628,7 +1628,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 17065,
+              "y": 17220,
               "width": 228,
               "height": 40
             },
@@ -1643,29 +1643,29 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 17192,
-              "width": 228,
-              "height": 40
+              "x": 0,
+              "y": 17397,
+              "width": 375,
+              "height": 391
             },
-            "area": 9133,
+            "area": 146625,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-101",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
               "x": 20,
-              "y": 17318,
-              "width": 228,
-              "height": 40
+              "y": 17437,
+              "width": 0,
+              "height": 0
             },
-            "area": 9133,
-            "isVisible": true,
+            "area": 0,
+            "isVisible": false,
             "inViewport": false
           },
           {
@@ -1676,11 +1676,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 17496,
+              "y": 17825,
               "width": 375,
-              "height": 391
+              "height": 40
             },
-            "area": 146625,
+            "area": 15000,
             "isVisible": true,
             "inViewport": false
           },
@@ -1692,7 +1692,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 17536,
+              "y": 17865,
               "width": 0,
               "height": 0
             },
@@ -1708,7 +1708,7 @@
             ],
             "position": {
               "x": 0,
-              "y": 17924,
+              "y": 17902,
               "width": 375,
               "height": 40
             },
@@ -1724,7 +1724,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 17964,
+              "y": 17942,
               "width": 0,
               "height": 0
             },
@@ -1739,12 +1739,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 0,
-              "y": 18001,
-              "width": 375,
-              "height": 40
+              "x": 20,
+              "y": 17979,
+              "width": 335,
+              "height": 65
             },
-            "area": 15000,
+            "area": 21775,
             "isVisible": true,
             "inViewport": false
           },
@@ -1756,7 +1756,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 18041,
+              "y": 18019,
               "width": 0,
               "height": 0
             },
@@ -1772,7 +1772,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 18078,
+              "y": 18056,
               "width": 335,
               "height": 65
             },
@@ -1788,7 +1788,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 18118,
+              "y": 18096,
               "width": 0,
               "height": 0
             },
@@ -1804,11 +1804,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 18155,
+              "y": 18133,
               "width": 335,
-              "height": 65
+              "height": 40
             },
-            "area": 21775,
+            "area": 13400,
             "isVisible": true,
             "inViewport": false
           },
@@ -1820,7 +1820,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 18195,
+              "y": 18173,
               "width": 0,
               "height": 0
             },
@@ -1836,28 +1836,28 @@
             ],
             "position": {
               "x": 20,
-              "y": 18232,
-              "width": 335,
-              "height": 40
+              "y": 18214,
+              "width": 228,
+              "height": 86
             },
-            "area": 13400,
+            "area": 19636,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-113",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
               "x": 20,
-              "y": 18272,
-              "width": 0,
-              "height": 0
+              "y": 18392,
+              "width": 228,
+              "height": 40
             },
-            "area": 0,
-            "isVisible": false,
+            "area": 9133,
+            "isVisible": true,
             "inViewport": false
           },
           {
@@ -1868,11 +1868,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 18313,
+              "y": 18518,
               "width": 228,
-              "height": 86
+              "height": 40
             },
-            "area": 19636,
+            "area": 9133,
             "isVisible": true,
             "inViewport": false
           },
@@ -1884,7 +1884,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 18490,
+              "y": 18645,
               "width": 228,
               "height": 40
             },
@@ -1900,7 +1900,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 18617,
+              "y": 18772,
               "width": 228,
               "height": 40
             },
@@ -1915,29 +1915,29 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 18744,
-              "width": 228,
-              "height": 40
+              "x": 0,
+              "y": 19257,
+              "width": 375,
+              "height": 391
             },
-            "area": 9133,
+            "area": 146625,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-118",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
               "x": 20,
-              "y": 18870,
-              "width": 228,
-              "height": 40
+              "y": 19297,
+              "width": 0,
+              "height": 0
             },
-            "area": 9133,
-            "isVisible": true,
+            "area": 0,
+            "isVisible": false,
             "inViewport": false
           },
           {
@@ -1948,11 +1948,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 19356,
+              "y": 19685,
               "width": 375,
-              "height": 391
+              "height": 40
             },
-            "area": 146625,
+            "area": 15000,
             "isVisible": true,
             "inViewport": false
           },
@@ -1964,7 +1964,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 19396,
+              "y": 19725,
               "width": 0,
               "height": 0
             },
@@ -1979,29 +1979,29 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 0,
-              "y": 19784,
-              "width": 375,
-              "height": 40
+              "x": 20,
+              "y": 19791,
+              "width": 160,
+              "height": 212
             },
-            "area": 15000,
+            "area": 33734,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-122",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 19824,
-              "width": 0,
-              "height": 0
+              "x": 196,
+              "y": 19791,
+              "width": 160,
+              "height": 212
             },
-            "area": 0,
-            "isVisible": false,
+            "area": 33734,
+            "isVisible": true,
             "inViewport": false
           },
           {
@@ -2012,7 +2012,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 19890,
+              "y": 20022,
               "width": 160,
               "height": 212
             },
@@ -2028,7 +2028,7 @@
             ],
             "position": {
               "x": 196,
-              "y": 19890,
+              "y": 20022,
               "width": 160,
               "height": 212
             },
@@ -2043,29 +2043,29 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 20,
-              "y": 20121,
-              "width": 160,
-              "height": 212
+              "x": 0,
+              "y": 20322,
+              "width": 375,
+              "height": 391
             },
-            "area": 33734,
+            "area": 146625,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-126",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 196,
-              "y": 20121,
-              "width": 160,
-              "height": 212
+              "x": 20,
+              "y": 20362,
+              "width": 0,
+              "height": 0
             },
-            "area": 33734,
-            "isVisible": true,
+            "area": 0,
+            "isVisible": false,
             "inViewport": false
           },
           {
@@ -2076,11 +2076,11 @@
             ],
             "position": {
               "x": 0,
-              "y": 20420,
+              "y": 20750,
               "width": 375,
-              "height": 391
+              "height": 40
             },
-            "area": 146625,
+            "area": 15000,
             "isVisible": true,
             "inViewport": false
           },
@@ -2092,7 +2092,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 20460,
+              "y": 20790,
               "width": 0,
               "height": 0
             },
@@ -2107,12 +2107,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 0,
-              "y": 20848,
-              "width": 375,
-              "height": 40
+              "x": 20,
+              "y": 20827,
+              "width": 335,
+              "height": 65
             },
-            "area": 15000,
+            "area": 21775,
             "isVisible": true,
             "inViewport": false
           },
@@ -2124,7 +2124,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 20888,
+              "y": 20867,
               "width": 0,
               "height": 0
             },
@@ -2140,7 +2140,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 20925,
+              "y": 20904,
               "width": 335,
               "height": 65
             },
@@ -2156,7 +2156,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 20965,
+              "y": 20944,
               "width": 0,
               "height": 0
             },
@@ -2172,7 +2172,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 21002,
+              "y": 20981,
               "width": 335,
               "height": 65
             },
@@ -2188,7 +2188,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 21042,
+              "y": 21021,
               "width": 0,
               "height": 0
             },
@@ -2204,11 +2204,11 @@
             ],
             "position": {
               "x": 20,
-              "y": 21079,
+              "y": 21058,
               "width": 335,
-              "height": 65
+              "height": 40
             },
-            "area": 21775,
+            "area": 13400,
             "isVisible": true,
             "inViewport": false
           },
@@ -2220,7 +2220,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 21119,
+              "y": 21098,
               "width": 0,
               "height": 0
             },
@@ -2236,28 +2236,28 @@
             ],
             "position": {
               "x": 20,
-              "y": 21156,
-              "width": 335,
-              "height": 40
+              "y": 21185,
+              "width": 228,
+              "height": 75
             },
-            "area": 13400,
+            "area": 17125,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-138",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
               "x": 20,
-              "y": 21196,
-              "width": 0,
-              "height": 0
+              "y": 21312,
+              "width": 228,
+              "height": 75
             },
-            "area": 0,
-            "isVisible": false,
+            "area": 17125,
+            "isVisible": true,
             "inViewport": false
           },
           {
@@ -2268,7 +2268,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 21284,
+              "y": 21439,
               "width": 228,
               "height": 75
             },
@@ -2284,7 +2284,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 21411,
+              "y": 21566,
               "width": 228,
               "height": 75
             },
@@ -2300,7 +2300,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 21538,
+              "y": 21692,
               "width": 228,
               "height": 75
             },
@@ -2316,39 +2316,7 @@
             ],
             "position": {
               "x": 20,
-              "y": 21664,
-              "width": 228,
-              "height": 75
-            },
-            "area": 17125,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-143",
-            "tagName": "DIV",
-            "classes": [
-              "tpl-lb"
-            ],
-            "position": {
-              "x": 20,
-              "y": 21791,
-              "width": 228,
-              "height": 75
-            },
-            "area": 17125,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-144",
-            "tagName": "DIV",
-            "classes": [
-              "tpl-lb"
-            ],
-            "position": {
-              "x": 20,
-              "y": 21918,
+              "y": 21819,
               "width": 228,
               "height": 75
             },
@@ -2367,9 +2335,9 @@
         "deviceType": "desktop"
       },
       "analysis": {
-        "elementCount": 133,
-        "totalCoveragePercent": 18,
-        "viewportCoveragePercent": 20,
+        "elementCount": 129,
+        "totalCoveragePercent": 17.7,
+        "viewportCoveragePercent": 24,
         "topComponents": [
           "tpl-lb",
           "tpl-lbl"
@@ -2377,17 +2345,17 @@
         "components": [
           {
             "selector": ".tpl-lb",
-            "count": 86,
-            "totalArea": 2973759,
-            "averageArea": 34579,
-            "coveragePercent": 14.44941517399011
+            "count": 83,
+            "totalArea": 2908611,
+            "averageArea": 35044,
+            "coveragePercent": 14.225429607718853
           },
           {
             "selector": ".tpl-lbl",
-            "count": 47,
-            "totalArea": 738298,
-            "averageArea": 15708,
-            "coveragePercent": 3.587370168237087
+            "count": 46,
+            "totalArea": 719679,
+            "averageArea": 15645,
+            "coveragePercent": 3.519804798459986
           }
         ],
         "elements": [
@@ -2399,11 +2367,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 516,
-              "width": 291,
-              "height": 168
+              "y": 467,
+              "width": 275,
+              "height": 193
             },
-            "area": 48956,
+            "area": 53090,
             "isVisible": true,
             "inViewport": true
           },
@@ -2415,11 +2383,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 516,
-              "width": 291,
-              "height": 51
+              "y": 484,
+              "width": 275,
+              "height": 76
             },
-            "area": 14735,
+            "area": 20888,
             "isVisible": true,
             "inViewport": true
           },
@@ -2431,11 +2399,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 700,
-              "width": 291,
-              "height": 121
+              "y": 693,
+              "width": 275,
+              "height": 55
             },
-            "area": 35154,
+            "area": 15112,
             "isVisible": true,
             "inViewport": true
           },
@@ -2447,11 +2415,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 700,
-              "width": 291,
-              "height": 43
+              "y": 693,
+              "width": 275,
+              "height": 38
             },
-            "area": 12583,
+            "area": 10571,
             "isVisible": true,
             "inViewport": true
           },
@@ -2463,29 +2431,29 @@
             ],
             "position": {
               "x": 120,
-              "y": 916,
-              "width": 398,
+              "y": 781,
+              "width": 275,
               "height": 55
             },
-            "area": 21855,
+            "area": 15112,
             "isVisible": true,
-            "inViewport": false
+            "inViewport": true
           },
           {
             "id": "element-5",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 551,
-              "y": 916,
-              "width": 369,
-              "height": 55
+              "x": 120,
+              "y": 781,
+              "width": 275,
+              "height": 38
             },
-            "area": 20263,
+            "area": 10571,
             "isVisible": true,
-            "inViewport": false
+            "inViewport": true
           },
           {
             "id": "element-6",
@@ -2494,14 +2462,14 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 982,
-              "y": 916,
-              "width": 398,
-              "height": 55
+              "x": 428,
+              "y": 838,
+              "width": 522,
+              "height": 80
             },
-            "area": 21855,
+            "area": 41798,
             "isVisible": true,
-            "inViewport": false
+            "inViewport": true
           },
           {
             "id": "element-7",
@@ -2510,120 +2478,104 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1413,
-              "y": 916,
-              "width": 398,
-              "height": 55
+              "x": 120,
+              "y": 963,
+              "width": 291,
+              "height": 178
             },
-            "area": 21855,
+            "area": 51922,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-8",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
               "x": 120,
-              "y": 1016,
+              "y": 963,
               "width": 291,
-              "height": 201
+              "height": 65
             },
-            "area": 58556,
+            "area": 18867,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-9",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
               "x": 120,
-              "y": 1034,
+              "y": 1158,
               "width": 291,
-              "height": 65
+              "height": 121
             },
-            "area": 18874,
+            "area": 35148,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-10",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
               "x": 120,
-              "y": 1233,
+              "y": 1158,
               "width": 291,
-              "height": 121
+              "height": 43
             },
-            "area": 35154,
+            "area": 12578,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-11",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
               "x": 120,
-              "y": 1233,
-              "width": 291,
-              "height": 43
+              "y": 1364,
+              "width": 399,
+              "height": 55
             },
-            "area": 12583,
+            "area": 21883,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-12",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
               "x": 120,
-              "y": 1416,
+              "y": 1364,
               "width": 399,
-              "height": 55
+              "height": 38
             },
-            "area": 21883,
+            "area": 15307,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-13",
-            "tagName": "A",
-            "classes": [
-              "tpl-lbl"
-            ],
-            "position": {
-              "x": 120,
-              "y": 1416,
-              "width": 399,
-              "height": 38
-            },
-            "area": 15307,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-14",
             "tagName": "DIV",
             "classes": [
               "tpl-lb"
             ],
             "position": {
               "x": 552,
-              "y": 1416,
+              "y": 1364,
               "width": 399,
               "height": 55
             },
@@ -2632,14 +2584,14 @@
             "inViewport": false
           },
           {
-            "id": "element-15",
+            "id": "element-14",
             "tagName": "A",
             "classes": [
               "tpl-lbl"
             ],
             "position": {
               "x": 552,
-              "y": 1416,
+              "y": 1364,
               "width": 399,
               "height": 38
             },
@@ -2648,98 +2600,114 @@
             "inViewport": false
           },
           {
-            "id": "element-16",
+            "id": "element-15",
             "tagName": "DIV",
             "classes": [
               "tpl-lb"
             ],
             "position": {
               "x": 120,
-              "y": 1547,
+              "y": 1495,
               "width": 291,
               "height": 157
             },
-            "area": 45639,
+            "area": 45633,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-16",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 1495,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-17",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
               "x": 120,
-              "y": 1547,
+              "y": 1668,
               "width": 291,
-              "height": 43
+              "height": 178
             },
-            "area": 12583,
+            "area": 51922,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-18",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
               "x": 120,
-              "y": 1720,
+              "y": 1668,
               "width": 291,
-              "height": 160
+              "height": 65
             },
-            "area": 46731,
+            "area": 18867,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-19",
-            "tagName": "A",
-            "classes": [
-              "tpl-lbl"
-            ],
-            "position": {
-              "x": 120,
-              "y": 1738,
-              "width": 291,
-              "height": 43
-            },
-            "area": 12583,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-20",
             "tagName": "DIV",
             "classes": [
               "tpl-lb"
             ],
             "position": {
               "x": 120,
-              "y": 1897,
+              "y": 1862,
               "width": 291,
-              "height": 55
+              "height": 77
             },
-            "area": 15991,
+            "area": 22471,
             "isVisible": true,
             "inViewport": false
           },
           {
-            "id": "element-21",
+            "id": "element-20",
             "tagName": "A",
             "classes": [
               "tpl-lbl"
             ],
             "position": {
               "x": 120,
-              "y": 1897,
+              "y": 1880,
               "width": 291,
               "height": 38
             },
-            "area": 11186,
+            "area": 11185,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-21",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 238,
+              "y": 1972,
+              "width": 280,
+              "height": 55
+            },
+            "area": 15376,
             "isVisible": true,
             "inViewport": false
           },
@@ -2750,12 +2718,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 238,
-              "y": 1984,
-              "width": 280,
-              "height": 74
+              "x": 669,
+              "y": 1972,
+              "width": 251,
+              "height": 55
             },
-            "area": 20754,
+            "area": 13784,
             "isVisible": true,
             "inViewport": false
           },
@@ -2766,12 +2734,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 669,
-              "y": 1984,
-              "width": 251,
+              "x": 1100,
+              "y": 1972,
+              "width": 280,
               "height": 55
             },
-            "area": 13784,
+            "area": 15376,
             "isVisible": true,
             "inViewport": false
           },
@@ -2782,8 +2750,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1100,
-              "y": 1984,
+              "x": 1531,
+              "y": 1972,
               "width": 280,
               "height": 55
             },
@@ -2798,44 +2766,44 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1531,
-              "y": 1984,
-              "width": 280,
-              "height": 55
+              "x": 120,
+              "y": 2151,
+              "width": 275,
+              "height": 140
             },
-            "area": 15376,
+            "area": 38447,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-26",
-            "tagName": "DIV",
-            "classes": [
-              "tpl-lb"
-            ],
-            "position": {
-              "x": 120,
-              "y": 2164,
-              "width": 275,
-              "height": 140
-            },
-            "area": 38452,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-27",
             "tagName": "A",
             "classes": [
               "tpl-lbl"
             ],
             "position": {
               "x": 120,
-              "y": 2164,
+              "y": 2151,
               "width": 275,
               "height": 43
             },
-            "area": 11891,
+            "area": 11887,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-27",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 3045,
+              "width": 275,
+              "height": 140
+            },
+            "area": 38447,
             "isVisible": true,
             "inViewport": false
           },
@@ -2847,11 +2815,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 3087,
-              "width": 291,
-              "height": 157
+              "y": 3488,
+              "width": 275,
+              "height": 161
             },
-            "area": 45639,
+            "area": 44390,
             "isVisible": true,
             "inViewport": false
           },
@@ -2863,11 +2831,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 3087,
-              "width": 291,
-              "height": 43
+              "y": 3488,
+              "width": 275,
+              "height": 65
             },
-            "area": 12583,
+            "area": 17830,
             "isVisible": true,
             "inViewport": false
           },
@@ -2879,11 +2847,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 3260,
-              "width": 291,
-              "height": 55
+              "y": 3901,
+              "width": 275,
+              "height": 161
             },
-            "area": 15991,
+            "area": 44390,
             "isVisible": true,
             "inViewport": false
           },
@@ -2895,27 +2863,27 @@
             ],
             "position": {
               "x": 120,
-              "y": 3260,
-              "width": 291,
-              "height": 38
+              "y": 3901,
+              "width": 275,
+              "height": 65
             },
-            "area": 11186,
+            "area": 17830,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-32",
-            "tagName": "DIV",
+            "tagName": "SECTION",
             "classes": [
               "tpl-lb"
             ],
             "position": {
               "x": 120,
-              "y": 3531,
-              "width": 275,
-              "height": 161
+              "y": 4313,
+              "width": 830,
+              "height": 467
             },
-            "area": 44398,
+            "area": 387589,
             "isVisible": true,
             "inViewport": false
           },
@@ -2927,11 +2895,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 3531,
-              "width": 275,
-              "height": 65
+              "y": 4646,
+              "width": 830,
+              "height": 134
             },
-            "area": 17837,
+            "area": 111401,
             "isVisible": true,
             "inViewport": false
           },
@@ -2943,11 +2911,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 3943,
+              "y": 4840,
               "width": 275,
-              "height": 140
+              "height": 161
             },
-            "area": 38452,
+            "area": 44390,
             "isVisible": true,
             "inViewport": false
           },
@@ -2959,11 +2927,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 4356,
-              "width": 275,
-              "height": 161
+              "y": 5252,
+              "width": 522,
+              "height": 99
             },
-            "area": 44398,
+            "area": 51711,
             "isVisible": true,
             "inViewport": false
           },
@@ -2975,29 +2943,29 @@
             ],
             "position": {
               "x": 120,
-              "y": 4356,
-              "width": 275,
-              "height": 65
+              "y": 5252,
+              "width": 522,
+              "height": 22
             },
-            "area": 17837,
+            "area": 11269,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-37",
-            "tagName": "SECTION",
+            "tagName": "DIV",
             "classes": [
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 4768,
-              "width": 830,
-              "height": 467
+              "x": 983,
+              "y": 467,
+              "width": 337,
+              "height": 389
             },
-            "area": 387589,
+            "area": 130951,
             "isVisible": true,
-            "inViewport": false
+            "inViewport": true
           },
           {
             "id": "element-38",
@@ -3006,14 +2974,14 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 120,
-              "y": 5101,
-              "width": 830,
-              "height": 134
+              "x": 983,
+              "y": 719,
+              "width": 337,
+              "height": 55
             },
-            "area": 111401,
+            "area": 18593,
             "isVisible": true,
-            "inViewport": false
+            "inViewport": true
           },
           {
             "id": "element-39",
@@ -3022,30 +2990,30 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 5295,
-              "width": 522,
-              "height": 99
+              "x": 983,
+              "y": 889,
+              "width": 151,
+              "height": 217
             },
-            "area": 51716,
+            "area": 32875,
             "isVisible": true,
-            "inViewport": false
+            "inViewport": true
           },
           {
             "id": "element-40",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 5295,
-              "width": 522,
-              "height": 22
+              "x": 1168,
+              "y": 889,
+              "width": 151,
+              "height": 234
             },
-            "area": 11273,
+            "area": 35374,
             "isVisible": true,
-            "inViewport": false
+            "inViewport": true
           },
           {
             "id": "element-41",
@@ -3054,30 +3022,30 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 516,
-              "width": 337,
-              "height": 389
+              "x": 1352,
+              "y": 889,
+              "width": 151,
+              "height": 253
             },
-            "area": 130957,
+            "area": 38282,
             "isVisible": true,
             "inViewport": true
           },
           {
             "id": "element-42",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 768,
-              "width": 337,
-              "height": 55
+              "x": 1536,
+              "y": 889,
+              "width": 151,
+              "height": 214
             },
-            "area": 18598,
+            "area": 32465,
             "isVisible": true,
-            "inViewport": true
+            "inViewport": false
           },
           {
             "id": "element-43",
@@ -3087,27 +3055,27 @@
             ],
             "position": {
               "x": 983,
-              "y": 938,
-              "width": 151,
-              "height": 217
+              "y": 1241,
+              "width": 337,
+              "height": 58
             },
-            "area": 32875,
+            "area": 19656,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-44",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 1168,
-              "y": 938,
-              "width": 151,
-              "height": 234
+              "x": 983,
+              "y": 1241,
+              "width": 337,
+              "height": 42
             },
-            "area": 35374,
+            "area": 14097,
             "isVisible": true,
             "inViewport": false
           },
@@ -3118,28 +3086,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1352,
-              "y": 938,
-              "width": 151,
-              "height": 253
+              "x": 983,
+              "y": 1333,
+              "width": 337,
+              "height": 274
             },
-            "area": 38282,
+            "area": 92460,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-46",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 1536,
-              "y": 938,
-              "width": 151,
-              "height": 214
+              "x": 983,
+              "y": 1333,
+              "width": 337,
+              "height": 42
             },
-            "area": 32465,
+            "area": 14097,
             "isVisible": true,
             "inViewport": false
           },
@@ -3151,11 +3119,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 1290,
+              "y": 1640,
               "width": 337,
-              "height": 58
+              "height": 81
             },
-            "area": 19659,
+            "area": 27405,
             "isVisible": true,
             "inViewport": false
           },
@@ -3167,11 +3135,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 1290,
+              "y": 1640,
               "width": 337,
-              "height": 42
+              "height": 65
             },
-            "area": 14100,
+            "area": 21846,
             "isVisible": true,
             "inViewport": false
           },
@@ -3183,11 +3151,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 1382,
-              "width": 337,
-              "height": 274
+              "y": 1940,
+              "width": 152,
+              "height": 98
             },
-            "area": 92465,
+            "area": 14944,
             "isVisible": true,
             "inViewport": false
           },
@@ -3199,11 +3167,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 1382,
-              "width": 337,
-              "height": 42
+              "y": 1940,
+              "width": 152,
+              "height": 65
             },
-            "area": 14100,
+            "area": 9853,
             "isVisible": true,
             "inViewport": false
           },
@@ -3215,11 +3183,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 1689,
-              "width": 337,
+              "y": 2054,
+              "width": 152,
               "height": 81
             },
-            "area": 27408,
+            "area": 12360,
             "isVisible": true,
             "inViewport": false
           },
@@ -3231,11 +3199,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 1689,
-              "width": 337,
+              "y": 2054,
+              "width": 152,
               "height": 65
             },
-            "area": 21849,
+            "area": 9853,
             "isVisible": true,
             "inViewport": false
           },
@@ -3246,12 +3214,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 1989,
+              "x": 1168,
+              "y": 1940,
               "width": 152,
-              "height": 98
+              "height": 144
             },
-            "area": 14945,
+            "area": 21933,
             "isVisible": true,
             "inViewport": false
           },
@@ -3262,12 +3230,12 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 983,
-              "y": 1989,
+              "x": 1168,
+              "y": 1940,
               "width": 152,
-              "height": 65
+              "height": 111
             },
-            "area": 9854,
+            "area": 16843,
             "isVisible": true,
             "inViewport": false
           },
@@ -3278,12 +3246,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 2103,
+              "x": 1168,
+              "y": 2100,
               "width": 152,
               "height": 104
             },
-            "area": 15857,
+            "area": 15855,
             "isVisible": true,
             "inViewport": false
           },
@@ -3294,12 +3262,12 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 983,
-              "y": 2103,
+              "x": 1168,
+              "y": 2100,
               "width": 152,
               "height": 88
             },
-            "area": 13349,
+            "area": 13348,
             "isVisible": true,
             "inViewport": false
           },
@@ -3310,28 +3278,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1168,
-              "y": 1989,
-              "width": 152,
-              "height": 98
+              "x": 983,
+              "y": 2250,
+              "width": 230,
+              "height": 132
             },
-            "area": 14945,
+            "area": 30400,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-58",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 1168,
-              "y": 1989,
-              "width": 152,
-              "height": 65
+              "x": 983,
+              "y": 2446,
+              "width": 230,
+              "height": 74
             },
-            "area": 9854,
+            "area": 17015,
             "isVisible": true,
             "inViewport": false
           },
@@ -3342,28 +3310,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1168,
-              "y": 2103,
-              "width": 152,
-              "height": 104
+              "x": 983,
+              "y": 2570,
+              "width": 230,
+              "height": 74
             },
-            "area": 15857,
+            "area": 17015,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-60",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 1168,
-              "y": 2103,
-              "width": 152,
-              "height": 88
+              "x": 983,
+              "y": 2693,
+              "width": 230,
+              "height": 74
             },
-            "area": 13349,
+            "area": 17015,
             "isVisible": true,
             "inViewport": false
           },
@@ -3375,11 +3343,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 2253,
+              "y": 2816,
               "width": 230,
-              "height": 132
+              "height": 71
             },
-            "area": 30401,
+            "area": 16394,
             "isVisible": true,
             "inViewport": false
           },
@@ -3391,11 +3359,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 2449,
+              "y": 2940,
               "width": 230,
-              "height": 55
+              "height": 74
             },
-            "area": 12607,
+            "area": 17015,
             "isVisible": true,
             "inViewport": false
           },
@@ -3406,28 +3374,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 2572,
-              "width": 230,
-              "height": 74
+              "x": 120,
+              "y": 6098,
+              "width": 275,
+              "height": 161
             },
-            "area": 17016,
+            "area": 44390,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-64",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 983,
-              "y": 2696,
-              "width": 230,
-              "height": 74
+              "x": 120,
+              "y": 6098,
+              "width": 275,
+              "height": 65
             },
-            "area": 17016,
+            "area": 17830,
             "isVisible": true,
             "inViewport": false
           },
@@ -3438,28 +3406,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 2819,
-              "width": 230,
-              "height": 74
+              "x": 120,
+              "y": 6292,
+              "width": 275,
+              "height": 140
             },
-            "area": 17016,
+            "area": 38447,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-66",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 983,
-              "y": 2942,
-              "width": 230,
-              "height": 74
+              "x": 120,
+              "y": 6292,
+              "width": 275,
+              "height": 43
             },
-            "area": 17016,
+            "area": 11887,
             "isVisible": true,
             "inViewport": false
           },
@@ -3471,11 +3439,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 6141,
+              "y": 6465,
               "width": 275,
-              "height": 140
+              "height": 161
             },
-            "area": 38452,
+            "area": 44390,
             "isVisible": true,
             "inViewport": false
           },
@@ -3487,11 +3455,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 6141,
+              "y": 6465,
               "width": 275,
-              "height": 43
+              "height": 65
             },
-            "area": 11891,
+            "area": 17830,
             "isVisible": true,
             "inViewport": false
           },
@@ -3502,76 +3470,76 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 6313,
-              "width": 275,
-              "height": 161
+              "x": 428,
+              "y": 6469,
+              "width": 522,
+              "height": 80
             },
-            "area": 44398,
+            "area": 41798,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-70",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 6313,
-              "width": 275,
-              "height": 65
+              "x": 983,
+              "y": 6098,
+              "width": 337,
+              "height": 72
             },
-            "area": 17837,
+            "area": 24226,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-71",
-            "tagName": "DIV",
-            "classes": [
-              "tpl-lb"
-            ],
-            "position": {
-              "x": 120,
-              "y": 6508,
-              "width": 275,
-              "height": 161
-            },
-            "area": 44398,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-72",
             "tagName": "A",
             "classes": [
               "tpl-lbl"
             ],
             "position": {
-              "x": 120,
-              "y": 6508,
-              "width": 275,
-              "height": 65
+              "x": 983,
+              "y": 6098,
+              "width": 337,
+              "height": 38
             },
-            "area": 17837,
+            "area": 12939,
             "isVisible": true,
             "inViewport": false
           },
           {
-            "id": "element-73",
+            "id": "element-72",
             "tagName": "DIV",
             "classes": [
               "tpl-lb"
             ],
             "position": {
-              "x": 428,
-              "y": 6512,
-              "width": 522,
-              "height": 80
+              "x": 983,
+              "y": 6186,
+              "width": 337,
+              "height": 53
             },
-            "area": 41801,
+            "area": 17756,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-73",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 6186,
+              "width": 337,
+              "height": 19
+            },
+            "area": 6470,
             "isVisible": true,
             "inViewport": false
           },
@@ -3583,7 +3551,7 @@
             ],
             "position": {
               "x": 983,
-              "y": 6141,
+              "y": 6255,
               "width": 337,
               "height": 72
             },
@@ -3599,7 +3567,7 @@
             ],
             "position": {
               "x": 983,
-              "y": 6141,
+              "y": 6255,
               "width": 337,
               "height": 38
             },
@@ -3615,7 +3583,7 @@
             ],
             "position": {
               "x": 983,
-              "y": 6229,
+              "y": 6343,
               "width": 337,
               "height": 72
             },
@@ -3631,7 +3599,7 @@
             ],
             "position": {
               "x": 983,
-              "y": 6229,
+              "y": 6343,
               "width": 337,
               "height": 38
             },
@@ -3647,7 +3615,7 @@
             ],
             "position": {
               "x": 983,
-              "y": 6316,
+              "y": 6430,
               "width": 337,
               "height": 72
             },
@@ -3663,7 +3631,7 @@
             ],
             "position": {
               "x": 983,
-              "y": 6316,
+              "y": 6430,
               "width": 337,
               "height": 38
             },
@@ -3679,11 +3647,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 6404,
+              "y": 6518,
               "width": 337,
-              "height": 72
+              "height": 55
             },
-            "area": 24226,
+            "area": 18498,
             "isVisible": true,
             "inViewport": false
           },
@@ -3695,7 +3663,7 @@
             ],
             "position": {
               "x": 983,
-              "y": 6404,
+              "y": 6518,
               "width": 337,
               "height": 38
             },
@@ -3710,28 +3678,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 6492,
-              "width": 337,
-              "height": 72
+              "x": 120,
+              "y": 6690,
+              "width": 213,
+              "height": 296
             },
-            "area": 24226,
+            "area": 63100,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-83",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 6492,
-              "width": 337,
-              "height": 38
+              "x": 366,
+              "y": 6690,
+              "width": 213,
+              "height": 279
             },
-            "area": 12939,
+            "area": 59579,
             "isVisible": true,
             "inViewport": false
           },
@@ -3742,28 +3710,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 6580,
-              "width": 337,
-              "height": 55
+              "x": 613,
+              "y": 6690,
+              "width": 213,
+              "height": 315
             },
-            "area": 18498,
+            "area": 67198,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-85",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 6580,
-              "width": 337,
-              "height": 38
+              "x": 859,
+              "y": 6690,
+              "width": 213,
+              "height": 277
             },
-            "area": 12939,
+            "area": 59003,
             "isVisible": true,
             "inViewport": false
           },
@@ -3774,12 +3742,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 6733,
+              "x": 1106,
+              "y": 6690,
               "width": 213,
-              "height": 260
+              "height": 296
             },
-            "area": 55484,
+            "area": 63100,
             "isVisible": true,
             "inViewport": false
           },
@@ -3790,12 +3758,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 366,
-              "y": 6733,
-              "width": 213,
-              "height": 296
+              "x": 983,
+              "y": 7394,
+              "width": 230,
+              "height": 97
             },
-            "area": 63103,
+            "area": 22249,
             "isVisible": true,
             "inViewport": false
           },
@@ -3806,12 +3774,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 613,
-              "y": 6733,
-              "width": 213,
-              "height": 279
+              "x": 983,
+              "y": 7523,
+              "width": 230,
+              "height": 116
             },
-            "area": 59582,
+            "area": 26611,
             "isVisible": true,
             "inViewport": false
           },
@@ -3822,12 +3790,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 859,
-              "y": 6733,
-              "width": 213,
-              "height": 315
+              "x": 983,
+              "y": 7672,
+              "width": 230,
+              "height": 116
             },
-            "area": 67201,
+            "area": 26611,
             "isVisible": true,
             "inViewport": false
           },
@@ -3838,28 +3806,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 1106,
-              "y": 6733,
-              "width": 213,
-              "height": 277
+              "x": 120,
+              "y": 7857,
+              "width": 291,
+              "height": 121
             },
-            "area": 59005,
+            "area": 35294,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-91",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 983,
-              "y": 7436,
-              "width": 230,
-              "height": 132
+              "x": 120,
+              "y": 7857,
+              "width": 291,
+              "height": 43
             },
-            "area": 30401,
+            "area": 12578,
             "isVisible": true,
             "inViewport": false
           },
@@ -3870,28 +3838,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 7602,
-              "width": 230,
-              "height": 132
+              "x": 120,
+              "y": 7995,
+              "width": 291,
+              "height": 143
             },
-            "area": 30401,
+            "area": 41583,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-93",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 983,
-              "y": 7767,
-              "width": 230,
-              "height": 116
+              "x": 120,
+              "y": 7995,
+              "width": 291,
+              "height": 65
             },
-            "area": 26612,
+            "area": 18867,
             "isVisible": true,
             "inViewport": false
           },
@@ -3903,11 +3871,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 7952,
+              "y": 8153,
               "width": 291,
-              "height": 121
+              "height": 104
             },
-            "area": 35299,
+            "area": 30343,
             "isVisible": true,
             "inViewport": false
           },
@@ -3919,11 +3887,11 @@
             ],
             "position": {
               "x": 120,
-              "y": 7952,
+              "y": 8153,
               "width": 291,
               "height": 43
             },
-            "area": 12583,
+            "area": 12578,
             "isVisible": true,
             "inViewport": false
           },
@@ -3934,12 +3902,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 8089,
-              "width": 291,
-              "height": 143
+              "x": 983,
+              "y": 7857,
+              "width": 337,
+              "height": 55
             },
-            "area": 41591,
+            "area": 18667,
             "isVisible": true,
             "inViewport": false
           },
@@ -3950,12 +3918,12 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 120,
-              "y": 8089,
-              "width": 291,
-              "height": 65
+              "x": 983,
+              "y": 7857,
+              "width": 337,
+              "height": 38
             },
-            "area": 18874,
+            "area": 12939,
             "isVisible": true,
             "inViewport": false
           },
@@ -3966,12 +3934,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 8248,
-              "width": 291,
-              "height": 107
+              "x": 983,
+              "y": 7929,
+              "width": 337,
+              "height": 55
             },
-            "area": 31106,
+            "area": 18667,
             "isVisible": true,
             "inViewport": false
           },
@@ -3982,12 +3950,12 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 120,
-              "y": 8248,
-              "width": 291,
-              "height": 65
+              "x": 983,
+              "y": 7929,
+              "width": 337,
+              "height": 38
             },
-            "area": 18874,
+            "area": 12939,
             "isVisible": true,
             "inViewport": false
           },
@@ -3999,11 +3967,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 7952,
+              "y": 8000,
               "width": 337,
-              "height": 55
+              "height": 19
             },
-            "area": 18667,
+            "area": 6470,
             "isVisible": true,
             "inViewport": false
           },
@@ -4015,11 +3983,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 7952,
+              "y": 8000,
               "width": 337,
-              "height": 38
+              "height": 19
             },
-            "area": 12939,
+            "area": 6470,
             "isVisible": true,
             "inViewport": false
           },
@@ -4031,75 +3999,75 @@
             ],
             "position": {
               "x": 983,
-              "y": 8023,
-              "width": 337,
-              "height": 55
+              "y": 8052,
+              "width": 230,
+              "height": 19
             },
-            "area": 18667,
+            "area": 4409,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-103",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 8023,
-              "width": 337,
-              "height": 38
+              "x": 120,
+              "y": 8829,
+              "width": 291,
+              "height": 157
             },
-            "area": 12939,
+            "area": 45633,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-104",
-            "tagName": "DIV",
-            "classes": [
-              "tpl-lb"
-            ],
-            "position": {
-              "x": 983,
-              "y": 8094,
-              "width": 337,
-              "height": 38
-            },
-            "area": 12939,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-105",
             "tagName": "A",
             "classes": [
               "tpl-lbl"
             ],
             "position": {
-              "x": 983,
-              "y": 8094,
-              "width": 337,
-              "height": 38
+              "x": 120,
+              "y": 8846,
+              "width": 291,
+              "height": 43
             },
-            "area": 12939,
+            "area": 12578,
             "isVisible": true,
             "inViewport": false
           },
           {
-            "id": "element-106",
+            "id": "element-105",
             "tagName": "DIV",
             "classes": [
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 8166,
-              "width": 230,
-              "height": 19
+              "x": 120,
+              "y": 9002,
+              "width": 291,
+              "height": 102
             },
-            "area": 4409,
+            "area": 29615,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-106",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9018,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
             "isVisible": true,
             "inViewport": false
           },
@@ -4110,28 +4078,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 8925,
-              "width": 291,
-              "height": 157
+              "x": 983,
+              "y": 8859,
+              "width": 152,
+              "height": 179
             },
-            "area": 45639,
+            "area": 27223,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-108",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 8941,
-              "width": 291,
-              "height": 43
+              "x": 1168,
+              "y": 8859,
+              "width": 152,
+              "height": 198
             },
-            "area": 12583,
+            "area": 30141,
             "isVisible": true,
             "inViewport": false
           },
@@ -4142,28 +4110,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 9098,
-              "width": 291,
-              "height": 123
+              "x": 983,
+              "y": 9091,
+              "width": 152,
+              "height": 198
             },
-            "area": 35912,
+            "area": 30141,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-110",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 9114,
-              "width": 291,
-              "height": 65
+              "x": 1168,
+              "y": 9091,
+              "width": 152,
+              "height": 179
             },
-            "area": 18874,
+            "area": 27223,
             "isVisible": true,
             "inViewport": false
           },
@@ -4174,28 +4142,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 8955,
-              "width": 152,
-              "height": 179
+              "x": 120,
+              "y": 9358,
+              "width": 291,
+              "height": 83
             },
-            "area": 27223,
+            "area": 24227,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-112",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 1168,
-              "y": 8955,
-              "width": 152,
-              "height": 198
+              "x": 120,
+              "y": 9358,
+              "width": 291,
+              "height": 43
             },
-            "area": 30141,
+            "area": 12578,
             "isVisible": true,
             "inViewport": false
           },
@@ -4206,28 +4174,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 9187,
-              "width": 152,
-              "height": 198
+              "x": 120,
+              "y": 9457,
+              "width": 291,
+              "height": 123
             },
-            "area": 30141,
+            "area": 35876,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-114",
-            "tagName": "DIV",
+            "tagName": "A",
             "classes": [
-              "tpl-lb"
+              "tpl-lbl"
             ],
             "position": {
-              "x": 1168,
-              "y": 9187,
-              "width": 152,
-              "height": 198
+              "x": 120,
+              "y": 9457,
+              "width": 291,
+              "height": 43
             },
-            "area": 30141,
+            "area": 12578,
             "isVisible": true,
             "inViewport": false
           },
@@ -4238,12 +4206,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 9454,
-              "width": 291,
-              "height": 83
+              "x": 983,
+              "y": 9358,
+              "width": 337,
+              "height": 36
             },
-            "area": 24232,
+            "area": 12197,
             "isVisible": true,
             "inViewport": false
           },
@@ -4254,12 +4222,12 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 120,
-              "y": 9454,
-              "width": 291,
-              "height": 43
+              "x": 983,
+              "y": 9358,
+              "width": 337,
+              "height": 19
             },
-            "area": 12583,
+            "area": 6470,
             "isVisible": true,
             "inViewport": false
           },
@@ -4270,12 +4238,12 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 9553,
-              "width": 291,
-              "height": 64
+              "x": 983,
+              "y": 9410,
+              "width": 337,
+              "height": 55
             },
-            "area": 18523,
+            "area": 18667,
             "isVisible": true,
             "inViewport": false
           },
@@ -4286,12 +4254,12 @@
               "tpl-lbl"
             ],
             "position": {
-              "x": 120,
-              "y": 9553,
-              "width": 291,
-              "height": 22
+              "x": 983,
+              "y": 9410,
+              "width": 337,
+              "height": 38
             },
-            "area": 6291,
+            "area": 12939,
             "isVisible": true,
             "inViewport": false
           },
@@ -4303,7 +4271,7 @@
             ],
             "position": {
               "x": 983,
-              "y": 9454,
+              "y": 9482,
               "width": 337,
               "height": 36
             },
@@ -4319,7 +4287,7 @@
             ],
             "position": {
               "x": 983,
-              "y": 9454,
+              "y": 9482,
               "width": 337,
               "height": 19
             },
@@ -4335,11 +4303,11 @@
             ],
             "position": {
               "x": 983,
-              "y": 9506,
+              "y": 9534,
               "width": 337,
-              "height": 55
+              "height": 38
             },
-            "area": 18667,
+            "area": 12939,
             "isVisible": true,
             "inViewport": false
           },
@@ -4351,7 +4319,7 @@
             ],
             "position": {
               "x": 983,
-              "y": 9506,
+              "y": 9534,
               "width": 337,
               "height": 38
             },
@@ -4366,28 +4334,28 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 9577,
-              "width": 337,
-              "height": 36
+              "x": 120,
+              "y": 9795,
+              "width": 291,
+              "height": 42
             },
-            "area": 12197,
+            "area": 12291,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-124",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 9577,
-              "width": 337,
-              "height": 19
+              "x": 552,
+              "y": 9795,
+              "width": 291,
+              "height": 42
             },
-            "area": 6470,
+            "area": 12291,
             "isVisible": true,
             "inViewport": false
           },
@@ -4399,27 +4367,27 @@
             ],
             "position": {
               "x": 983,
-              "y": 9629,
-              "width": 337,
-              "height": 38
+              "y": 9795,
+              "width": 230,
+              "height": 61
             },
-            "area": 12939,
+            "area": 14052,
             "isVisible": true,
             "inViewport": false
           },
           {
             "id": "element-126",
-            "tagName": "A",
+            "tagName": "DIV",
             "classes": [
-              "tpl-lbl"
+              "tpl-lb"
             ],
             "position": {
-              "x": 983,
-              "y": 9629,
-              "width": 337,
-              "height": 38
+              "x": 120,
+              "y": 9918,
+              "width": 291,
+              "height": 61
             },
-            "area": 12939,
+            "area": 17824,
             "isVisible": true,
             "inViewport": false
           },
@@ -4430,8 +4398,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 120,
-              "y": 9890,
+              "x": 552,
+              "y": 9918,
               "width": 291,
               "height": 42
             },
@@ -4446,72 +4414,8 @@
               "tpl-lb"
             ],
             "position": {
-              "x": 552,
-              "y": 9890,
-              "width": 291,
-              "height": 42
-            },
-            "area": 12291,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-129",
-            "tagName": "DIV",
-            "classes": [
-              "tpl-lb"
-            ],
-            "position": {
               "x": 983,
-              "y": 9890,
-              "width": 230,
-              "height": 61
-            },
-            "area": 14052,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-130",
-            "tagName": "DIV",
-            "classes": [
-              "tpl-lb"
-            ],
-            "position": {
-              "x": 120,
-              "y": 10013,
-              "width": 291,
-              "height": 61
-            },
-            "area": 17825,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-131",
-            "tagName": "DIV",
-            "classes": [
-              "tpl-lb"
-            ],
-            "position": {
-              "x": 552,
-              "y": 10013,
-              "width": 291,
-              "height": 42
-            },
-            "area": 12291,
-            "isVisible": true,
-            "inViewport": false
-          },
-          {
-            "id": "element-132",
-            "tagName": "DIV",
-            "classes": [
-              "tpl-lb"
-            ],
-            "position": {
-              "x": 983,
-              "y": 10013,
+              "y": 9918,
               "width": 230,
               "height": 61
             },
@@ -4525,16 +4429,16 @@
   },
   "crossViewportAnalysis": {
     "coverageVariance": {
-      "min": 18,
-      "max": 58.8,
-      "average": 38.4,
-      "range": 40.8
+      "min": 17.7,
+      "max": 59.2,
+      "average": 38.45,
+      "range": 41.5
     },
     "elementCountVariance": {
-      "min": 133,
-      "max": 145,
-      "average": 139,
-      "range": 12
+      "min": 129,
+      "max": 143,
+      "average": 136,
+      "range": 14
     },
     "componentConsistency": {
       "tpl-lb": 1,
