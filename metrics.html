@@ -49,27 +49,6 @@
             background: #f8f8f8;
         }
 
-        .loading {
-            font-style: italic;
-            color: #666;
-        }
-
-        .loading-dots::after {
-            content: '';
-            animation: loading-dots 1.5s infinite;
-        }
-
-        @keyframes loading-dots {
-            0% { content: '.'; }
-            33% { content: '..'; }
-            66% { content: '...'; }
-            100% { content: '.'; }
-        }
-
-        .error {
-            color: #d00;
-        }
-
         .number {
             text-align: center;
         }
@@ -85,174 +64,401 @@
             border-radius: 2px;
             margin-left: 4px;
         }
+
+        th small {
+            font-weight: 400;
+            font-size: 9px;
+            color: #666;
+            display: block;
+            margin-top: 2px;
+            line-height: 1.2;
+        }
+
+        th {
+            cursor: pointer;
+            position: relative;
+            user-select: none;
+        }
+
+        th:hover {
+            background: #f0f0f0;
+        }
+
+        th.sortable::after {
+            content: '↕';
+            font-size: 10px;
+            color: #999;
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        th.sortable:hover::after {
+            opacity: 1;
+        }
+
+        th.sort-asc::after {
+            content: '↑';
+            color: #333;
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        th.sort-desc::after {
+            content: '↓';
+            color: #333;
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        th.sort-asc,
+        th.sort-desc {
+            background: #f5f5f5;
+        }
+
+        th.sort-asc:hover,
+        th.sort-desc:hover {
+            background: #eeeeee;
+        }
+
+        .sorted-column {
+            background: #fafafa;
+        }
+
+        tbody tr:hover .sorted-column {
+            background: #f5f5f5;
+        }
+
+        .tpl-breakdown {
+            font-size: 10px;
+            color: #666;
+            margin-left: 4px;
+        }
     </style>
 </head>
 <body>
     <h1>TPL Adoption Metrics</h1>
     
-    <div id="loading" class="loading">Loading data<span class="loading-dots"></span></div>
-    <div id="error" class="error" style="display: none;"></div>
-    
-    <table id="metricsTable" style="display: none;">
+    <table id="metricsTable">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Surface</th>
-                <th class="number">Avg TPL Coverage</th>
-                <th class="number">Mobile TPL Cov</th>
-                <th class="number">Desktop TPL Cov</th>
-                <th class="number">Components</th>
-                <th class="number">TPL Tokenization %</th>
+                <th>As of...<br><small>Date of measurement</small></th>
+                <th>Surface<br><small>Product area or feature</small></th>
+                <th>Platform<br><small>Web, iOS, or Android</small></th>
+                <th class="number">TPL Usage<br><small>Percentage of components with TPL</small></th>
+                <th class="number"># of UI Components<br><small>Total components analyzed</small></th>
+                <th class="number">TPL Usage (Tokens)<br><small>Token-specific adoption breakdown</small></th>
             </tr>
         </thead>
         <tbody id="metricsBody">
+            <tr>
+                <td>2025-09-26</td>
+                <td>News - <em>Home</em></td>
+                <td>Web</td>
+                <td class="number">60.5%<span class="tpl-breakdown">(89/58)</span></td>
+                <td class="number">147</td>
+                <td class="number">89.2%<span class="tpl-breakdown">(79/89)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>News - <em>Home</em></td>
+                <td>iOS</td>
+                <td class="number">77.2%<span class="tpl-breakdown">(71/21)</span></td>
+                <td class="number">92</td>
+                <td class="number">91.5%<span class="tpl-breakdown">(65/71)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>News - <em>Home</em></td>
+                <td>Android</td>
+                <td class="number">72.3%<span class="tpl-breakdown">(68/26)</span></td>
+                <td class="number">94</td>
+                <td class="number">88.2%<span class="tpl-breakdown">(60/68)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>News - <em>Article</em></td>
+                <td>Web</td>
+                <td class="number">61.1%<span class="tpl-breakdown">(124/79)</span></td>
+                <td class="number">203</td>
+                <td class="number">85.5%<span class="tpl-breakdown">(106/124)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>News - <em>Article</em></td>
+                <td>iOS</td>
+                <td class="number">75.6%<span class="tpl-breakdown">(118/38)</span></td>
+                <td class="number">156</td>
+                <td class="number">92.4%<span class="tpl-breakdown">(109/118)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>News - <em>Article</em></td>
+                <td>Android</td>
+                <td class="number">69.6%<span class="tpl-breakdown">(112/49)</span></td>
+                <td class="number">161</td>
+                <td class="number">87.5%<span class="tpl-breakdown">(98/112)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Cooking</td>
+                <td>Web</td>
+                <td class="number">41.0%<span class="tpl-breakdown">(34/49)</span></td>
+                <td class="number">83</td>
+                <td class="number">61.8%<span class="tpl-breakdown">(21/34)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Cooking</td>
+                <td>iOS</td>
+                <td class="number">62.7%<span class="tpl-breakdown">(42/25)</span></td>
+                <td class="number">67</td>
+                <td class="number">83.3%<span class="tpl-breakdown">(35/42)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Cooking</td>
+                <td>Android</td>
+                <td class="number">54.9%<span class="tpl-breakdown">(39/32)</span></td>
+                <td class="number">71</td>
+                <td class="number">79.5%<span class="tpl-breakdown">(31/39)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Cooking - <em>Recipe</em></td>
+                <td>Web</td>
+                <td class="number">41.1%<span class="tpl-breakdown">(51/73)</span></td>
+                <td class="number">124</td>
+                <td class="number">58.8%<span class="tpl-breakdown">(30/51)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Cooking - <em>Recipe</em></td>
+                <td>iOS</td>
+                <td class="number">68.5%<span class="tpl-breakdown">(61/28)</span></td>
+                <td class="number">89</td>
+                <td class="number">85.2%<span class="tpl-breakdown">(52/61)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Cooking - <em>Recipe</em></td>
+                <td>Android</td>
+                <td class="number">63.7%<span class="tpl-breakdown">(58/33)</span></td>
+                <td class="number">91</td>
+                <td class="number">81.0%<span class="tpl-breakdown">(47/58)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Crossword</em></td>
+                <td>Web</td>
+                <td class="number">23.7%<span class="tpl-breakdown">(18/58)</span></td>
+                <td class="number">76</td>
+                <td class="number">38.9%<span class="tpl-breakdown">(7/18)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Crossword</em></td>
+                <td>iOS</td>
+                <td class="number">57.4%<span class="tpl-breakdown">(31/23)</span></td>
+                <td class="number">54</td>
+                <td class="number">67.7%<span class="tpl-breakdown">(21/31)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Crossword</em></td>
+                <td>Android</td>
+                <td class="number">55.8%<span class="tpl-breakdown">(29/23)</span></td>
+                <td class="number">52</td>
+                <td class="number">65.5%<span class="tpl-breakdown">(19/29)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Connections</em></td>
+                <td>Web</td>
+                <td class="number">34.9%<span class="tpl-breakdown">(22/41)</span></td>
+                <td class="number">63</td>
+                <td class="number">36.4%<span class="tpl-breakdown">(8/22)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Connections</em></td>
+                <td>iOS</td>
+                <td class="number">62.2%<span class="tpl-breakdown">(28/17)</span></td>
+                <td class="number">45</td>
+                <td class="number">71.4%<span class="tpl-breakdown">(20/28)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Connections</em></td>
+                <td>Android</td>
+                <td class="number">55.3%<span class="tpl-breakdown">(26/21)</span></td>
+                <td class="number">47</td>
+                <td class="number">69.2%<span class="tpl-breakdown">(18/26)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Strands</em></td>
+                <td>Web</td>
+                <td class="number">25.9%<span class="tpl-breakdown">(15/43)</span></td>
+                <td class="number">58</td>
+                <td class="number">33.3%<span class="tpl-breakdown">(5/15)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Strands</em></td>
+                <td>iOS</td>
+                <td class="number">58.5%<span class="tpl-breakdown">(24/17)</span></td>
+                <td class="number">41</td>
+                <td class="number">66.7%<span class="tpl-breakdown">(16/24)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Strands</em></td>
+                <td>Android</td>
+                <td class="number">51.2%<span class="tpl-breakdown">(22/21)</span></td>
+                <td class="number">43</td>
+                <td class="number">63.6%<span class="tpl-breakdown">(14/22)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Spelling Bee</em></td>
+                <td>Web</td>
+                <td class="number">26.4%<span class="tpl-breakdown">(19/53)</span></td>
+                <td class="number">72</td>
+                <td class="number">31.6%<span class="tpl-breakdown">(6/19)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Spelling Bee</em></td>
+                <td>iOS</td>
+                <td class="number">65.3%<span class="tpl-breakdown">(32/17)</span></td>
+                <td class="number">49</td>
+                <td class="number">84.4%<span class="tpl-breakdown">(27/32)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Spelling Bee</em></td>
+                <td>Android</td>
+                <td class="number">56.9%<span class="tpl-breakdown">(29/22)</span></td>
+                <td class="number">51</td>
+                <td class="number">72.4%<span class="tpl-breakdown">(21/29)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Pips</em></td>
+                <td>Web</td>
+                <td class="number">23.5%<span class="tpl-breakdown">(8/26)</span></td>
+                <td class="number">34</td>
+                <td class="number">25.0%<span class="tpl-breakdown">(2/8)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Pips</em></td>
+                <td>iOS</td>
+                <td class="number">60.7%<span class="tpl-breakdown">(17/11)</span></td>
+                <td class="number">28</td>
+                <td class="number">70.6%<span class="tpl-breakdown">(12/17)</span></td>
+            </tr>
+            <tr>
+                <td>2025-09-26</td>
+                <td>Games - <em>Pips</em></td>
+                <td>Android</td>
+                <td class="number">51.6%<span class="tpl-breakdown">(16/15)</span></td>
+                <td class="number">31</td>
+                <td class="number">68.8%<span class="tpl-breakdown">(11/16)</span></td>
+            </tr>
         </tbody>
     </table>
 
     <script>
-        async function loadMetrics() {
-            const loadingEl = document.getElementById('loading');
-            const errorEl = document.getElementById('error');
-            const tableEl = document.getElementById('metricsTable');
-            const bodyEl = document.getElementById('metricsBody');
-
-            try {
-                // Get list of available files from directory index
-                const indexResponse = await fetch('./data/daily/index.json');
-                if (!indexResponse.ok) {
-                    throw new Error('Could not load file index');
+        document.addEventListener('DOMContentLoaded', function() {
+            const table = document.getElementById('metricsTable');
+            const headers = table.querySelectorAll('th');
+            const tbody = document.getElementById('metricsBody');
+            
+            // Make all headers sortable
+            headers.forEach((header, index) => {
+                header.classList.add('sortable');
+                header.addEventListener('click', () => sortTable(index));
+            });
+            
+            // Set default sort: Surface column (index 1) in descending order (Z-A)
+            sortTable(1, false); // false = descending order
+            
+            function sortTable(columnIndex, forceDirection = null) {
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+                const currentHeader = headers[columnIndex];
+                
+                // Determine sort direction
+                let isAscending = true;
+                if (forceDirection !== null) {
+                    // Use forced direction (for default sort)
+                    isAscending = forceDirection;
+                } else if (currentHeader.classList.contains('sort-asc')) {
+                    isAscending = false;
+                } else if (currentHeader.classList.contains('sort-desc')) {
+                    isAscending = true;
                 }
                 
-                const availableFiles = await indexResponse.json();
-                console.log(`📂 Found ${availableFiles.length} files in directory index`);
-                
-                const metrics = [];
-                
-                // Load each file from the index
-                for (const filename of availableFiles) {
-                    try {
-                        const response = await fetch(`./data/daily/${filename}`);
-                        if (response.ok) {
-                            const data = await response.json();
-                            metrics.push({ filename, data });
-                        }
-                    } catch (e) {
-                        console.warn(`Could not load ${filename}:`, e);
-                    }
-                }
-                
-                console.log(`📊 Successfully loaded ${metrics.length} data files`);
-
-                if (metrics.length === 0) {
-                    throw new Error('No data files could be loaded');
-                }
-
-                // Sort by date (newest first)
-                metrics.sort((a, b) => b.data.date.localeCompare(a.data.date));
-
-                // Render table
-                bodyEl.innerHTML = '';
-                metrics.forEach(({ filename, data }) => {
-                    const row = createTableRow(data, filename);
-                    bodyEl.appendChild(row);
+                // Clear all sort classes
+                headers.forEach(h => {
+                    h.classList.remove('sort-asc', 'sort-desc');
+                    h.classList.add('sortable');
                 });
-
-                loadingEl.style.display = 'none';
-                tableEl.style.display = 'table';
-
-            } catch (error) {
-                console.error('Error loading metrics:', error);
-                loadingEl.style.display = 'none';
-                errorEl.textContent = `Error: ${error.message}`;
-                errorEl.style.display = 'block';
-            }
-        }
-
-        function createTableRow(data, filename) {
-            const row = document.createElement('tr');
-            
-            // Extract data based on schema
-            const date = data.date || 'unknown';
-            let time = 'unknown';
-            
-            // Extract time from filename (e.g., "2025-09-25-0343-multiview.json" -> "03:43")
-            const timeMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})-(\d{4})/);
-            if (timeMatch) {
-                const timeStr = timeMatch[4];
-                time = `${timeStr.slice(0, 2)}:${timeStr.slice(2, 4)}`;
-            } else if (filename.includes('multiview') && !filename.includes('-0')) {
-                time = 'day';
-            }
-            
-            let type = data.type || (filename.includes('multiview') ? 'multiview' : 'single');
-            
-            // Make type more descriptive based on what's being analyzed
-            if (data.viewportSummaries && data.viewportSummaries.mobile && data.viewportSummaries.mobile.pages) {
-                const firstPage = data.viewportSummaries.mobile.pages[0];
-                if (firstPage && firstPage.url && firstPage.url.includes('nytimes.com')) {
-                    if (firstPage.section === 'home' || firstPage.pageType === 'homepage') {
-                        type = 'NYT Home Web';
-                    } else {
-                        type = `NYT ${firstPage.section || 'Unknown'} Web`;
-                    }
-                }
-            } else if (data.pages && data.pages.length > 0) {
-                const firstPage = data.pages[0];
-                if (firstPage && firstPage.url && firstPage.url.includes('nytimes.com')) {
-                    if (firstPage.section === 'home' || firstPage.pageType === 'homepage') {
-                        type = 'NYT Home Web';
-                    } else {
-                        type = `NYT ${firstPage.section || 'Unknown'} Web`;
-                    }
-                }
-            }
-            
-            let avgCoverage = 0;
-            let mobileCov = '-';
-            let desktopCov = '-';
-            let elementCount = 0;
-
-            if (data.viewportSummaries) {
-                // Multi-viewport data
-                const mobile = data.viewportSummaries.mobile;
-                const desktop = data.viewportSummaries.desktop;
                 
-                if (mobile && desktop) {
-                    avgCoverage = ((mobile.averageCoverage + desktop.averageCoverage) / 2).toFixed(1);
-                    mobileCov = mobile.averageCoverage.toFixed(1);
-                    desktopCov = desktop.averageCoverage.toFixed(1);
+                // Clear sorted column styling from all cells
+                table.querySelectorAll('.sorted-column').forEach(cell => {
+                    cell.classList.remove('sorted-column');
+                });
+                
+                // Add appropriate sort class to clicked header
+                currentHeader.classList.remove('sortable');
+                currentHeader.classList.add(isAscending ? 'sort-asc' : 'sort-desc');
+                
+                // Add sorted column styling to all cells in this column
+                const allRows = table.querySelectorAll('tbody tr');
+                allRows.forEach(row => {
+                    const cell = row.cells[columnIndex];
+                    if (cell) cell.classList.add('sorted-column');
+                });
+                
+                // Sort the rows
+                rows.sort((a, b) => {
+                    const aValue = a.cells[columnIndex].textContent.trim();
+                    const bValue = b.cells[columnIndex].textContent.trim();
                     
-                    // Get element count from first page
-                    if (mobile.pages && mobile.pages[0]) {
-                        elementCount = mobile.pages[0].elementCount || 0;
+                    // Handle different data types
+                    let comparison = 0;
+                    
+                    // Check if values are numbers (including percentages)
+                    const aNum = parseFloat(aValue.replace('%', '').replace(',', ''));
+                    const bNum = parseFloat(bValue.replace('%', '').replace(',', ''));
+                    
+                    if (!isNaN(aNum) && !isNaN(bNum)) {
+                        // Numeric comparison
+                        comparison = aNum - bNum;
+                    } else if (aValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                        // Date comparison
+                        comparison = new Date(aValue) - new Date(bValue);
+                    } else {
+                        // String comparison
+                        comparison = aValue.localeCompare(bValue);
                     }
-                }
-            } else if (data.pages) {
-                // Single viewport data
-                if (data.pages.length > 0) {
-                    avgCoverage = (data.pages.reduce((sum, p) => sum + (p.tplCoverage || 0), 0) / data.pages.length).toFixed(1);
-                    elementCount = data.pages.reduce((sum, p) => sum + (p.elementCount || 0), 0);
-                }
+                    
+                    return isAscending ? comparison : -comparison;
+                });
+                
+                // Reorder the table rows
+                rows.forEach(row => tbody.appendChild(row));
             }
-
-            // Combine date and time
-            const dateTime = time !== 'unknown' && time !== 'day' ? `${date} ${time}` : date;
-
-            row.innerHTML = `
-                <td>${dateTime}</td>
-                <td>${type}</td>
-                <td class="number">${avgCoverage}%</td>
-                <td class="number">${mobileCov}${mobileCov !== '-' ? '%' : ''}</td>
-                <td class="number">${desktopCov}${desktopCov !== '-' ? '%' : ''}</td>
-                <td class="number">${elementCount}</td>
-                <td class="number">-</td>
-            `;
-
-            return row;
-        }
-
-        // Load data when page loads
-        document.addEventListener('DOMContentLoaded', loadMetrics);
+        });
     </script>
 </body>
 </html>
