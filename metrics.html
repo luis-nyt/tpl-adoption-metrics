@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
             margin: 0;
@@ -18,7 +19,43 @@
             line-height: 1.4;
             color: #000;
             background: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
             padding: 20px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            z-index: 100;
+        }
+
+        .chart-section {
+            flex: 1;
+            padding: 20px;
+            background: #fafafa;
+            border-bottom: 1px solid #ddd;
+            overflow: hidden;
+        }
+
+        .table-section {
+            flex: 1;
+            background: #fff;
+            overflow: auto;
+            position: relative;
+        }
+
+        .table-container {
+            height: 100%;
+            overflow: auto;
         }
 
         h1 {
@@ -35,7 +72,7 @@
 
         th, td {
             text-align: left;
-            padding: 8px 12px;
+            padding: 12px 16px;
             border-bottom: 1px solid #ddd;
             font-size: 11px;
         }
@@ -47,6 +84,15 @@
         th {
             font-weight: 600;
             background: #f8f8f8;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .table-wrapper {
+            padding: 0;
         }
 
         .number {
@@ -144,9 +190,21 @@
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
     <h1>TPL Adoption Metrics</h1>
-    
-    <table id="metricsTable">
+        </div>
+        
+        <div class="chart-section">
+            <div id="chartContainer">
+                <canvas id="tplChart" width="800" height="300"></canvas>
+            </div>
+        </div>
+        
+        <div class="table-section">
+            <div class="table-container">
+                <div class="table-wrapper">
+                    <table id="metricsTable">
         <thead>
             <tr>
                 <th>As of...<br><small>Date of measurement</small></th>
@@ -376,6 +434,10 @@
             </tr>
         </tbody>
     </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -391,6 +453,9 @@
             
             // Set default sort: Surface column (index 1) in descending order (Z-A)
             sortTable(1, false); // false = descending order
+            
+            // Initialize chart
+            initChart();
             
             function sortTable(columnIndex, forceDirection = null) {
                 const rows = Array.from(tbody.querySelectorAll('tr'));
@@ -457,6 +522,105 @@
                 
                 // Reorder the table rows
                 rows.forEach(row => tbody.appendChild(row));
+            }
+            
+            function initChart() {
+                const ctx = document.getElementById('tplChart').getContext('2d');
+                
+                // Extract data from table for chart
+                const chartData = extractChartData();
+                
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: chartData.labels,
+                        datasets: [{
+                            label: 'TPL Usage %',
+                            data: chartData.tplUsage,
+                            backgroundColor: 'rgba(50, 104, 145, 0.8)',
+                            borderColor: 'rgba(50, 104, 145, 1)',
+                            borderWidth: 1
+                        }, {
+                            label: 'Token Usage %',
+                            data: chartData.tokenUsage,
+                            backgroundColor: 'rgba(255, 107, 53, 0.8)',
+                            borderColor: 'rgba(255, 107, 53, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'TPL and Token Adoption by Product & Platform',
+                                font: {
+                                    family: 'IBM Plex Mono',
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    font: {
+                                        family: 'IBM Plex Mono',
+                                        size: 11
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    },
+                                    font: {
+                                        family: 'IBM Plex Mono',
+                                        size: 10
+                                    }
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    maxRotation: 45,
+                                    font: {
+                                        family: 'IBM Plex Mono',
+                                        size: 9
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            function extractChartData() {
+                const rows = tbody.querySelectorAll('tr');
+                const labels = [];
+                const tplUsage = [];
+                const tokenUsage = [];
+                
+                rows.forEach(row => {
+                    const surface = row.cells[1].textContent.trim();
+                    const platform = row.cells[2].textContent.trim();
+                    const tplPercent = parseFloat(row.cells[3].textContent.replace('%', ''));
+                    const tokenPercent = parseFloat(row.cells[5].textContent.replace('%', ''));
+                    
+                    // Create short label for chart
+                    const shortSurface = surface.replace('Games - ', 'G-').replace('Cooking - ', 'C-').replace('News - ', 'N-');
+                    const label = `${shortSurface} (${platform})`;
+                    
+                    labels.push(label);
+                    tplUsage.push(tplPercent);
+                    tokenUsage.push(tokenPercent);
+                });
+                
+                return { labels, tplUsage, tokenUsage };
             }
         });
     </script>
