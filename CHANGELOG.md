@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2025-10-03
+- added Cooking homepage (https://cooking.nytimes.com/) to data collection configuration in pages.yml for TPL adoption tracking across cooking vertical
+- removed duplicate Games - Crossword rows from metrics table (kept only Web Desktop, iOS, Android versions)
+- updated all "Cooking" labels to "Cooking - Home" for consistency with other surface naming
 - added Crossword game (https://www.nytimes.com/crosswords/game/daily) to data collection configuration in pages.yml for TPL adoption tracking across games vertical
 - renamed "TPL Usage" column header to "TPL Coverage" with updated description "Area Coverage of TPL Components" to better reflect what's being measured
 - updated platform labels from "Web" to "Web (Desktop)" as scaffolding for future mobile/tablet breakdowns
