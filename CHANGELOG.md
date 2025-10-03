@@ -1,5 +1,14 @@
 # Changelog
 
+## 2025-10-03
+- renamed "TPL Usage" column header to "TPL Coverage" with updated description "Area Coverage of TPL Components" to better reflect what's being measured
+- updated platform labels from "Web" to "Web (Desktop)" as scaffolding for future mobile/tablet breakdowns
+- removed "# of UI Components" column to simplify the table and focus on coverage and token metrics
+- updated "TPL Usage (Tokens)" to "TPL Tokens" with clearer description "Approx. % of TPL Tokens vs Not"
+- implemented dynamic data loading system with `data/daily/latest.json` for performance - loads only one small file regardless of historical data size
+- added JavaScript to metrics.html that fetches latest.json and populates the News - Home / Web (Desktop) row with real TPL coverage data (14.7%)
+- structured latest.json as scalable array that can grow to include all surfaces/platforms as data collection expands
+
 ## 2025-09-25
 - renamed project from nyt-tpl-highlighter to tpl-adoption-metrics to better reflect focus on automated metrics collection rather than browser extension functionality
 - updated package.json, README.md, and all internal references to use new project name and positioning

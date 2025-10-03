@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPL Area Coverage Analyzer Bookmarklet</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #f8f9fa; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { color: #326891; margin-bottom: 30px; }
+        .bookmarklet-section { background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #326891; }
+        .btn { display: inline-block; background: #326891; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 5px; cursor: pointer; border: none; }
+        .btn:hover { background: #2c5a82; }
+        .code-section { background: #f5f5f5; padding: 15px; border-radius: 6px; margin: 20px 0; }
+        textarea { width: 100%; height: 120px; font-family: monospace; font-size: 10px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        .example { background: #d4edda; padding: 20px; border-radius: 8px; border-left: 4px solid #28a745; font-family: monospace; font-size: 12px; }
+        .feature { background: #fff3cd; padding: 20px; border-radius: 8px; border-left: 4px solid #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📐 TPL Area Coverage Analyzer</h1>
+        
+        <p>This bookmarklet measures the <strong>visual area coverage</strong> of TPL tokenized elements vs non-tokenized elements. Perfect for understanding the visual impact of token adoption.</p>
+        
+        <div class="bookmarklet-section">
+            <h2>📌 Test the area analyzer:</h2>
+            <button onclick="runAreaAnalyzer()" class="btn">📐 Run TPL Area Analyzer</button>
+            <p><em>Click to test on this page, then copy the bookmarklet code below for use anywhere</em></p>
+        </div>
+
+        <div class="feature">
+            <h3>🎯 What It Measures:</h3>
+            <ul>
+                <li><strong>Area Coverage</strong> - Total pixel area of tokenized vs non-tokenized elements</li>
+                <li><strong>Visual Impact</strong> - How much of the visible page uses TPL tokens</li>
+                <li><strong>Coverage Percentage</strong> - Tokenized area / Total element area</li>
+                <li><strong>Element exclusions</strong> - No background/body, only content elements</li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <h3>📊 Example Output:</h3>
+            <pre>TPL Area Coverage Analysis
+• Visible elements: 1,247
+• Total element area: 892,450 px²
+• Tokenized area: 534,270 px² (59.9%)
+• Non-tokenized area: 358,180 px² (40.1%)
+
+🎨 Area by Token Category:
+• Colors: 445,230 px² (49.9%)
+• Typography: 67,340 px² (7.5%)
+• Interactive: 21,700 px² (2.4%)</pre>
+        </div>
+
+        <div class="code-section">
+            <h3>📋 Bookmarklet Code:</h3>
+            <p>Copy this code and create a bookmark with it:</p>
+            <textarea id="bookmarkletCode" readonly onclick="this.select()">javascript:(function(){if(window.tplAreaAnalyzer){window.tplAreaAnalyzer.remove();document.querySelectorAll('.tpl-area-badge').forEach(b=>b.remove());window.tplAreaAnalyzer=null;return;}const t={colors:{'--tpl-color-content-primary':['hsla(0,0%,7.06%,1)','#121212','rgb(18, 18, 18)'],'--tpl-color-content-primaryDim':['hsla(0,0%,21.18%,1)','#363636'],'--tpl-color-content-secondary':['hsla(0,0%,35.3%,1)','#5a5a5a'],'--tpl-color-content-secondaryDim':['hsla(0,0%,44.71%,1)','#717171'],'--tpl-color-content-accent':['hsla(213.44,55.75%,46.08%,1)','#346EB7'],'--tpl-color-content-breaking':['hsla(352.72,98.1%,41.18%,1)','#d0021b'],'--tpl-color-stroke-tertiary':['hsla(0,0%,87.46%,1)','#dfdfdf'],'--tpl-color-background-primary':['hsla(0,0%,100%,1)','#fff','white'],'--tpl-color-background-secondary':['hsla(0,0%,97.26%,1)','#f8f8f8']},typography:{'--cheltenham':['nyt-cheltenham'],'--franklin':['nyt-franklin'],'--imperial':['nyt-imperial'],'--karnak':['nyt-karnak']},interactive:{'--tpl-input-background':[],'--tpl-input-stroke':[],'--tpl-input-content':[]}};function c(e){const s=getComputedStyle(e);const m=[];const props=['color','backgroundColor','borderColor','fontFamily','margin','padding','borderRadius','outline'];for(const p of props){const v=s[p];if(!v||v==='none')continue;for(const[k,vals]of Object.entries({...t.colors,...t.typography,...t.interactive})){if(vals.length>0&&vals.some(val=>v.includes(val))){m.push({token:k,prop:p,value:v});}}}const inline=e.style.cssText||'';if(inline.includes('var(--tpl-')||inline.includes('--tpl-')){m.push({token:'css-variable',prop:'inline'});}for(const p of props){const v=s[p];if(v&&v.includes('var(--tpl-')){m.push({token:'css-variable',prop:p});}}return m.length>0?{hasTokens:true,matches:m,primaryToken:m[0].token}:{hasTokens:false}}const els=Array.from(document.querySelectorAll('*')).filter(el=>el.tagName!=='HTML'&&el.tagName!=='BODY');const visible=els.filter(el=>{const r=el.getBoundingClientRect();const s=getComputedStyle(el);return r.width>0&&r.height>0&&s.display!=='none'&&s.visibility!=='hidden'&&s.opacity!=='0'});const analysis=visible.map(el=>{const r=el.getBoundingClientRect();return{element:el,analysis:c(el),area:r.width*r.height}});const tokenized=analysis.filter(item=>item.analysis.hasTokens);const nonTokenized=analysis.filter(item=>!item.analysis.hasTokens);const totalArea=analysis.reduce((sum,item)=>sum+item.area,0);const tokenizedArea=tokenized.reduce((sum,item)=>sum+item.area,0);const nonTokenizedArea=nonTokenized.reduce((sum,item)=>sum+item.area,0);const areaPct=totalArea>0?(tokenizedArea/totalArea*100).toFixed(1):0;const cats={colors:0,typography:0,interactive:0,cssVars:0};tokenized.forEach(item=>{if(item.analysis.matches){item.analysis.matches.forEach(match=>{if(match.token.includes('color'))cats.colors+=item.area;else if(match.token.includes('cheltenham')||match.token.includes('franklin')||match.token.includes('imperial')||match.token.includes('karnak'))cats.typography+=item.area;else if(match.token.includes('input'))cats.interactive+=item.area;else if(match.token==='css-variable')cats.cssVars+=item.area;})}});const f=n=>n.toLocaleString();const panel=document.createElement('div');panel.style.cssText='position:fixed;top:20px;right:20px;width:350px;background:white;border:1px solid #ddd;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:9999;font:12px sans-serif;padding:15px';panel.innerHTML=`<div style="background:#ff6b35;color:white;padding:10px;margin:-15px -15px 10px;border-radius:8px 8px 0 0;font-weight:bold">TPL Area Coverage Analysis <span onclick="this.closest('div').parentElement.remove();document.querySelectorAll('.tpl-area-badge').forEach(b=>b.remove());" style="float:right;cursor:pointer">×</span></div><div>📐 <strong>Area Coverage: ${areaPct}%</strong><br>• Visible elements: ${visible.length}<br>• Total element area: ${f(Math.round(totalArea))} px²<br>• Tokenized area: ${f(Math.round(tokenizedArea))} px²<br>• Non-tokenized area: ${f(Math.round(nonTokenizedArea))} px²<br><br>🎨 <strong>Area by Category:</strong><br>• Colors: ${f(Math.round(cats.colors))} px² (${totalArea>0?(cats.colors/totalArea*100).toFixed(1):0}%)<br>• Typography: ${f(Math.round(cats.typography))} px² (${totalArea>0?(cats.typography/totalArea*100).toFixed(1):0}%)<br>• Interactive: ${f(Math.round(cats.interactive))} px² (${totalArea>0?(cats.interactive/totalArea*100).toFixed(1):0}%)<br>• CSS Vars: ${f(Math.round(cats.cssVars))} px² (${totalArea>0?(cats.cssVars/totalArea*100).toFixed(1):0}%)<br><small style="color:#666;margin-top:10px;display:block">Measures visual area coverage (excludes body/html)</small></div>`;document.body.appendChild(panel);window.tplAreaAnalyzer=panel;tokenized.forEach(item=>{const el=item.element;el.style.outline='3px solid #ff6b35';el.style.backgroundColor='rgba(255,107,53,0.1)';const badge=document.createElement('div');badge.className='tpl-area-badge';badge.style.cssText='position:absolute;background:#ff6b35;color:white;font:600 8px monospace;padding:2px 4px;border-radius:3px;z-index:9998;pointer-events:none;';const areaPx=Math.round(item.area);badge.textContent=areaPx>1000?`${Math.round(areaPx/1000)}k px²`:`${areaPx} px²`;const rect=el.getBoundingClientRect();badge.style.left=rect.left+window.scrollX+'px';badge.style.top=rect.top+window.scrollY-12+'px';document.body.appendChild(badge);});alert(`Area analysis complete! ${areaPct}% visual coverage by TPL tokens`);})();</textarea>
+            <button onclick="copyAreaCode()" class="btn">📋 Copy Area Bookmarklet</button>
+        </div>
+
+        <div class="feature">
+            <h3>🎯 Perfect for:</h3>
+            <ul>
+                <li><strong>Visual Impact Assessment</strong> - How much of the page visually uses TPL?</li>
+                <li><strong>Design System ROI</strong> - Measure visual standardization coverage</li>
+                <li><strong>Component vs Token</strong> - Compare with element-count bookmarklet</li>
+                <li><strong>Page Comparison</strong> - Different visual coverage across sections</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function runAreaAnalyzer() {
+            // Token database (same as element analyzer)
+            const tokenDB = {
+                colors: {
+                    '--tpl-color-content-primary': ['hsla(0,0%,7.06%,1)', '#121212', 'rgb(18, 18, 18)', 'rgb(18,18,18)'],
+                    '--tpl-color-content-primaryDim': ['hsla(0,0%,21.18%,1)', '#363636', 'rgb(54, 54, 54)', 'rgb(54,54,54)'],
+                    '--tpl-color-content-secondary': ['hsla(0,0%,35.3%,1)', '#5a5a5a', 'rgb(90, 90, 90)', 'rgb(90,90,90)'],
+                    '--tpl-color-content-secondaryDim': ['hsla(0,0%,44.71%,1)', '#717171', 'rgb(113, 113, 113)', 'rgb(113,113,113)'],
+                    '--tpl-color-content-accent': ['hsla(213.44,55.75%,46.08%,1)', '#346EB7', 'rgb(52, 110, 183)', 'rgb(52,110,183)'],
+                    '--tpl-color-content-accentDim': ['hsla(205.9,48.72%,38.24%,1)'],
+                    '--tpl-color-content-positive': ['hsla(126.98,53.09%,31.77%,1)'],
+                    '--tpl-color-content-negative': ['hsla(354.29,98.83%,33.34%,1)'],
+                    '--tpl-color-content-breaking': ['hsla(352.72,98.1%,41.18%,1)', '#d0021b', 'rgb(208, 2, 27)', 'rgb(208,2,27)'],
+                    '--tpl-color-content-placeholder': ['hsla(0,0%,54.51%,1)'],
+                    '--tpl-color-content-accent-hover': [],
+                    '--tpl-color-stroke-primary': ['hsla(0,0%,7.06%,1)', '#121212'],
+                    '--tpl-color-stroke-secondary': ['hsla(0,0%,59.22%,1)'],
+                    '--tpl-color-stroke-tertiary': ['hsla(0,0%,87.46%,1)', '#dfdfdf', 'rgb(223, 223, 223)', 'rgb(223,223,223)'],
+                    '--tpl-color-background-primary': ['hsla(0,0%,100%,1)', '#ffffff', '#fff', 'rgb(255, 255, 255)', 'rgb(255,255,255)', 'white'],
+                    '--tpl-color-background-secondary': ['hsla(0,0%,97.26%,1)', '#f8f8f8', 'rgb(248, 248, 248)', 'rgb(248,248,248)'],
+                    '--tpl-color-background-tertiary': ['hsla(0,0%,92.16%,1)'],
+                    '--tpl-color-background-highlight': ['hsla(54.67,95.75%,90.79%,1)'],
+                    '--tpl-color-background-scrim': ['hsla(0,0%,7%,0.6)']
+                },
+                typography: {
+                    '--cheltenham': ['nyt-cheltenham', '"nyt-cheltenham"', 'nyt-cheltenham,'],
+                    '--franklin': ['nyt-franklin', '"nyt-franklin"', 'nyt-franklin,'],
+                    '--imperial': ['nyt-imperial', '"nyt-imperial"', 'nyt-imperial,'],
+                    '--karnak': ['nyt-karnak', '"nyt-karnak"', 'nyt-karnak,']
+                },
+                interactive: {
+                    '--tpl-input-tab-focus-accent': [],
+                    '--tpl-input-focus-stroke': [],
+                    '--tpl-input-background': [],
+                    '--tpl-input-stroke': [],
+                    '--tpl-input-locked-background': [],
+                    '--tpl-input-content': [],
+                    '--tpl-input-placeholder': [],
+                    '--tpl-input-error-stroke': []
+                }
+            };
+
+            function checkTokenUsage(el) {
+                const computed = getComputedStyle(el);
+                const matches = [];
+                
+                // Check all computed style properties for token values
+                const propsToCheck = [
+                    'color', 'backgroundColor', 'borderColor', 'outlineColor',
+                    'fontFamily', 'fontSize', 'fontWeight', 'lineHeight',
+                    'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+                    'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+                    'borderRadius', 'boxShadow', 'textShadow'
+                ];
+                
+                for (const prop of propsToCheck) {
+                    const value = computed[prop];
+                    if (!value || value === 'none' || value === 'auto') continue;
+                    
+                    // Check against all token values
+                    for (const [token, values] of Object.entries({...tokenDB.colors, ...tokenDB.typography, ...tokenDB.interactive})) {
+                        for (const tokenValue of values) {
+                            if (tokenValue && value.includes(tokenValue)) {
+                                matches.push({ token, prop, value, tokenValue });
+                            }
+                        }
+                    }
+                }
+                
+                // Check for explicit CSS variable usage in inline styles and computed styles
+                const inlineStyles = el.style.cssText || '';
+                if (inlineStyles.includes('var(--tpl-') || inlineStyles.includes('--tpl-')) {
+                    matches.push({ token: 'css-variable', prop: 'inline', value: inlineStyles });
+                }
+                
+                // Also check if computed styles contain var() references (sometimes visible)
+                for (const prop of propsToCheck) {
+                    const value = computed[prop];
+                    if (value && value.includes('var(--tpl-')) {
+                        matches.push({ token: 'css-variable', prop: prop, value: value });
+                    }
+                }
+                
+                return matches.length > 0 ? { hasTokens: true, matches: matches, primaryToken: matches[0].token } : { hasTokens: false };
+            }
+
+            // Remove existing analysis
+            const existing = document.getElementById('tpl-area-analysis-panel');
+            if (existing) existing.remove();
+
+            // Filter to content elements only (exclude html, body) and visible elements
+            const allElements = Array.from(document.querySelectorAll('*'))
+                .filter(el => el.tagName !== 'HTML' && el.tagName !== 'BODY');
+                
+            const visibleElements = allElements.filter(el => {
+                const rect = el.getBoundingClientRect();
+                const styles = getComputedStyle(el);
+                
+                // Element must have dimensions and not be hidden
+                return rect.width > 0 && 
+                       rect.height > 0 && 
+                       styles.display !== 'none' && 
+                       styles.visibility !== 'hidden' &&
+                       styles.opacity !== '0';
+            });
+            
+            console.log(`Analyzing area coverage for ${visibleElements.length} visible elements...`);
+
+            // Analyze every visible element with area calculation
+            const elementAnalysis = visibleElements.map(el => {
+                const rect = el.getBoundingClientRect();
+                return {
+                    element: el,
+                    analysis: checkTokenUsage(el),
+                    area: rect.width * rect.height
+                };
+            });
+            
+            const tokenizedElements = elementAnalysis.filter(item => item.analysis.hasTokens);
+            const nonTokenizedElements = elementAnalysis.filter(item => !item.analysis.hasTokens);
+            
+            // Calculate areas
+            const totalArea = elementAnalysis.reduce((sum, item) => sum + item.area, 0);
+            const tokenizedArea = tokenizedElements.reduce((sum, item) => sum + item.area, 0);
+            const nonTokenizedArea = nonTokenizedElements.reduce((sum, item) => sum + item.area, 0);
+            
+            const areaCoveragePercent = totalArea > 0 ? (tokenizedArea / totalArea * 100).toFixed(1) : 0;
+            
+            // Category breakdown by area
+            const categoryAreas = { colors: 0, typography: 0, interactive: 0, cssVariables: 0, spacing: 0 };
+            tokenizedElements.forEach(item => {
+                if (item.analysis.matches) {
+                    item.analysis.matches.forEach(match => {
+                        if (match.token.includes('color')) {
+                            categoryAreas.colors += item.area;
+                        } else if (match.token.includes('cheltenham') || match.token.includes('franklin') || match.token.includes('imperial') || match.token.includes('karnak')) {
+                            categoryAreas.typography += item.area;
+                        } else if (match.token.includes('input')) {
+                            categoryAreas.interactive += item.area;
+                        } else if (match.token === 'css-variable' || match.token === 'css-variable-pattern') {
+                            categoryAreas.cssVariables += item.area;
+                        } else if (match.token.includes('dialog') || match.token.includes('toast') || match.token.includes('story-list')) {
+                            categoryAreas.spacing += item.area;
+                        }
+                    });
+                }
+            });
+
+            // Helper function to format numbers
+            const formatNumber = (num) => Math.round(num).toLocaleString();
+
+            // Create results panel
+            const panel = document.createElement('div');
+            panel.id = 'tpl-area-analysis-panel';
+            panel.style.cssText = `
+                position: fixed; top: 20px; right: 20px; width: 350px; 
+                background: white; border: 1px solid #ddd; border-radius: 8px; 
+                box-shadow: 0 4px 20px rgba(0,0,0,0.2); z-index: 9999; 
+                font: 12px sans-serif; padding: 15px;
+            `;
+            
+            panel.innerHTML = `
+                <div style="background:#ff6b35;color:white;padding:10px;margin:-15px -15px 10px;border-radius:8px 8px 0 0;font-weight:bold">
+                    TPL Area Coverage Analysis
+                    <span onclick="this.closest('div').parentElement.remove()" style="float:right;cursor:pointer">×</span>
+                </div>
+                <div>
+                    📐 <strong>Area Coverage: ${areaCoveragePercent}%</strong><br>
+                    • Visible elements: ${visibleElements.length}<br>
+                    • Total element area: ${formatNumber(totalArea)} px²<br>
+                    • Tokenized area: ${formatNumber(tokenizedArea)} px²<br>
+                    • Non-tokenized area: ${formatNumber(nonTokenizedArea)} px²<br><br>
+                    🎨 <strong>Area by Category:</strong><br>
+                    • Colors: ${formatNumber(categoryAreas.colors)} px² (${totalArea > 0 ? (categoryAreas.colors/totalArea*100).toFixed(1) : 0}%)<br>
+                    • Typography: ${formatNumber(categoryAreas.typography)} px² (${totalArea > 0 ? (categoryAreas.typography/totalArea*100).toFixed(1) : 0}%)<br>
+                    • Interactive: ${formatNumber(categoryAreas.interactive)} px² (${totalArea > 0 ? (categoryAreas.interactive/totalArea*100).toFixed(1) : 0}%)<br>
+                    • CSS Variables: ${formatNumber(categoryAreas.cssVariables)} px² (${totalArea > 0 ? (categoryAreas.cssVariables/totalArea*100).toFixed(1) : 0}%)<br>
+                    • Spacing: ${formatNumber(categoryAreas.spacing)} px² (${totalArea > 0 ? (categoryAreas.spacing/totalArea*100).toFixed(1) : 0}%)<br>
+                    <small style="color:#666;margin-top:10px;display:block">
+                        Measures visual area coverage (excludes html/body background)<br>
+                        Orange highlighting = tokenized elements
+                    </small>
+                </div>
+            `;
+            
+            document.body.appendChild(panel);
+
+            // Highlight tokenized elements with orange outline and area badges
+            tokenizedElements.forEach(item => {
+                const el = item.element;
+                el.style.outline = '3px solid #ff6b35';
+                el.style.backgroundColor = 'rgba(255,107,53,0.1)';
+                
+                // Add area badge
+                const badge = document.createElement('div');
+                badge.className = 'tpl-area-badge';
+                badge.style.cssText = 'position:absolute;background:#ff6b35;color:white;font:600 8px monospace;padding:2px 4px;border-radius:3px;z-index:9998;pointer-events:none;';
+                
+                const areaPx = Math.round(item.area);
+                badge.textContent = areaPx > 1000 ? `${Math.round(areaPx/1000)}k px²` : `${areaPx} px²`;
+                
+                const rect = el.getBoundingClientRect();
+                badge.style.left = rect.left + window.scrollX + 'px';
+                badge.style.top = rect.top + window.scrollY - 12 + 'px';
+                document.body.appendChild(badge);
+            });
+
+            alert(`Area analysis complete! ${areaCoveragePercent}% visual coverage by TPL tokens`);
+        }
+
+        function copyAreaCode() {
+            const textarea = document.getElementById('bookmarkletCode');
+            textarea.select();
+            document.execCommand('copy');
+            alert('📋 Area analyzer bookmarklet code copied! Create a new bookmark and paste this as the URL.');
+        }
+    </script>
+</body>
+</html>

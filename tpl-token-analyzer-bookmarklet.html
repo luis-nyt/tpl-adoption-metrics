@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPL Token Analyzer Bookmarklet</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #f8f9fa; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { color: #326891; margin-bottom: 30px; }
+        .bookmarklet-section { background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #326891; }
+        .btn { display: inline-block; background: #326891; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px 5px; cursor: pointer; border: none; }
+        .btn:hover { background: #2c5a82; }
+        .code-section { background: #f5f5f5; padding: 15px; border-radius: 6px; margin: 20px 0; }
+        textarea { width: 100%; height: 120px; font-family: monospace; font-size: 10px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        .example { background: #d4edda; padding: 20px; border-radius: 8px; border-left: 4px solid #28a745; font-family: monospace; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 TPL Token Analyzer Bookmarklet</h1>
+        
+        <p>This bookmarklet analyzes TPL token usage vs traditional styling on any NYT page.</p>
+        
+        <div class="bookmarklet-section">
+            <h2>📌 Test the analyzer:</h2>
+            <button onclick="runAnalyzer()" class="btn">🎯 Run TPL Token Analyzer</button>
+            <p><em>Click to test on this page, then copy the bookmarklet code below for use anywhere</em></p>
+        </div>
+
+        <div class="example">
+            <h3>📊 Example Output:</h3>
+            <pre>TPL Token Analysis
+• Elements Analyzed: 487
+• Using TPL Tokens: 156 (32.0%)
+• No Token Usage: 331
+• Area Coverage: 45.3%</pre>
+        </div>
+
+        <div class="code-section">
+            <h3>📋 Bookmarklet Code:</h3>
+            <p>Copy this code and create a bookmark with it:</p>
+            <textarea id="bookmarkletCode" readonly onclick="this.select()">javascript:(function(){if(window.tplAnalyzer){window.tplAnalyzer.remove();document.querySelectorAll('.tpl-token-badge').forEach(b=>b.remove());window.tplAnalyzer=null;return;}const t={colors:{'--tpl-color-content-primary':['hsla(0,0%,7.06%,1)','#121212','rgb(18, 18, 18)'],'--tpl-color-content-primaryDim':['hsla(0,0%,21.18%,1)','#363636'],'--tpl-color-content-secondary':['hsla(0,0%,35.3%,1)','#5a5a5a'],'--tpl-color-content-secondaryDim':['hsla(0,0%,44.71%,1)','#717171'],'--tpl-color-content-accent':['hsla(213.44,55.75%,46.08%,1)','#346EB7'],'--tpl-color-content-breaking':['hsla(352.72,98.1%,41.18%,1)','#d0021b'],'--tpl-color-stroke-tertiary':['hsla(0,0%,87.46%,1)','#dfdfdf'],'--tpl-color-background-primary':['hsla(0,0%,100%,1)','#fff','white'],'--tpl-color-background-secondary':['hsla(0,0%,97.26%,1)','#f8f8f8']},typography:{'--cheltenham':['nyt-cheltenham'],'--franklin':['nyt-franklin'],'--imperial':['nyt-imperial'],'--karnak':['nyt-karnak']},interactive:{'--tpl-input-background':[],'--tpl-input-stroke':[],'--tpl-input-content':[]}};function c(e){const s=getComputedStyle(e);const m=[];const props=['color','backgroundColor','borderColor','fontFamily','margin','padding','borderRadius','outline'];for(const p of props){const v=s[p];if(!v||v==='none')continue;for(const[k,vals]of Object.entries({...t.colors,...t.typography,...t.interactive})){if(vals.length>0&&vals.some(val=>v.includes(val))){m.push({token:k,prop:p,value:v});}}}const inline=e.style.cssText||'';if(inline.includes('var(--tpl-')||inline.includes('--tpl-')){m.push({token:'css-variable',prop:'inline'});}for(const p of props){const v=s[p];if(v&&v.includes('var(--tpl-')){m.push({token:'css-variable',prop:p});}}return m.length>0?{hasTokens:true,matches:m,primaryToken:m[0].token}:{hasTokens:false}}const els=Array.from(document.querySelectorAll('*'));const visible=els.filter(el=>{const r=el.getBoundingClientRect();const s=getComputedStyle(el);return r.width>0&&r.height>0&&s.display!=='none'&&s.visibility!=='hidden'&&s.opacity!=='0'});const analysis=visible.map(el=>({element:el,analysis:c(el)}));const tokenized=analysis.filter(item=>item.analysis.hasTokens);const pct=visible.length>0?(tokenized.length/visible.length*100).toFixed(1):0;const cats={colors:0,typography:0,interactive:0,cssVars:0,spacing:0};tokenized.forEach(item=>{if(item.analysis.matches){item.analysis.matches.forEach(match=>{if(match.token.includes('color'))cats.colors++;else if(match.token.includes('cheltenham')||match.token.includes('franklin')||match.token.includes('imperial')||match.token.includes('karnak'))cats.typography++;else if(match.token.includes('input'))cats.interactive++;else if(match.token==='css-variable')cats.cssVars++;else if(match.token.includes('dialog')||match.token.includes('toast')||match.token.includes('story-list'))cats.spacing++;})}});const panel=document.createElement('div');panel.style.cssText='position:fixed;top:20px;right:20px;width:320px;background:white;border:1px solid #ddd;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:9999;font:12px sans-serif;padding:15px';panel.innerHTML=`<div style="background:#28a745;color:white;padding:10px;margin:-15px -15px 10px;border-radius:8px 8px 0 0;font-weight:bold">TPL Token Analysis (Enhanced) <span onclick="this.closest('div').parentElement.remove();document.querySelectorAll('.tpl-token-badge').forEach(b=>b.remove());" style="float:right;cursor:pointer">×</span></div><div>📊 <strong>Tokenization Rate: ${pct}%</strong><br>• Visible elements: ${visible.length}<br>• Using TPL tokens: ${tokenized.length}<br>• No token usage: ${visible.length-tokenized.length}<br><br>🎨 <strong>Token Categories:</strong><br>• Colors: ${cats.colors}<br>• Typography: ${cats.typography}<br>• Interactive: ${cats.interactive}<br>• CSS Variables: ${cats.cssVars}<br><small style="color:#666;margin-top:10px;display:block">Detects inherited values + CSS variables + computed styles</small></div>`;document.body.appendChild(panel);window.tplAnalyzer=panel;tokenized.forEach(item=>{const el=item.element;el.style.outline='2px solid #28a745';el.style.backgroundColor='rgba(40,167,69,0.1)';const badge=document.createElement('div');badge.className='tpl-token-badge';badge.style.cssText='position:absolute;background:#28a745;color:white;font:600 8px monospace;padding:2px 4px;border-radius:3px;z-index:9998;pointer-events:none;';badge.textContent=item.analysis.primaryToken.replace('--tpl-','').replace('--','');const rect=el.getBoundingClientRect();badge.style.left=rect.left+window.scrollX+'px';badge.style.top=rect.top+window.scrollY-12+'px';document.body.appendChild(badge);});alert(`Enhanced TPL analysis complete! ${pct}% tokenization rate`);})();</textarea>
+            <button onclick="copyCode()" class="btn">📋 Copy Bookmarklet</button>
+        </div>
+    </div>
+
+    <script>
+        function runAnalyzer() {
+            // Token database
+            const tokenDB = {
+                colors: {
+                    '--tpl-color-content-primary': ['hsla(0,0%,7.06%,1)', '#121212', 'rgb(18, 18, 18)', 'rgb(18,18,18)'],
+                    '--tpl-color-content-primaryDim': ['hsla(0,0%,21.18%,1)', '#363636', 'rgb(54, 54, 54)', 'rgb(54,54,54)'],
+                    '--tpl-color-content-secondary': ['hsla(0,0%,35.3%,1)', '#5a5a5a', 'rgb(90, 90, 90)', 'rgb(90,90,90)'],
+                    '--tpl-color-content-secondaryDim': ['hsla(0,0%,44.71%,1)', '#717171', 'rgb(113, 113, 113)', 'rgb(113,113,113)'],
+                    '--tpl-color-content-accent': ['hsla(213.44,55.75%,46.08%,1)', '#346EB7', 'rgb(52, 110, 183)', 'rgb(52,110,183)'],
+                    '--tpl-color-content-accentDim': ['hsla(205.9,48.72%,38.24%,1)'],
+                    '--tpl-color-content-positive': ['hsla(126.98,53.09%,31.77%,1)'],
+                    '--tpl-color-content-negative': ['hsla(354.29,98.83%,33.34%,1)'],
+                    '--tpl-color-content-breaking': ['hsla(352.72,98.1%,41.18%,1)', '#d0021b', 'rgb(208, 2, 27)', 'rgb(208,2,27)'],
+                    '--tpl-color-content-placeholder': ['hsla(0,0%,54.51%,1)'],
+                    '--tpl-color-content-accent-hover': [],
+                    '--tpl-color-stroke-primary': ['hsla(0,0%,7.06%,1)', '#121212'],
+                    '--tpl-color-stroke-secondary': ['hsla(0,0%,59.22%,1)'],
+                    '--tpl-color-stroke-tertiary': ['hsla(0,0%,87.46%,1)', '#dfdfdf', 'rgb(223, 223, 223)', 'rgb(223,223,223)'],
+                    '--tpl-color-background-primary': ['hsla(0,0%,100%,1)', '#ffffff', '#fff', 'rgb(255, 255, 255)', 'rgb(255,255,255)', 'white'],
+                    '--tpl-color-background-secondary': ['hsla(0,0%,97.26%,1)', '#f8f8f8', 'rgb(248, 248, 248)', 'rgb(248,248,248)'],
+                    '--tpl-color-background-tertiary': ['hsla(0,0%,92.16%,1)'],
+                    '--tpl-color-background-highlight': ['hsla(54.67,95.75%,90.79%,1)'],
+                    '--tpl-color-background-scrim': ['hsla(0,0%,7%,0.6)']
+                },
+                typography: {
+                    '--cheltenham': ['nyt-cheltenham', '"nyt-cheltenham"', 'nyt-cheltenham,'],
+                    '--franklin': ['nyt-franklin', '"nyt-franklin"', 'nyt-franklin,'],
+                    '--imperial': ['nyt-imperial', '"nyt-imperial"', 'nyt-imperial,'],
+                    '--karnak': ['nyt-karnak', '"nyt-karnak"', 'nyt-karnak,']
+                },
+                interactive: {
+                    '--tpl-input-tab-focus-accent': [],
+                    '--tpl-input-focus-stroke': [],
+                    '--tpl-input-background': [],
+                    '--tpl-input-stroke': [],
+                    '--tpl-input-locked-background': [],
+                    '--tpl-input-content': [],
+                    '--tpl-input-placeholder': [],
+                    '--tpl-input-error-stroke': []
+                },
+                // Add CSS variable pattern detection
+                cssVariablePatterns: [
+                    /var\(--tpl-color-[^)]+\)/g,
+                    /var\(--tpl-input-[^)]+\)/g,
+                    /var\(--tpl-dialog-[^)]+\)/g,
+                    /var\(--tpl-toast-[^)]+\)/g,
+                    /var\(--tpl-story-list-[^)]+\)/g
+                ]
+            };
+
+            function checkTokenUsage(el) {
+                const computed = getComputedStyle(el);
+                const matches = [];
+                
+                // Check all computed style properties for token values
+                const propsToCheck = [
+                    'color', 'backgroundColor', 'borderColor', 'outlineColor',
+                    'fontFamily', 'fontSize', 'fontWeight', 'lineHeight',
+                    'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+                    'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+                    'borderRadius', 'boxShadow', 'textShadow'
+                ];
+                
+                for (const prop of propsToCheck) {
+                    const value = computed[prop];
+                    if (!value || value === 'none' || value === 'auto') continue;
+                    
+                    // Check against all token values
+                    for (const [token, values] of Object.entries({...tokenDB.colors, ...tokenDB.typography, ...tokenDB.interactive})) {
+                        for (const tokenValue of values) {
+                            if (tokenValue && value.includes(tokenValue)) {
+                                matches.push({ token, prop, value, tokenValue });
+                            }
+                        }
+                    }
+                }
+                
+                // Check for explicit CSS variable usage in inline styles and computed styles
+                const inlineStyles = el.style.cssText || '';
+                if (inlineStyles.includes('var(--tpl-') || inlineStyles.includes('--tpl-')) {
+                    matches.push({ token: 'css-variable', prop: 'inline', value: inlineStyles });
+                }
+                
+                // Also check if computed styles contain var() references (sometimes visible)
+                for (const prop of propsToCheck) {
+                    const value = computed[prop];
+                    if (value && value.includes('var(--tpl-')) {
+                        matches.push({ token: 'css-variable', prop: prop, value: value });
+                    }
+                }
+                
+                // Check for broader TPL token pattern matches in CSS variable names
+                for (const pattern of tokenDB.cssVariablePatterns) {
+                    pattern.lastIndex = 0; // Reset regex
+                    if (pattern.test(inlineStyles)) {
+                        matches.push({ token: 'css-variable-pattern', prop: 'inline', value: inlineStyles });
+                        break;
+                    }
+                }
+                
+                return matches.length > 0 ? { hasTokens: true, matches: matches, primaryToken: matches[0].token } : { hasTokens: false };
+            }
+
+            // Remove existing analysis
+            const existing = document.getElementById('tpl-analysis-panel');
+            if (existing) existing.remove();
+
+            // Filter to only VISIBLE elements for meaningful metrics
+            const allElements = Array.from(document.querySelectorAll('*'));
+            const visibleElements = allElements.filter(el => {
+                const rect = el.getBoundingClientRect();
+                const styles = getComputedStyle(el);
+                
+                // Element must have dimensions and not be hidden
+                return rect.width > 0 && 
+                       rect.height > 0 && 
+                       styles.display !== 'none' && 
+                       styles.visibility !== 'hidden' &&
+                       styles.opacity !== '0';
+            });
+            
+            console.log(`Analyzing ${visibleElements.length} visible elements (of ${allElements.length} total)...`);
+
+            // Analyze every visible element
+            const elementAnalysis = visibleElements.map(el => ({
+                element: el,
+                analysis: checkTokenUsage(el)
+            }));
+            
+            const tokenizedElements = elementAnalysis.filter(item => item.analysis.hasTokens);
+            const tokenizationRate = visibleElements.length > 0 ? (tokenizedElements.length / visibleElements.length * 100).toFixed(1) : 0;
+            
+            // Category breakdown
+            const categories = { colors: 0, typography: 0, interactive: 0, cssVariables: 0, spacing: 0 };
+            tokenizedElements.forEach(item => {
+                if (item.analysis.matches) {
+                    item.analysis.matches.forEach(match => {
+                        if (match.token.includes('color')) {
+                            categories.colors++;
+                        } else if (match.token.includes('cheltenham') || match.token.includes('franklin') || match.token.includes('imperial') || match.token.includes('karnak')) {
+                            categories.typography++;
+                        } else if (match.token.includes('input')) {
+                            categories.interactive++;
+                        } else if (match.token === 'css-variable' || match.token === 'css-variable-pattern') {
+                            categories.cssVariables++;
+                        } else if (match.token.includes('dialog') || match.token.includes('toast') || match.token.includes('story-list')) {
+                            categories.spacing++;
+                        }
+                    });
+                }
+            });
+
+            // Create results panel
+            const panel = document.createElement('div');
+            panel.id = 'tpl-analysis-panel';
+            panel.style.cssText = `
+                position: fixed; top: 20px; right: 20px; width: 300px; 
+                background: white; border: 1px solid #ddd; border-radius: 8px; 
+                box-shadow: 0 4px 20px rgba(0,0,0,0.2); z-index: 9999; 
+                font: 12px sans-serif; padding: 15px;
+            `;
+            
+            panel.innerHTML = `
+                <div style="background:#28a745;color:white;padding:10px;margin:-15px -15px 10px;border-radius:8px 8px 0 0;font-weight:bold">
+                    TPL Token Analysis (Inherited + Direct)
+                    <span onclick="this.closest('div').parentElement.remove()" style="float:right;cursor:pointer">×</span>
+                </div>
+                <div>
+                    📊 <strong>Tokenization Rate: ${tokenizationRate}%</strong><br>
+                    • Visible elements analyzed: ${visibleElements.length}<br>
+                    • Using TPL tokens: ${tokenizedElements.length}<br>
+                    • No token usage: ${visibleElements.length - tokenizedElements.length}<br>
+                    • Hidden elements skipped: ${allElements.length - visibleElements.length}<br><br>
+                    🎨 <strong>Token Categories:</strong><br>
+                    • Colors: ${categories.colors} matches<br>
+                    • Typography: ${categories.typography} matches<br>
+                    • Interactive: ${categories.interactive} matches<br>
+                    • Spacing: ${categories.spacing} matches<br>
+                    • CSS Variables: ${categories.cssVariables} matches<br>
+                    <small style="color:#666;margin-top:10px;display:block">
+                        Detects inherited token values + CSS variables<br>
+                        Only analyzes visible elements (no area calculation)
+                    </small>
+                </div>
+            `;
+            
+            document.body.appendChild(panel);
+
+            // Highlight tokenized elements
+            tokenizedElements.forEach(item => {
+                const el = item.element;
+                el.style.outline = '2px solid #28a745';
+                el.style.backgroundColor = 'rgba(40,167,69,0.1)';
+                
+                // Add a badge showing primary token type
+                const badge = document.createElement('div');
+                badge.className = 'tpl-token-badge';
+                badge.style.cssText = 'position:absolute;background:#28a745;color:white;font:600 8px monospace;padding:2px 4px;border-radius:3px;z-index:9998;pointer-events:none;';
+                badge.textContent = item.analysis.primaryToken.replace('--tpl-', '').replace('--', '');
+                
+                const rect = el.getBoundingClientRect();
+                badge.style.left = rect.left + window.scrollX + 'px';
+                badge.style.top = rect.top + window.scrollY - 12 + 'px';
+                document.body.appendChild(badge);
+            });
+
+            alert(`Analysis complete! Found ${tokenizationRate}% tokenization rate`);
+        }
+
+        function copyCode() {
+            const textarea = document.getElementById('bookmarkletCode');
+            textarea.select();
+            document.execCommand('copy');
+            alert('📋 Bookmarklet code copied! Create a new bookmark and paste this as the URL.');
+        }
+    </script>
+</body>
+</html>

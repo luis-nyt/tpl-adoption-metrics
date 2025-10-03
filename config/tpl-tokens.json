@@ -1,0 +1,410 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-09-25",
+  "description": "TPL token database extracted from real NYT article analysis",
+  "source": "Analyzed from https://www.nytimes.com/2025/09/25/us/politics/trump-argentina-milei-bailout.html",
+  "categories": {
+    "colors": {
+      "description": "Color tokens for content, backgrounds, and strokes",
+      "tokens": {
+        "--tpl-color-content-primary": {
+          "values": ["hsla(0,0%,7.06%,1)", "#121212", "rgb(18,18,18)"],
+          "cssProperties": ["color"],
+          "description": "Primary text/content color"
+        },
+        "--tpl-color-content-primaryDim": {
+          "values": ["hsla(0,0%,21.18%,1)", "#363636"],
+          "cssProperties": ["color"],
+          "description": "Dimmed primary content color"
+        },
+        "--tpl-color-content-secondary": {
+          "values": ["hsla(0,0%,35.3%,1)", "#5a5a5a"],
+          "cssProperties": ["color", "background-color"],
+          "description": "Secondary content color"
+        },
+        "--tpl-color-content-secondaryDim": {
+          "values": ["hsla(0,0%,44.71%,1)", "#717171"],
+          "cssProperties": ["color"],
+          "description": "Dimmed secondary content color"
+        },
+        "--tpl-color-content-accent": {
+          "values": ["hsla(213.44,55.75%,46.08%,1)", "#346EB7"],
+          "cssProperties": ["color", "background-color", "outline-color"],
+          "description": "Accent color for links and interactive elements"
+        },
+        "--tpl-color-content-accentDim": {
+          "values": ["hsla(205.9,48.72%,38.24%,1)"],
+          "cssProperties": ["color"],
+          "description": "Dimmed accent color"
+        },
+        "--tpl-color-content-positive": {
+          "values": ["hsla(126.98,53.09%,31.77%,1)"],
+          "cssProperties": ["color"],
+          "description": "Positive/success color"
+        },
+        "--tpl-color-content-negative": {
+          "values": ["hsla(354.29,98.83%,33.34%,1)"],
+          "cssProperties": ["color"],
+          "description": "Negative/error color"
+        },
+        "--tpl-color-content-breaking": {
+          "values": ["hsla(352.72,98.1%,41.18%,1)", "#d0021b"],
+          "cssProperties": ["color"],
+          "description": "Breaking news/urgent content color"
+        },
+        "--tpl-color-content-placeholder": {
+          "values": ["hsla(0,0%,54.51%,1)"],
+          "cssProperties": ["color"],
+          "description": "Placeholder text color"
+        },
+        "--tpl-color-stroke-primary": {
+          "values": ["hsla(0,0%,7.06%,1)", "#121212"],
+          "cssProperties": ["border-color", "outline-color"],
+          "description": "Primary border/stroke color"
+        },
+        "--tpl-color-stroke-secondary": {
+          "values": ["hsla(0,0%,59.22%,1)"],
+          "cssProperties": ["border-color"],
+          "description": "Secondary border color"
+        },
+        "--tpl-color-stroke-tertiary": {
+          "values": ["hsla(0,0%,87.46%,1)", "#dfdfdf"],
+          "cssProperties": ["border-color"],
+          "description": "Light border color for subtle divisions"
+        },
+        "--tpl-color-background-primary": {
+          "values": ["hsla(0,0%,100%,1)", "#ffffff", "#fff"],
+          "cssProperties": ["background-color"],
+          "description": "Primary background color (white)"
+        },
+        "--tpl-color-background-secondary": {
+          "values": ["hsla(0,0%,97.26%,1)", "#f8f8f8"],
+          "cssProperties": ["background-color"],
+          "description": "Secondary background color (light gray)"
+        },
+        "--tpl-color-background-tertiary": {
+          "values": ["hsla(0,0%,92.16%,1)"],
+          "cssProperties": ["background-color"],
+          "description": "Tertiary background color"
+        },
+        "--tpl-color-background-highlight": {
+          "values": ["hsla(54.67,95.75%,90.79%,1)"],
+          "cssProperties": ["background-color"],
+          "description": "Highlight background color"
+        },
+        "--tpl-color-background-scrim": {
+          "values": ["hsla(0,0%,7%,0.6)"],
+          "cssProperties": ["background-color"],
+          "description": "Semi-transparent overlay color"
+        },
+        "--tpl-color-content-accent-hover": {
+          "values": [],
+          "cssProperties": ["color"],
+          "description": "Hover state for accent color"
+        }
+      }
+    },
+    "typography": {
+      "description": "Font family tokens and typography-related variables",
+      "tokens": {
+        "--serif": {
+          "values": ["georgia,'times new roman',times,serif"],
+          "cssProperties": ["font-family"],
+          "description": "Serif font stack fallback"
+        },
+        "--sans-serif": {
+          "values": ["helvetica,arial,sans-serif"],
+          "cssProperties": ["font-family"],
+          "description": "Sans-serif font stack fallback"
+        },
+        "--cheltenham": {
+          "values": ["\"nyt-cheltenham\",var(--serif)", "nyt-cheltenham"],
+          "cssProperties": ["font-family"],
+          "description": "NYT Cheltenham font family"
+        },
+        "--franklin": {
+          "values": ["\"nyt-franklin\",var(--sans-serif)", "nyt-franklin"],
+          "cssProperties": ["font-family"],
+          "description": "NYT Franklin font family"
+        },
+        "--imperial": {
+          "values": ["\"nyt-imperial\",var(--serif)", "nyt-imperial"],
+          "cssProperties": ["font-family"],
+          "description": "NYT Imperial font family"
+        },
+        "--karnak": {
+          "values": ["\"nyt-karnak\",var(--serif)", "nyt-karnak"],
+          "cssProperties": ["font-family"],
+          "description": "NYT Karnak font family"
+        },
+        "--cheltenham-condensed": {
+          "values": ["\"nyt-cheltenham-cond\",var(--serif)"],
+          "cssProperties": ["font-family"],
+          "description": "NYT Cheltenham Condensed font family"
+        },
+        "--cheltenham-text-condensed": {
+          "values": ["\"nyt-cheltenham-text-cond\",var(--serif)"],
+          "cssProperties": ["font-family"],
+          "description": "NYT Cheltenham Text Condensed font family"
+        }
+      }
+    },
+    "interactive": {
+      "description": "Input and interactive element tokens",
+      "tokens": {
+        "--tpl-input-tab-focus-accent": {
+          "values": [],
+          "cssProperties": ["outline-color"],
+          "description": "Tab focus accent color for inputs"
+        },
+        "--tpl-input-focus-stroke": {
+          "values": [],
+          "cssProperties": ["border-color", "outline-color"],
+          "description": "Focus state border color for inputs"
+        },
+        "--tpl-input-background": {
+          "values": [],
+          "cssProperties": ["background-color"],
+          "description": "Input background color"
+        },
+        "--tpl-input-stroke": {
+          "values": [],
+          "cssProperties": ["border-color"],
+          "description": "Input border color"
+        },
+        "--tpl-input-locked-background": {
+          "values": [],
+          "cssProperties": ["background-color"],
+          "description": "Locked/disabled input background"
+        },
+        "--tpl-input-content": {
+          "values": [],
+          "cssProperties": ["color"],
+          "description": "Input text color"
+        },
+        "--tpl-input-placeholder": {
+          "values": [],
+          "cssProperties": ["color"],
+          "description": "Input placeholder text color"
+        },
+        "--tpl-input-error-stroke": {
+          "values": [],
+          "cssProperties": ["border-color"],
+          "description": "Input error state border color"
+        }
+      }
+    },
+    "spacing": {
+      "description": "Spacing, padding, margin, and layout tokens",
+      "categories": {
+        "story-list": {
+          "description": "Spacing tokens specific to story list components",
+          "tokens": {
+            "--tpl-story-list-outerPaddingHorizontal": {
+              "values": [],
+              "cssProperties": ["padding-left", "padding-right"],
+              "description": "Horizontal outer padding for story lists"
+            },
+            "--tpl-story-list-sectionMarginTop": {
+              "values": [],
+              "cssProperties": ["margin-top"],
+              "description": "Top margin for story list sections"
+            },
+            "--tpl-story-list-sectionHeaderPaddingTop": {
+              "values": [],
+              "cssProperties": ["padding-top"],
+              "description": "Top padding for story list section headers"
+            },
+            "--tpl-story-list-sectionHeaderPaddingBottom": {
+              "values": [],
+              "cssProperties": ["padding-bottom"],
+              "description": "Bottom padding for story list section headers"
+            },
+            "--tpl-story-list-itemOuterPaddingTop": {
+              "values": [],
+              "cssProperties": ["padding-top"],
+              "description": "Top outer padding for story list items"
+            },
+            "--tpl-story-list-itemOuterPaddingBottom": {
+              "values": [],
+              "cssProperties": ["padding-bottom"],
+              "description": "Bottom outer padding for story list items"
+            },
+            "--tpl-story-list-itemActionsGap": {
+              "values": [],
+              "cssProperties": ["gap"],
+              "description": "Gap between story list item actions"
+            },
+            "--tpl-story-list-itemContentMediaGap": {
+              "values": [],
+              "cssProperties": ["gap"],
+              "description": "Gap between content and media in story items"
+            },
+            "--tpl-story-list-itemContentInnerGap": {
+              "values": [],
+              "cssProperties": ["gap"],
+              "description": "Inner gap for story item content"
+            },
+            "--tpl-story-list-itemTopLabelMarginBottom": {
+              "values": [],
+              "cssProperties": ["margin-bottom"],
+              "description": "Bottom margin for story item top labels"
+            },
+            "--tpl-story-list-itemPosterOverlayColor": {
+              "values": [],
+              "cssProperties": ["background-color"],
+              "description": "Overlay color for story poster items"
+            },
+            "--tpl-story-list-itemPosterTextShadowColor": {
+              "values": [],
+              "cssProperties": ["text-shadow"],
+              "description": "Text shadow color for poster text"
+            },
+            "--tpl-story-list-item-overlay-gradient-side": {
+              "values": [],
+              "cssProperties": ["background"],
+              "description": "Side gradient overlay for story items"
+            },
+            "--tpl-story-list-itemPosterGradientColor": {
+              "values": [],
+              "cssProperties": ["background"],
+              "description": "Gradient color for story poster items"
+            },
+            "--tpl-story-list-item-poster-overlay-color": {
+              "values": [],
+              "cssProperties": ["background-color"],
+              "description": "Poster overlay color"
+            },
+            "--tpl-story-list-item-poster-text-shadow-color": {
+              "values": [],
+              "cssProperties": ["text-shadow"],
+              "description": "Poster text shadow color"
+            },
+            "--tpl-story-list-item-poster-gradient-color": {
+              "values": [],
+              "cssProperties": ["background"],
+              "description": "Poster gradient color"
+            }
+          }
+        },
+        "dialog": {
+          "description": "Spacing tokens specific to dialog/modal components",
+          "tokens": {
+            "--tpl-dialog-outerPadding": {
+              "values": [],
+              "cssProperties": ["padding"],
+              "description": "Outer padding for dialogs"
+            },
+            "--tpl-dialog-spacing": {
+              "values": [],
+              "cssProperties": ["margin", "padding"],
+              "description": "General spacing within dialogs"
+            },
+            "--tpl-dialog-padding": {
+              "values": [],
+              "cssProperties": ["padding"],
+              "description": "Inner padding for dialogs"
+            },
+            "--tpl-dialog-spacingBetweenActions": {
+              "values": [],
+              "cssProperties": ["gap", "margin"],
+              "description": "Spacing between dialog action buttons"
+            },
+            "--tpl-dialog-cornerRadius": {
+              "values": [],
+              "cssProperties": ["border-radius"],
+              "description": "Corner radius for dialogs"
+            },
+            "--tpl-dialog-shadowX": {
+              "values": [],
+              "cssProperties": ["box-shadow"],
+              "description": "Horizontal shadow offset for dialogs"
+            },
+            "--tpl-dialog-shadowY": {
+              "values": [],
+              "cssProperties": ["box-shadow"],
+              "description": "Vertical shadow offset for dialogs"
+            },
+            "--tpl-dialog-shadowRadius": {
+              "values": [],
+              "cssProperties": ["box-shadow"],
+              "description": "Shadow blur radius for dialogs"
+            },
+            "--tpl-dialog-shadowColor": {
+              "values": [],
+              "cssProperties": ["box-shadow"],
+              "description": "Shadow color for dialogs"
+            },
+            "--tpl-dialog-alignment": {
+              "values": [],
+              "cssProperties": ["align-items", "justify-content"],
+              "description": "Alignment settings for dialogs"
+            },
+            "--tpl-dialog-background": {
+              "values": [],
+              "cssProperties": ["background-color"],
+              "description": "Background color for dialogs"
+            }
+          }
+        },
+        "toast": {
+          "description": "Spacing tokens specific to toast/notification components",
+          "tokens": {
+            "--tpl-toast-background": {
+              "values": [],
+              "cssProperties": ["background-color"],
+              "description": "Background color for toast notifications"
+            },
+            "--tpl-toast-maxWidth": {
+              "values": [],
+              "cssProperties": ["max-width"],
+              "description": "Maximum width for toast notifications"
+            },
+            "--tpl-toast-outerPadding": {
+              "values": [],
+              "cssProperties": ["padding"],
+              "description": "Outer padding for toast notifications"
+            },
+            "--tpl-toast-cornerRadius": {
+              "values": [],
+              "cssProperties": ["border-radius"],
+              "description": "Corner radius for toast notifications"
+            },
+            "--tpl-toast-minHeight": {
+              "values": [],
+              "cssProperties": ["min-height"],
+              "description": "Minimum height for toast notifications"
+            },
+            "--tpl-toast-padding": {
+              "values": [],
+              "cssProperties": ["padding"],
+              "description": "Inner padding for toast notifications"
+            }
+          }
+        }
+      }
+    }
+  },
+  "detectionPatterns": {
+    "cssVariables": {
+      "definition": "^--tpl-.*",
+      "usage": "var\\(--tpl-[^)]+\\)"
+    },
+    "categories": {
+      "colors": "^--tpl-color-.*",
+      "typography": "^--(serif|sans-serif|cheltenham|franklin|imperial|karnak).*",
+      "interactive": "^--tpl-input-.*",
+      "spacing": "^--tpl-(.*-)*(padding|margin|spacing|gap|width|height|radius).*"
+    }
+  },
+  "statistics": {
+    "totalTokens": 76,
+    "totalCategories": 4,
+    "byCategory": {
+      "colors": 18,
+      "typography": 8,
+      "interactive": 8,
+      "spacing": 42
+    }
+  }
+}
