@@ -1,0 +1,103 @@
+{
+  "date": "2025-10-03",
+  "type": "multi-viewport-analysis",
+  "viewportSummaries": {
+    "mobile": {
+      "pages": [
+        {
+          "url": "https://www.nytimes.com/",
+          "pageType": "homepage",
+          "section": "home",
+          "viewport": "mobile",
+          "viewportSize": "375x667",
+          "deviceType": "mobile",
+          "tplCoverage": 67.9,
+          "elementCount": 164,
+          "topComponents": [
+            "tpl-lb",
+            "tpl-lbl"
+          ]
+        },
+        {
+          "url": "https://www.nytimes.com/crosswords/game/daily",
+          "pageType": "game",
+          "section": "crossword",
+          "viewport": "mobile",
+          "viewportSize": "375x667",
+          "deviceType": "mobile",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        },
+        {
+          "url": "https://cooking.nytimes.com/",
+          "pageType": "homepage",
+          "section": "cooking",
+          "viewport": "mobile",
+          "viewportSize": "375x667",
+          "deviceType": "mobile",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        }
+      ],
+      "averageCoverage": 22.6,
+      "totalPagesAnalyzed": 3
+    },
+    "desktop": {
+      "pages": [
+        {
+          "url": "https://www.nytimes.com/",
+          "pageType": "homepage",
+          "section": "home",
+          "viewport": "desktop",
+          "viewportSize": "1440x900",
+          "deviceType": "desktop",
+          "tplCoverage": 18.8,
+          "elementCount": 149,
+          "topComponents": [
+            "tpl-lb",
+            "tpl-lbl"
+          ]
+        },
+        {
+          "url": "https://www.nytimes.com/crosswords/game/daily",
+          "pageType": "game",
+          "section": "crossword",
+          "viewport": "desktop",
+          "viewportSize": "1440x900",
+          "deviceType": "desktop",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        }
+      ],
+      "averageCoverage": 9.4,
+      "totalPagesAnalyzed": 2
+    }
+  },
+  "crossViewportInsights": {
+    "overallResponsiveScore": 0.33,
+    "mostConsistentComponents": [
+      {
+        "component": "tpl-lb",
+        "averageConsistency": 1
+      },
+      {
+        "component": "tpl-lbl",
+        "averageConsistency": 1
+      }
+    ],
+    "coveragePatterns": {
+      "mobileFirst": 1,
+      "desktopFirst": 0,
+      "consistent": 1
+    },
+    "deviceSpecificInsights": {}
+  },
+  "totalPagesAnalyzed": 3,
+  "viewportsTested": [
+    "mobile",
+    "desktop"
+  ]
+}
