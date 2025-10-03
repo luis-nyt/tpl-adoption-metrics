@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2025-10-03
+- added Crossword game (https://www.nytimes.com/crosswords/game/daily) to data collection configuration in pages.yml for TPL adoption tracking across games vertical
 - renamed "TPL Usage" column header to "TPL Coverage" with updated description "Area Coverage of TPL Components" to better reflect what's being measured
 - updated platform labels from "Web" to "Web (Desktop)" as scaffolding for future mobile/tablet breakdowns
 - removed "# of UI Components" column to simplify the table and focus on coverage and token metrics

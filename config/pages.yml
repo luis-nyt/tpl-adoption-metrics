@@ -4,6 +4,12 @@ pages:
     type: "homepage"
     section: "home"
     priority: "high"
+  
+  - url: "https://www.nytimes.com/crosswords/game/daily"
+    name: "Crossword"
+    type: "game"
+    section: "crossword"
+    priority: "high"
 
 # Mobile vs Desktop viewport analysis
 viewports:
