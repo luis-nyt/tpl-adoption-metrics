@@ -189,6 +189,17 @@
             color: #ccc;
             font-weight: normal;
         }
+
+        .coverage-link {
+            color: #326891;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        .coverage-link:hover {
+            border-bottom: 1px solid #326891;
+        }
     </style>
 </head>
 <body>
@@ -460,9 +471,18 @@
                         row.cells[0].textContent = metric.date;
                         row.cells[0].classList.remove('placeholder');
                         
-                        // Update TPL Coverage
+                        // Update TPL Coverage with link
                         if (metric.tplCoverage !== null && metric.tplCoverage !== undefined) {
-                            row.cells[3].textContent = metric.tplCoverage + '%';
+                            const coverageLink = document.createElement('a');
+                            coverageLink.href = 'https://www.nytimes.com/';
+                            coverageLink.textContent = metric.tplCoverage + '%';
+                            coverageLink.className = 'coverage-link';
+                            coverageLink.target = '_blank';
+                            coverageLink.rel = 'noopener noreferrer';
+                            coverageLink.title = 'Open NYT.com to test TPL coverage';
+                            
+                            row.cells[3].textContent = '';
+                            row.cells[3].appendChild(coverageLink);
                             row.cells[3].classList.remove('placeholder');
                         }
                         
