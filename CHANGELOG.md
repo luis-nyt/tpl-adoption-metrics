@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-10-02
+- converted the metrics page to a table-only layout and removed charting code in `metrics.html` to simplify the view and focus on comparative scanning
+- styled the header as a black nav bar with centered white title for clarity and emphasis; made both the main header and the table header sticky on scroll for better usability with long tables
+- templated the data rows by replacing most cell values with placeholders; preserved only the 'News - Home / Web' date in the 'as of…' column and set all other dates to placeholders for clarity while wiring up dynamic data
+
 ## 2025-09-25
 - renamed project from nyt-tpl-highlighter to tpl-adoption-metrics to better reflect focus on automated metrics collection rather than browser extension functionality
 - updated package.json, README.md, and all internal references to use new project name and positioning
