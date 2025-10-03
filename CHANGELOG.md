@@ -8,7 +8,6 @@
 - implemented dynamic data loading system with `data/daily/latest.json` for performance - loads only one small file regardless of historical data size
 - added JavaScript to metrics.html that fetches latest.json and populates the News - Home / Web (Desktop) row with real TPL coverage data (14.7%)
 - structured latest.json as scalable array that can grow to include all surfaces/platforms as data collection expands
-- made TPL coverage percentage clickable - links to NYT.com in new tab so users can apply bookmarklet to verify coverage data
 
 ## 2025-09-25
 - renamed project from nyt-tpl-highlighter to tpl-adoption-metrics to better reflect focus on automated metrics collection rather than browser extension functionality

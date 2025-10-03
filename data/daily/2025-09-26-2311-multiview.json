@@ -1,0 +1,55 @@
+{
+  "date": "2025-09-26",
+  "type": "multi-viewport-analysis",
+  "viewportSummaries": {
+    "mobile": {
+      "pages": [
+        {
+          "url": "https://www.nytimes.com/",
+          "pageType": "homepage",
+          "section": "home",
+          "viewport": "mobile",
+          "viewportSize": "375x667",
+          "deviceType": "mobile",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        }
+      ],
+      "averageCoverage": 0,
+      "totalPagesAnalyzed": 1
+    },
+    "desktop": {
+      "pages": [
+        {
+          "url": "https://www.nytimes.com/",
+          "pageType": "homepage",
+          "section": "home",
+          "viewport": "desktop",
+          "viewportSize": "1440x900",
+          "deviceType": "desktop",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        }
+      ],
+      "averageCoverage": 0,
+      "totalPagesAnalyzed": 1
+    }
+  },
+  "crossViewportInsights": {
+    "overallResponsiveScore": 1,
+    "mostConsistentComponents": [],
+    "coveragePatterns": {
+      "mobileFirst": 0,
+      "desktopFirst": 0,
+      "consistent": 1
+    },
+    "deviceSpecificInsights": {}
+  },
+  "totalPagesAnalyzed": 1,
+  "viewportsTested": [
+    "mobile",
+    "desktop"
+  ]
+}
