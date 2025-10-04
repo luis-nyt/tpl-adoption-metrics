@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-10-04
+- added three more game surfaces to data collection: Strands (https://www.nytimes.com/games/strands/), Spelling Bee (https://www.nytimes.com/puzzles/spelling-bee), and Wordle (https://www.nytimes.com/games/wordle/index.html) for comprehensive games vertical TPL tracking
+- added Wordle rows to metrics table (Web Desktop, iOS, Android) - Strands and Spelling Bee rows already existed
+
 ## 2025-10-03
 - added Cooking homepage (https://cooking.nytimes.com/) to data collection configuration in pages.yml for TPL adoption tracking across cooking vertical
 - removed duplicate Games - Crossword rows from metrics table (kept only Web Desktop, iOS, Android versions)

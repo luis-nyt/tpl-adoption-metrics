@@ -16,6 +16,24 @@ pages:
     type: "homepage"
     section: "cooking"
     priority: "high"
+  
+  - url: "https://www.nytimes.com/games/strands/"
+    name: "Strands"
+    type: "game"
+    section: "strands"
+    priority: "high"
+  
+  - url: "https://www.nytimes.com/puzzles/spelling-bee"
+    name: "Spelling Bee"
+    type: "game"
+    section: "spelling-bee"
+    priority: "high"
+  
+  - url: "https://www.nytimes.com/games/wordle/index.html"
+    name: "Wordle"
+    type: "game"
+    section: "wordle"
+    priority: "high"
 
 # Mobile vs Desktop viewport analysis
 viewports:
