@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2025-10-04
+- added Times Store to latest.json for display on metrics table once data collection begins
 - renamed page title and header from "TPL Adoption Metrics" to "TPL Usage Metrics" for clarity and consistency with internal terminology
 - added Times Store (https://store.nytimes.com/) to data collection as web-only surface - no iOS/Android versions since the store is web-only
 - swapped Platform and Surface columns in metrics table - Platform now appears before Surface for better readability when grouping by device type
