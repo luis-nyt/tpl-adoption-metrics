@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2025-10-04
+- added Times Store (https://store.nytimes.com/) to data collection as web-only surface - no iOS/Android versions since the store is web-only
 - swapped Platform and Surface columns in metrics table - Platform now appears before Surface for better readability when grouping by device type
 - updated JavaScript data loading logic to match new column order (Platform in cell[1], Surface in cell[2])
 - updated default table sort to use Surface column (now index 2)
