@@ -1,6 +1,11 @@
 # Changelog
 
 ## 2025-10-04
+- **experimental**: restructured metrics table with nested platform rows under each surface with expand/collapse functionality - click any surface row to show/hide its platforms (Web Desktop, iOS, Android)
+- added CSS styling for parent rows (surfaces) and child rows (platforms) with visual nesting indicators
+- implemented JavaScript toggle logic to expand/collapse platform rows per surface
+- updated data loading to work with new nested structure (matches platform within parent surface)
+- disabled table sorting temporarily for nested view compatibility
 - swapped Platform and Surface columns in metrics table - Platform now appears before Surface for better readability when grouping by device type
 - updated JavaScript data loading logic to match new column order (Platform in cell[1], Surface in cell[2])
 - updated default table sort to use Surface column (now index 2)

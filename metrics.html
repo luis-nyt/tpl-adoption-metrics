@@ -189,6 +189,41 @@
             color: #ccc;
             font-weight: normal;
         }
+
+        .parent-row {
+            cursor: pointer;
+            background: #fafafa;
+            font-weight: 600;
+        }
+
+        .parent-row:hover {
+            background: #f0f0f0;
+        }
+
+        .parent-row .toggle {
+            display: inline-block;
+            width: 16px;
+            font-size: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .parent-row.expanded .toggle {
+            transform: rotate(90deg);
+        }
+
+        .child-row {
+            background: #fff;
+        }
+
+        .child-row .nested-cell {
+            padding-left: 32px;
+            font-size: 10px;
+            color: #666;
+        }
+
+        .child-row:hover {
+            background: #f8f9fa;
+        }
     </style>
 </head>
 <body>
@@ -203,207 +238,249 @@
                     <table id="metricsTable">
         <thead>
             <tr>
-                <th>As of...<br><small>Date of measurement</small></th>
-                <th>Platform<br><small>Web, iOS, or Android</small></th>
                 <th>Surface<br><small>Product area or feature</small></th>
+                <th>As of...<br><small>Date of measurement</small></th>
                 <th class="number">TPL Coverage<br><small>Area Coverage of TPL Components</small></th>
                 <th class="number">TPL Tokens<br><small>Approx. % of TPL Tokens vs Not</small></th>
             </tr>
         </thead>
         <tbody id="metricsBody">
-            <tr>
+            <!-- News - Home -->
+            <tr class="parent-row" data-surface="news-home">
+                <td><span class="toggle">▶</span> News - <em>Home</em></td>
+                <td colspan="3"><em>Click to expand platforms</em></td>
+            </tr>
+            <tr class="child-row" data-parent="news-home" style="display: none;">
+                <td class="nested-cell">↳ Web (Desktop)</td>
                 <td>2025-09-26</td>
-                <td>Web (Desktop)</td>
-                <td>News - <em>Home</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="news-home" style="display: none;">
+                <td class="nested-cell">↳ iOS</td>
                 <td class="placeholder">-</td>
-                <td>iOS</td>
-                <td>News - <em>Home</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="news-home" style="display: none;">
+                <td class="nested-cell">↳ Android</td>
                 <td class="placeholder">-</td>
-                <td>Android</td>
-                <td>News - <em>Home</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            
+            <!-- News - Article -->
+            <tr class="parent-row" data-surface="news-article">
+                <td><span class="toggle">▶</span> News - <em>Article</em></td>
+                <td colspan="3"><em>Click to expand platforms</em></td>
+            </tr>
+            <tr class="child-row" data-parent="news-article" style="display: none;">
+                <td class="nested-cell">↳ Web (Desktop)</td>
                 <td class="placeholder">-</td>
-                <td>Web (Desktop)</td>
-                <td>News - <em>Article</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="news-article" style="display: none;">
+                <td class="nested-cell">↳ iOS</td>
                 <td class="placeholder">-</td>
-                <td>iOS</td>
-                <td>News - <em>Article</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="news-article" style="display: none;">
+                <td class="nested-cell">↳ Android</td>
                 <td class="placeholder">-</td>
-                <td>Android</td>
-                <td>News - <em>Article</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            
+            <!-- Games - Crossword -->
+            <tr class="parent-row" data-surface="games-crossword">
+                <td><span class="toggle">▶</span> Games - <em>Crossword</em></td>
+                <td colspan="3"><em>Click to expand platforms</em></td>
+            </tr>
+            <tr class="child-row" data-parent="games-crossword" style="display: none;">
+                <td class="nested-cell">↳ Web (Desktop)</td>
                 <td class="placeholder">-</td>
-                <td>Web (Desktop)</td>
-                <td>Games - <em>Crossword</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="games-crossword" style="display: none;">
+                <td class="nested-cell">↳ iOS</td>
                 <td class="placeholder">-</td>
-                <td>Web (Desktop)</td>
-                <td>Cooking - <em>Home</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="games-crossword" style="display: none;">
+                <td class="nested-cell">↳ Android</td>
                 <td class="placeholder">-</td>
-                <td>iOS</td>
-                <td>Cooking - <em>Home</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            
+            <!-- Cooking - Home -->
+            <tr class="parent-row" data-surface="cooking-home">
+                <td><span class="toggle">▶</span> Cooking - <em>Home</em></td>
+                <td colspan="3"><em>Click to expand platforms</em></td>
+            </tr>
+            <tr class="child-row" data-parent="cooking-home" style="display: none;">
+                <td class="nested-cell">↳ Web (Desktop)</td>
                 <td class="placeholder">-</td>
-                <td>Android</td>
-                <td>Cooking - <em>Home</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="cooking-home" style="display: none;">
+                <td class="nested-cell">↳ iOS</td>
                 <td class="placeholder">-</td>
-                <td>Web (Desktop)</td>
-                <td>Cooking - <em>Recipe</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="cooking-home" style="display: none;">
+                <td class="nested-cell">↳ Android</td>
                 <td class="placeholder">-</td>
-                <td>iOS</td>
-                <td>Cooking - <em>Recipe</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            
+            <!-- Cooking - Recipe -->
+            <tr class="parent-row" data-surface="cooking-recipe">
+                <td><span class="toggle">▶</span> Cooking - <em>Recipe</em></td>
+                <td colspan="3"><em>Click to expand platforms</em></td>
+            </tr>
+            <tr class="child-row" data-parent="cooking-recipe" style="display: none;">
+                <td class="nested-cell">↳ Web (Desktop)</td>
                 <td class="placeholder">-</td>
-                <td>Android</td>
-                <td>Cooking - <em>Recipe</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="cooking-recipe" style="display: none;">
+                <td class="nested-cell">↳ iOS</td>
                 <td class="placeholder">-</td>
-                <td>Web (Desktop)</td>
-                <td>Games - <em>Connections</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="cooking-recipe" style="display: none;">
+                <td class="nested-cell">↳ Android</td>
                 <td class="placeholder">-</td>
-                <td>iOS</td>
-                <td>Games - <em>Connections</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            
+            <!-- Games - Connections -->
+            <tr class="parent-row" data-surface="games-connections">
+                <td><span class="toggle">▶</span> Games - <em>Connections</em></td>
+                <td colspan="3"><em>Click to expand platforms</em></td>
+            </tr>
+            <tr class="child-row" data-parent="games-connections" style="display: none;">
+                <td class="nested-cell">↳ Web (Desktop)</td>
                 <td class="placeholder">-</td>
-                <td>Android</td>
-                <td>Games - <em>Connections</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="games-connections" style="display: none;">
+                <td class="nested-cell">↳ iOS</td>
                 <td class="placeholder">-</td>
-                <td>Web (Desktop)</td>
-                <td>Games - <em>Strands</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="games-connections" style="display: none;">
+                <td class="nested-cell">↳ Android</td>
                 <td class="placeholder">-</td>
-                <td>iOS</td>
-                <td>Games - <em>Strands</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            
+            <!-- Games - Strands -->
+            <tr class="parent-row" data-surface="games-strands">
+                <td><span class="toggle">▶</span> Games - <em>Strands</em></td>
+                <td colspan="3"><em>Click to expand platforms</em></td>
+            </tr>
+            <tr class="child-row" data-parent="games-strands" style="display: none;">
+                <td class="nested-cell">↳ Web (Desktop)</td>
                 <td class="placeholder">-</td>
-                <td>Android</td>
-                <td>Games - <em>Strands</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="games-strands" style="display: none;">
+                <td class="nested-cell">↳ iOS</td>
                 <td class="placeholder">-</td>
-                <td>Web (Desktop)</td>
-                <td>Games - <em>Spelling Bee</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="games-strands" style="display: none;">
+                <td class="nested-cell">↳ Android</td>
                 <td class="placeholder">-</td>
-                <td>iOS</td>
-                <td>Games - <em>Spelling Bee</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            
+            <!-- Games - Spelling Bee -->
+            <tr class="parent-row" data-surface="games-spelling-bee">
+                <td><span class="toggle">▶</span> Games - <em>Spelling Bee</em></td>
+                <td colspan="3"><em>Click to expand platforms</em></td>
+            </tr>
+            <tr class="child-row" data-parent="games-spelling-bee" style="display: none;">
+                <td class="nested-cell">↳ Web (Desktop)</td>
                 <td class="placeholder">-</td>
-                <td>Android</td>
-                <td>Games - <em>Spelling Bee</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="games-spelling-bee" style="display: none;">
+                <td class="nested-cell">↳ iOS</td>
                 <td class="placeholder">-</td>
-                <td>Web (Desktop)</td>
-                <td>Games - <em>Wordle</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="games-spelling-bee" style="display: none;">
+                <td class="nested-cell">↳ Android</td>
                 <td class="placeholder">-</td>
-                <td>iOS</td>
-                <td>Games - <em>Wordle</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            
+            <!-- Games - Wordle -->
+            <tr class="parent-row" data-surface="games-wordle">
+                <td><span class="toggle">▶</span> Games - <em>Wordle</em></td>
+                <td colspan="3"><em>Click to expand platforms</em></td>
+            </tr>
+            <tr class="child-row" data-parent="games-wordle" style="display: none;">
+                <td class="nested-cell">↳ Web (Desktop)</td>
                 <td class="placeholder">-</td>
-                <td>Android</td>
-                <td>Games - <em>Wordle</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="games-wordle" style="display: none;">
+                <td class="nested-cell">↳ iOS</td>
                 <td class="placeholder">-</td>
-                <td>Web (Desktop)</td>
-                <td>Games - <em>Pips</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            <tr class="child-row" data-parent="games-wordle" style="display: none;">
+                <td class="nested-cell">↳ Android</td>
                 <td class="placeholder">-</td>
-                <td>iOS</td>
-                <td>Games - <em>Pips</em></td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
-            <tr>
+            
+            <!-- Games - Pips -->
+            <tr class="parent-row" data-surface="games-pips">
+                <td><span class="toggle">▶</span> Games - <em>Pips</em></td>
+                <td colspan="3"><em>Click to expand platforms</em></td>
+            </tr>
+            <tr class="child-row" data-parent="games-pips" style="display: none;">
+                <td class="nested-cell">↳ Web (Desktop)</td>
                 <td class="placeholder">-</td>
-                <td>Android</td>
-                <td>Games - <em>Pips</em></td>
+                <td class="number placeholder">-</td>
+                <td class="number placeholder">-</td>
+            </tr>
+            <tr class="child-row" data-parent="games-pips" style="display: none;">
+                <td class="nested-cell">↳ iOS</td>
+                <td class="placeholder">-</td>
+                <td class="number placeholder">-</td>
+                <td class="number placeholder">-</td>
+            </tr>
+            <tr class="child-row" data-parent="games-pips" style="display: none;">
+                <td class="nested-cell">↳ Android</td>
+                <td class="placeholder">-</td>
                 <td class="number placeholder">-</td>
                 <td class="number placeholder">-</td>
             </tr>
@@ -423,14 +500,34 @@
             // Load latest metrics data
             loadLatestMetrics();
             
-            // Make all headers sortable
-            headers.forEach((header, index) => {
-                header.classList.add('sortable');
-                header.addEventListener('click', () => sortTable(index));
+            // Add expand/collapse functionality to parent rows
+            const parentRows = tbody.querySelectorAll('.parent-row');
+            parentRows.forEach(parentRow => {
+                parentRow.addEventListener('click', function() {
+                    const surface = this.dataset.surface;
+                    const childRows = tbody.querySelectorAll(`.child-row[data-parent="${surface}"]`);
+                    const isExpanded = this.classList.contains('expanded');
+                    
+                    if (isExpanded) {
+                        // Collapse
+                        this.classList.remove('expanded');
+                        childRows.forEach(row => row.style.display = 'none');
+                    } else {
+                        // Expand
+                        this.classList.add('expanded');
+                        childRows.forEach(row => row.style.display = 'table-row');
+                    }
+                });
             });
             
-            // Set default sort: Surface column (index 2) in descending order (Z-A)
-            sortTable(2, false); // false = descending order
+            // Make all headers sortable (disabled for now with nested structure)
+            // headers.forEach((header, index) => {
+            //     header.classList.add('sortable');
+            //     header.addEventListener('click', () => sortTable(index));
+            // });
+            
+            // Set default sort: disabled for nested view
+            // sortTable(0, false);
             
             // Load and populate metrics from latest.json
             async function loadLatestMetrics() {
@@ -455,28 +552,36 @@
             
             // Update a specific table row with metric data
             function updateTableRow(metric) {
-                const rows = tbody.querySelectorAll('tr');
+                const childRows = tbody.querySelectorAll('.child-row');
                 
-                rows.forEach(row => {
-                    const platformCell = row.cells[1].textContent.trim();
-                    const surfaceCell = row.cells[2].textContent.trim().replace(/\s+/g, ' ');
+                childRows.forEach(row => {
+                    // Extract platform from nested cell (e.g., "↳ Web (Desktop)" -> "Web (Desktop)")
+                    const platformText = row.cells[0].textContent.trim().replace('↳ ', '');
+                    
+                    // Get parent surface from data attribute
+                    const parentSurface = row.dataset.parent;
+                    
+                    // Convert metric surface to match data attribute format
+                    const surfaceSlug = metric.surface.toLowerCase()
+                        .replace(/ - /g, '-')
+                        .replace(/ /g, '-');
                     
                     // Match by surface and platform
-                    if (surfaceCell === metric.surface && platformCell === metric.platform) {
-                        // Update date
-                        row.cells[0].textContent = metric.date;
-                        row.cells[0].classList.remove('placeholder');
+                    if (parentSurface === surfaceSlug && platformText === metric.platform) {
+                        // Update date (cell 1)
+                        row.cells[1].textContent = metric.date;
+                        row.cells[1].classList.remove('placeholder');
                         
-                        // Update TPL Coverage
+                        // Update TPL Coverage (cell 2)
                         if (metric.tplCoverage !== null && metric.tplCoverage !== undefined) {
-                            row.cells[3].textContent = metric.tplCoverage + '%';
-                            row.cells[3].classList.remove('placeholder');
+                            row.cells[2].textContent = metric.tplCoverage + '%';
+                            row.cells[2].classList.remove('placeholder');
                         }
                         
-                        // Update TPL Tokens (if available)
+                        // Update TPL Tokens (cell 3, if available)
                         if (metric.tplTokens !== null && metric.tplTokens !== undefined) {
-                            row.cells[4].textContent = metric.tplTokens + '%';
-                            row.cells[4].classList.remove('placeholder');
+                            row.cells[3].textContent = metric.tplTokens + '%';
+                            row.cells[3].classList.remove('placeholder');
                         }
                     }
                 });
