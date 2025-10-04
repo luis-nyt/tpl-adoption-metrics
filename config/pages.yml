@@ -40,6 +40,30 @@ pages:
     type: "store"
     section: "store"
     priority: "high"
+  
+  - url: "https://www.nytimes.com/crosswords/game/mini"
+    name: "Mini Crossword"
+    type: "game"
+    section: "mini-crossword"
+    priority: "high"
+  
+  - url: "https://www.nytimes.com/puzzles/tiles"
+    name: "Tiles"
+    type: "game"
+    section: "tiles"
+    priority: "high"
+  
+  - url: "https://www.nytimes.com/puzzles/letter-boxed"
+    name: "Letter Boxed"
+    type: "game"
+    section: "letter-boxed"
+    priority: "high"
+  
+  - url: "https://www.nytimes.com/puzzles/sudoku/hard"
+    name: "Sudoku"
+    type: "game"
+    section: "sudoku"
+    priority: "high"
 
 # Mobile vs Desktop viewport analysis
 viewports:

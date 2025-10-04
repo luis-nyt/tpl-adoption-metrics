@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2025-10-04
+- added four more games to complete NYT Games coverage: Mini Crossword, Tiles, Letter Boxed, and Sudoku - now tracking all major NYT games
 - added Times Store to latest.json for display on metrics table once data collection begins
 - renamed page title and header from "TPL Adoption Metrics" to "TPL Usage Metrics" for clarity and consistency with internal terminology
 - added Times Store (https://store.nytimes.com/) to data collection as web-only surface - no iOS/Android versions since the store is web-only
