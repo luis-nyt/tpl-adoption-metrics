@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2025-10-04
+- swapped Platform and Surface columns in metrics table - Platform now appears before Surface for better readability when grouping by device type
+- updated JavaScript data loading logic to match new column order (Platform in cell[1], Surface in cell[2])
+- updated default table sort to use Surface column (now index 2)
 - added three more game surfaces to data collection: Strands (https://www.nytimes.com/games/strands/), Spelling Bee (https://www.nytimes.com/puzzles/spelling-bee), and Wordle (https://www.nytimes.com/games/wordle/index.html) for comprehensive games vertical TPL tracking
 - added Wordle rows to metrics table (Web Desktop, iOS, Android) - Strands and Spelling Bee rows already existed
 
