@@ -1,0 +1,51 @@
+{
+  "url": "https://cooking.nytimes.com/",
+  "pageType": "homepage",
+  "section": "cooking",
+  "timestamp": "2026-02-23T23:52:27.160Z",
+  "viewportResults": {
+    "mobile": {
+      "viewport": {
+        "name": "Mobile",
+        "width": 375,
+        "height": 667,
+        "deviceType": "mobile"
+      },
+      "analysis": {
+        "elementCount": 0,
+        "totalCoveragePercent": 0,
+        "viewportCoveragePercent": 0,
+        "topComponents": [],
+        "components": [],
+        "elements": []
+      }
+    },
+    "desktop": {
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900,
+        "deviceType": "desktop"
+      },
+      "error": "Navigation timeout of 30000 ms exceeded",
+      "analysis": null
+    }
+  },
+  "crossViewportAnalysis": {
+    "coverageVariance": {
+      "min": 0,
+      "max": 0,
+      "average": 0,
+      "range": 0
+    },
+    "elementCountVariance": {
+      "min": 0,
+      "max": 0,
+      "average": 0,
+      "range": 0
+    },
+    "componentConsistency": {},
+    "viewportSpecificComponents": {},
+    "responsiveAdoptionScore": 0
+  }
+}
