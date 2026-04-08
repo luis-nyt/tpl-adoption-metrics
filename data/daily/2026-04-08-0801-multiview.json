@@ -1,0 +1,154 @@
+{
+  "date": "2026-04-08",
+  "type": "multi-viewport-analysis",
+  "viewportSummaries": {
+    "mobile": {
+      "pages": [
+        {
+          "url": "https://www.nytimes.com/games/wordle/index.html",
+          "pageType": "game",
+          "section": "wordle",
+          "viewport": "mobile",
+          "viewportSize": "375x667",
+          "deviceType": "mobile",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        },
+        {
+          "url": "https://store.nytimes.com/",
+          "pageType": "store",
+          "section": "store",
+          "viewport": "mobile",
+          "viewportSize": "375x667",
+          "deviceType": "mobile",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        },
+        {
+          "url": "https://www.nytimes.com/crosswords/game/mini",
+          "pageType": "game",
+          "section": "mini-crossword",
+          "viewport": "mobile",
+          "viewportSize": "375x667",
+          "deviceType": "mobile",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        },
+        {
+          "url": "https://www.nytimes.com/puzzles/tiles",
+          "pageType": "game",
+          "section": "tiles",
+          "viewport": "mobile",
+          "viewportSize": "375x667",
+          "deviceType": "mobile",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        },
+        {
+          "url": "https://www.nytimes.com/puzzles/letter-boxed",
+          "pageType": "game",
+          "section": "letter-boxed",
+          "viewport": "mobile",
+          "viewportSize": "375x667",
+          "deviceType": "mobile",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        },
+        {
+          "url": "https://www.nytimes.com/puzzles/sudoku/hard",
+          "pageType": "game",
+          "section": "sudoku",
+          "viewport": "mobile",
+          "viewportSize": "375x667",
+          "deviceType": "mobile",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        }
+      ],
+      "averageCoverage": 0,
+      "totalPagesAnalyzed": 6
+    },
+    "desktop": {
+      "pages": [
+        {
+          "url": "https://www.nytimes.com/games/wordle/index.html",
+          "pageType": "game",
+          "section": "wordle",
+          "viewport": "desktop",
+          "viewportSize": "1440x900",
+          "deviceType": "desktop",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        },
+        {
+          "url": "https://store.nytimes.com/",
+          "pageType": "store",
+          "section": "store",
+          "viewport": "desktop",
+          "viewportSize": "1440x900",
+          "deviceType": "desktop",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        },
+        {
+          "url": "https://www.nytimes.com/puzzles/tiles",
+          "pageType": "game",
+          "section": "tiles",
+          "viewport": "desktop",
+          "viewportSize": "1440x900",
+          "deviceType": "desktop",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        },
+        {
+          "url": "https://www.nytimes.com/puzzles/letter-boxed",
+          "pageType": "game",
+          "section": "letter-boxed",
+          "viewport": "desktop",
+          "viewportSize": "1440x900",
+          "deviceType": "desktop",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        },
+        {
+          "url": "https://www.nytimes.com/puzzles/sudoku/hard",
+          "pageType": "game",
+          "section": "sudoku",
+          "viewport": "desktop",
+          "viewportSize": "1440x900",
+          "deviceType": "desktop",
+          "tplCoverage": 0,
+          "elementCount": 0,
+          "topComponents": []
+        }
+      ],
+      "averageCoverage": 0,
+      "totalPagesAnalyzed": 5
+    }
+  },
+  "crossViewportInsights": {
+    "overallResponsiveScore": 0.83,
+    "mostConsistentComponents": [],
+    "coveragePatterns": {
+      "mobileFirst": 0,
+      "desktopFirst": 0,
+      "consistent": 5
+    },
+    "deviceSpecificInsights": {}
+  },
+  "totalPagesAnalyzed": 6,
+  "viewportsTested": [
+    "mobile",
+    "desktop"
+  ]
+}
