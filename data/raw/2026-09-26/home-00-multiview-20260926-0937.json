@@ -1,0 +1,2942 @@
+{
+  "url": "https://www.nytimes.com/",
+  "pageType": "homepage",
+  "section": "home",
+  "timestamp": "2026-09-26T09:37:29.555Z",
+  "viewportResults": {
+    "mobile": {
+      "viewport": {
+        "name": "Mobile",
+        "width": 375,
+        "height": 667,
+        "deviceType": "mobile"
+      },
+      "analysis": {
+        "elementCount": 0,
+        "totalCoveragePercent": 0,
+        "viewportCoveragePercent": 0,
+        "topComponents": [],
+        "components": [],
+        "elements": []
+      }
+    },
+    "desktop": {
+      "viewport": {
+        "name": "Desktop",
+        "width": 1440,
+        "height": 900,
+        "deviceType": "desktop"
+      },
+      "analysis": {
+        "elementCount": 178,
+        "totalCoveragePercent": 29.8,
+        "viewportCoveragePercent": 123.2,
+        "topComponents": [
+          "tpl-lb",
+          "tpl-always-light",
+          "tpl-lbl"
+        ],
+        "components": [
+          {
+            "selector": ".tpl-lb",
+            "count": 93,
+            "totalArea": 4224658,
+            "averageArea": 45426,
+            "coveragePercent": 19.253119029910604
+          },
+          {
+            "selector": ".tpl-always-light",
+            "count": 1,
+            "totalArea": 1296000,
+            "averageArea": 1296000,
+            "coveragePercent": 5.906286914293214
+          },
+          {
+            "selector": ".tpl-lbl",
+            "count": 84,
+            "totalArea": 1014145,
+            "averageArea": 12073,
+            "coveragePercent": 4.621783443438188
+          }
+        ],
+        "elements": [
+          {
+            "id": "element-0",
+            "tagName": "HTML",
+            "classes": [
+              "tpl-always-light"
+            ],
+            "position": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "area": 1296000,
+            "isVisible": true,
+            "inViewport": true
+          },
+          {
+            "id": "element-1",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 137,
+              "y": 537,
+              "width": 279,
+              "height": 218
+            },
+            "area": 60812,
+            "isVisible": true,
+            "inViewport": true
+          },
+          {
+            "id": "element-2",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 137,
+              "y": 537,
+              "width": 279,
+              "height": 76
+            },
+            "area": 21181,
+            "isVisible": true,
+            "inViewport": true
+          },
+          {
+            "id": "element-3",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 137,
+              "y": 771,
+              "width": 279,
+              "height": 162
+            },
+            "area": 45266,
+            "isVisible": true,
+            "inViewport": true
+          },
+          {
+            "id": "element-4",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 137,
+              "y": 771,
+              "width": 279,
+              "height": 43
+            },
+            "area": 12053,
+            "isVisible": true,
+            "inViewport": true
+          },
+          {
+            "id": "element-5",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 137,
+              "y": 949,
+              "width": 279,
+              "height": 87
+            },
+            "area": 24220,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-6",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 137,
+              "y": 949,
+              "width": 279,
+              "height": 65
+            },
+            "area": 18080,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-7",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 137,
+              "y": 1100,
+              "width": 382,
+              "height": 85
+            },
+            "area": 32598,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-8",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 137,
+              "y": 1116,
+              "width": 279,
+              "height": 38
+            },
+            "area": 10719,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-9",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 552,
+              "y": 1100,
+              "width": 382,
+              "height": 85
+            },
+            "area": 32598,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-10",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 552,
+              "y": 1100,
+              "width": 279,
+              "height": 19
+            },
+            "area": 5359,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-11",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 137,
+              "y": 1218,
+              "width": 382,
+              "height": 85
+            },
+            "area": 32598,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-12",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 137,
+              "y": 1218,
+              "width": 279,
+              "height": 38
+            },
+            "area": 10719,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-13",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 552,
+              "y": 1218,
+              "width": 382,
+              "height": 85
+            },
+            "area": 32598,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-14",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 552,
+              "y": 1235,
+              "width": 279,
+              "height": 38
+            },
+            "area": 10719,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-15",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 1397,
+              "width": 291,
+              "height": 162
+            },
+            "area": 47235,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-16",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 1397,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-17",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 1575,
+              "width": 291,
+              "height": 126
+            },
+            "area": 36750,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-18",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 1575,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-19",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 1797,
+              "width": 399,
+              "height": 65
+            },
+            "area": 25980,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-20",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 1797,
+              "width": 399,
+              "height": 43
+            },
+            "area": 17212,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-21",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 552,
+              "y": 1797,
+              "width": 399,
+              "height": 65
+            },
+            "area": 25980,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-22",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 552,
+              "y": 1797,
+              "width": 399,
+              "height": 43
+            },
+            "area": 17212,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-23",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 1908,
+              "width": 291,
+              "height": 162
+            },
+            "area": 47235,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-24",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 1908,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-25",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 2086,
+              "width": 291,
+              "height": 87
+            },
+            "area": 25274,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-26",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 2086,
+              "width": 291,
+              "height": 65
+            },
+            "area": 18867,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-27",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 2358,
+              "width": 275,
+              "height": 252
+            },
+            "area": 69436,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-28",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 2374,
+              "width": 275,
+              "height": 65
+            },
+            "area": 17830,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-29",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 2918,
+              "width": 399,
+              "height": 394
+            },
+            "area": 156978,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-30",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 2918,
+              "width": 399,
+              "height": 55
+            },
+            "area": 21995,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-31",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 3345,
+              "width": 399,
+              "height": 65
+            },
+            "area": 25980,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-32",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 3345,
+              "width": 399,
+              "height": 43
+            },
+            "area": 17212,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-33",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 3581,
+              "width": 291,
+              "height": 161
+            },
+            "area": 46943,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-34",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 3581,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-35",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 3758,
+              "width": 291,
+              "height": 65
+            },
+            "area": 18985,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-36",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 3758,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-37",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 4123,
+              "width": 291,
+              "height": 184
+            },
+            "area": 53523,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-38",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 4123,
+              "width": 291,
+              "height": 65
+            },
+            "area": 18867,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-39",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 4323,
+              "width": 291,
+              "height": 65
+            },
+            "area": 18985,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-40",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 4323,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-41",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 4567,
+              "width": 830,
+              "height": 367
+            },
+            "area": 304904,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-42",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 4567,
+              "width": 275,
+              "height": 43
+            },
+            "area": 11887,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-43",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 4979,
+              "width": 830,
+              "height": 432
+            },
+            "area": 358834,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-44",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 4979,
+              "width": 522,
+              "height": 43
+            },
+            "area": 22537,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-45",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 5476,
+              "width": 399,
+              "height": 152
+            },
+            "area": 60560,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-46",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 5476,
+              "width": 230,
+              "height": 38
+            },
+            "area": 8818,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-47",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 552,
+              "y": 5476,
+              "width": 399,
+              "height": 152
+            },
+            "area": 60560,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-48",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 552,
+              "y": 5476,
+              "width": 230,
+              "height": 19
+            },
+            "area": 4409,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-49",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 5661,
+              "width": 399,
+              "height": 152
+            },
+            "area": 60560,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-50",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 5677,
+              "width": 230,
+              "height": 38
+            },
+            "area": 8818,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-51",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 552,
+              "y": 5661,
+              "width": 399,
+              "height": 152
+            },
+            "area": 60560,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-52",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 552,
+              "y": 5661,
+              "width": 230,
+              "height": 38
+            },
+            "area": 8818,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-53",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 466,
+              "width": 337,
+              "height": 422
+            },
+            "area": 142101,
+            "isVisible": true,
+            "inViewport": true
+          },
+          {
+            "id": "element-54",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 718,
+              "width": 337,
+              "height": 83
+            },
+            "area": 27890,
+            "isVisible": true,
+            "inViewport": true
+          },
+          {
+            "id": "element-55",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 921,
+              "width": 151,
+              "height": 217
+            },
+            "area": 32875,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-56",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1168,
+              "y": 921,
+              "width": 151,
+              "height": 258
+            },
+            "area": 39115,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-57",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1352,
+              "y": 921,
+              "width": 151,
+              "height": 258
+            },
+            "area": 39115,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-58",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1536,
+              "y": 921,
+              "width": 151,
+              "height": 258
+            },
+            "area": 39115,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-59",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 1283,
+              "width": 337,
+              "height": 339
+            },
+            "area": 114159,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-60",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 1283,
+              "width": 337,
+              "height": 65
+            },
+            "area": 21846,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-61",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 1655,
+              "width": 337,
+              "height": 87
+            },
+            "area": 29258,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-62",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 1655,
+              "width": 337,
+              "height": 65
+            },
+            "area": 21846,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-63",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 1960,
+              "width": 337,
+              "height": 64
+            },
+            "area": 21509,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-64",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 1960,
+              "width": 337,
+              "height": 42
+            },
+            "area": 14097,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-65",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2057,
+              "width": 152,
+              "height": 104
+            },
+            "area": 15779,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-66",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2057,
+              "width": 152,
+              "height": 65
+            },
+            "area": 9853,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-67",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2177,
+              "width": 152,
+              "height": 110
+            },
+            "area": 16691,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-68",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2177,
+              "width": 152,
+              "height": 88
+            },
+            "area": 13348,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-69",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1168,
+              "y": 2057,
+              "width": 152,
+              "height": 150
+            },
+            "area": 22769,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-70",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 1168,
+              "y": 2057,
+              "width": 152,
+              "height": 111
+            },
+            "area": 16843,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-71",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1168,
+              "y": 2223,
+              "width": 152,
+              "height": 79
+            },
+            "area": 11957,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-72",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 1168,
+              "y": 2223,
+              "width": 152,
+              "height": 57
+            },
+            "area": 8614,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-73",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2347,
+              "width": 337,
+              "height": 121
+            },
+            "area": 40903,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-74",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2347,
+              "width": 230,
+              "height": 38
+            },
+            "area": 8818,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-75",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2532,
+              "width": 337,
+              "height": 90
+            },
+            "area": 30422,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-76",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2532,
+              "width": 230,
+              "height": 58
+            },
+            "area": 13227,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-77",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2656,
+              "width": 337,
+              "height": 96
+            },
+            "area": 32380,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-78",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2672,
+              "width": 230,
+              "height": 58
+            },
+            "area": 13227,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-79",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2785,
+              "width": 337,
+              "height": 90
+            },
+            "area": 30422,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-80",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2785,
+              "width": 230,
+              "height": 38
+            },
+            "area": 8818,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-81",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2908,
+              "width": 337,
+              "height": 90
+            },
+            "area": 30422,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-82",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 2908,
+              "width": 230,
+              "height": 58
+            },
+            "area": 13227,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-83",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 3031,
+              "width": 337,
+              "height": 90
+            },
+            "area": 30422,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-84",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 3031,
+              "width": 230,
+              "height": 38
+            },
+            "area": 8818,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-85",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 6702,
+              "width": 522,
+              "height": 107
+            },
+            "area": 55935,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-86",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 6702,
+              "width": 522,
+              "height": 43
+            },
+            "area": 22537,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-87",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 6702,
+              "width": 337,
+              "height": 90
+            },
+            "area": 30422,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-88",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 6702,
+              "width": 230,
+              "height": 58
+            },
+            "area": 13227,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-89",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 6826,
+              "width": 337,
+              "height": 90
+            },
+            "area": 30422,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-90",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 6826,
+              "width": 230,
+              "height": 58
+            },
+            "area": 13227,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-91",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 6949,
+              "width": 337,
+              "height": 90
+            },
+            "area": 30422,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-92",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 6949,
+              "width": 230,
+              "height": 58
+            },
+            "area": 13227,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-93",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 7168,
+              "width": 399,
+              "height": 60
+            },
+            "area": 24075,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-94",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 7168,
+              "width": 399,
+              "height": 38
+            },
+            "area": 15307,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-95",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 552,
+              "y": 7168,
+              "width": 399,
+              "height": 60
+            },
+            "area": 24075,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-96",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 552,
+              "y": 7168,
+              "width": 399,
+              "height": 38
+            },
+            "area": 15307,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-97",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 7168,
+              "width": 337,
+              "height": 60
+            },
+            "area": 20351,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-98",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 7168,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-99",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 7261,
+              "width": 399,
+              "height": 41
+            },
+            "area": 16421,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-100",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 7261,
+              "width": 399,
+              "height": 19
+            },
+            "area": 7653,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-101",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 552,
+              "y": 7261,
+              "width": 399,
+              "height": 41
+            },
+            "area": 16421,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-102",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 552,
+              "y": 7261,
+              "width": 399,
+              "height": 19
+            },
+            "area": 7653,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-103",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 7261,
+              "width": 337,
+              "height": 60
+            },
+            "area": 20351,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-104",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 7261,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-105",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 7386,
+              "width": 213,
+              "height": 301
+            },
+            "area": 64274,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-106",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 366,
+              "y": 7386,
+              "width": 213,
+              "height": 260
+            },
+            "area": 55482,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-107",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 613,
+              "y": 7386,
+              "width": 213,
+              "height": 320
+            },
+            "area": 68372,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-108",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 859,
+              "y": 7386,
+              "width": 213,
+              "height": 301
+            },
+            "area": 64274,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-109",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1106,
+              "y": 7386,
+              "width": 213,
+              "height": 301
+            },
+            "area": 64274,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-110",
+            "tagName": "ARTICLE",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 8140,
+              "width": 275,
+              "height": 179
+            },
+            "area": 49225,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-111",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 132,
+              "y": 8187,
+              "width": 132,
+              "height": 77
+            },
+            "area": 10114,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-112",
+            "tagName": "ARTICLE",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 425,
+              "y": 8140,
+              "width": 275,
+              "height": 179
+            },
+            "area": 49225,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-113",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 437,
+              "y": 8187,
+              "width": 132,
+              "height": 58
+            },
+            "area": 7586,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-114",
+            "tagName": "ARTICLE",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 730,
+              "y": 8140,
+              "width": 275,
+              "height": 179
+            },
+            "area": 49225,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-115",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 742,
+              "y": 8186,
+              "width": 132,
+              "height": 58
+            },
+            "area": 7586,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-116",
+            "tagName": "ARTICLE",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1035,
+              "y": 8140,
+              "width": 275,
+              "height": 179
+            },
+            "area": 49225,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-117",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 1047,
+              "y": 8187,
+              "width": 132,
+              "height": 58
+            },
+            "area": 7586,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-118",
+            "tagName": "ARTICLE",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1340,
+              "y": 8140,
+              "width": 275,
+              "height": 179
+            },
+            "area": 49225,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-119",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 1352,
+              "y": 8187,
+              "width": 132,
+              "height": 77
+            },
+            "area": 10114,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-120",
+            "tagName": "ARTICLE",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1645,
+              "y": 8140,
+              "width": 275,
+              "height": 179
+            },
+            "area": 49225,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-121",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 1657,
+              "y": 8186,
+              "width": 132,
+              "height": 58
+            },
+            "area": 7586,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-122",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 8423,
+              "width": 337,
+              "height": 121
+            },
+            "area": 40903,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-123",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 8423,
+              "width": 230,
+              "height": 38
+            },
+            "area": 8818,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-124",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 8578,
+              "width": 337,
+              "height": 138
+            },
+            "area": 46461,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-125",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 8594,
+              "width": 230,
+              "height": 38
+            },
+            "area": 8818,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-126",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 8749,
+              "width": 337,
+              "height": 102
+            },
+            "area": 34501,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-127",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 8749,
+              "width": 230,
+              "height": 38
+            },
+            "area": 8818,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-128",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9290,
+              "width": 291,
+              "height": 178
+            },
+            "area": 51922,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-129",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9307,
+              "width": 291,
+              "height": 65
+            },
+            "area": 18867,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-130",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9485,
+              "width": 291,
+              "height": 121
+            },
+            "area": 35294,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-131",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9485,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-132",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9622,
+              "width": 291,
+              "height": 104
+            },
+            "area": 30343,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-133",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9622,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-134",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 9290,
+              "width": 337,
+              "height": 55
+            },
+            "area": 18667,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-135",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 9290,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-136",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 9362,
+              "width": 337,
+              "height": 55
+            },
+            "area": 18667,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-137",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 9362,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-138",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 9433,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-139",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 9433,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-140",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 9505,
+              "width": 337,
+              "height": 90
+            },
+            "area": 30422,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-141",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 9505,
+              "width": 230,
+              "height": 19
+            },
+            "area": 4409,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-142",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9795,
+              "width": 291,
+              "height": 154
+            },
+            "area": 44905,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-143",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9812,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-144",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9965,
+              "width": 291,
+              "height": 137
+            },
+            "area": 39954,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-145",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 9982,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-146",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 9819,
+              "width": 152,
+              "height": 215
+            },
+            "area": 32649,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-147",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 9979,
+              "width": 152,
+              "height": 38
+            },
+            "area": 5836,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-148",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1168,
+              "y": 9819,
+              "width": 152,
+              "height": 215
+            },
+            "area": 32649,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-149",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 1168,
+              "y": 9979,
+              "width": 152,
+              "height": 38
+            },
+            "area": 5836,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-150",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10067,
+              "width": 152,
+              "height": 215
+            },
+            "area": 32649,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-151",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10227,
+              "width": 152,
+              "height": 38
+            },
+            "area": 5836,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-152",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 1168,
+              "y": 10067,
+              "width": 152,
+              "height": 215
+            },
+            "area": 32649,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-153",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 1168,
+              "y": 10227,
+              "width": 152,
+              "height": 38
+            },
+            "area": 5836,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-154",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 10351,
+              "width": 291,
+              "height": 83
+            },
+            "area": 24227,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-155",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 10351,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-156",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 10451,
+              "width": 291,
+              "height": 85
+            },
+            "area": 24810,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-157",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 10451,
+              "width": 291,
+              "height": 43
+            },
+            "area": 12578,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-158",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10351,
+              "width": 337,
+              "height": 55
+            },
+            "area": 18667,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-159",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10351,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-160",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10423,
+              "width": 337,
+              "height": 55
+            },
+            "area": 18667,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-161",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10423,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-162",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10494,
+              "width": 337,
+              "height": 55
+            },
+            "area": 18667,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-163",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10494,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-164",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10566,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-165",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10566,
+              "width": 337,
+              "height": 38
+            },
+            "area": 12939,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-166",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 10788,
+              "width": 399,
+              "height": 90
+            },
+            "area": 35994,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-167",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 10788,
+              "width": 291,
+              "height": 19
+            },
+            "area": 5593,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-168",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 552,
+              "y": 10788,
+              "width": 399,
+              "height": 90
+            },
+            "area": 35994,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-169",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 552,
+              "y": 10788,
+              "width": 291,
+              "height": 19
+            },
+            "area": 5593,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-170",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10788,
+              "width": 337,
+              "height": 90
+            },
+            "area": 30422,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-171",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10788,
+              "width": 230,
+              "height": 19
+            },
+            "area": 4409,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-172",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 120,
+              "y": 10911,
+              "width": 399,
+              "height": 90
+            },
+            "area": 35994,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-173",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 120,
+              "y": 10911,
+              "width": 291,
+              "height": 19
+            },
+            "area": 5593,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-174",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 552,
+              "y": 10911,
+              "width": 399,
+              "height": 90
+            },
+            "area": 35994,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-175",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 552,
+              "y": 10911,
+              "width": 291,
+              "height": 19
+            },
+            "area": 5593,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-176",
+            "tagName": "DIV",
+            "classes": [
+              "tpl-lb"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10911,
+              "width": 337,
+              "height": 90
+            },
+            "area": 30422,
+            "isVisible": true,
+            "inViewport": false
+          },
+          {
+            "id": "element-177",
+            "tagName": "A",
+            "classes": [
+              "tpl-lbl"
+            ],
+            "position": {
+              "x": 983,
+              "y": 10911,
+              "width": 230,
+              "height": 19
+            },
+            "area": 4409,
+            "isVisible": true,
+            "inViewport": false
+          }
+        ]
+      }
+    }
+  },
+  "crossViewportAnalysis": {
+    "coverageVariance": {
+      "min": 0,
+      "max": 29.8,
+      "average": 14.9,
+      "range": 29.8
+    },
+    "elementCountVariance": {
+      "min": 0,
+      "max": 178,
+      "average": 89,
+      "range": 178
+    },
+    "componentConsistency": {
+      "tpl-lb": 0.5,
+      "tpl-always-light": 0.5,
+      "tpl-lbl": 0.5
+    },
+    "viewportSpecificComponents": {
+      "desktop": [
+        "tpl-lb",
+        "tpl-always-light",
+        "tpl-lbl"
+      ]
+    },
+    "responsiveAdoptionScore": 0
+  }
+}
